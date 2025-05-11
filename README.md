@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slango
 
-## Getting Started
+Slango is a modern web application designed to let users share and explore unique slang words and phrases. It provides a platform for users to create accounts, log in, and contribute to a growing collection of slang while interacting with a sleek and responsive user interface.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **User Authentication**: Sign up and log in functionality with form validation.
+- **Responsive Design**: Fully responsive layout for desktop and mobile devices.
+- **Dark Mode**: Toggle between light and dark modes for a personalized experience.
+- **Dynamic Navigation**: Mobile-friendly navigation with animations.
+- **Social Login**: Easy login with third-party providers.
+- **Form Validation**: Built-in validation for user inputs using `zod` and `react-hook-form`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: React, Next.js, TypeScript
+- **Styling**: Tailwind CSS
+- **Form Handling**: `react-hook-form` with `zod` for schema validation
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Routing**: Next.js routing system
