@@ -5,6 +5,7 @@ import google_logo from "../assets/google.svg";
 import github_white from "../assets/github-mark-white.svg";
 import github_black from "../assets/github-mark.svg";
 import { Separator } from "./ui/separator";
+import SignInSocial from "./SignInSocial";
 
 const SocialLogin = () => {
   return (
@@ -15,11 +16,11 @@ const SocialLogin = () => {
           OR
         </span>
       </div>
-      <Button className="w-full flex items-center justify-center gap-2 mt-5">
+      <SignInSocial provider="google">
         <Image src={google_logo} alt="Google Icon" width={20} height={20} />
-        <span>Sign up with Google</span>
-      </Button>
-      <Button className="w-full flex items-center justify-center gap-2 mt-5">
+        <span>Sign with Google</span>
+      </SignInSocial>
+      <SignInSocial provider="github">
         <Image
           src={github_white}
           alt="Google Icon"
@@ -34,8 +35,8 @@ const SocialLogin = () => {
           height={20}
           className="dark:inline-block hidden"
         />
-        <span>Sign up with Google</span>
-      </Button>
+        <span>Sign with Google</span>
+      </SignInSocial>
     </>
   );
 };

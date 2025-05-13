@@ -159,21 +159,14 @@ exports.Prisma.VerificationScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.OriginScalarFieldEnum = {
-  id: 'id',
-  icon: 'icon',
-  flag: 'flag',
-  name: 'name',
-  slang_id: 'slang_id'
-};
-
 exports.Prisma.SlangScalarFieldEnum = {
   id: 'id',
   name: 'name',
   example: 'example',
   explaination: 'explaination',
+  category_id: 'category_id',
   view: 'view',
-  bookmarked: 'bookmarked',
+  user_id: 'user_id',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -186,8 +179,13 @@ exports.Prisma.LikeScalarFieldEnum = {
 
 exports.Prisma.CategoryScalarFieldEnum = {
   id: 'id',
-  name: 'name',
-  slang_id: 'slang_id'
+  name: 'name'
+};
+
+exports.Prisma.BookmarkScalarFieldEnum = {
+  id: 'id',
+  slang_id: 'slang_id',
+  user_id: 'user_id'
 };
 
 exports.Prisma.SortOrder = {
@@ -206,10 +204,10 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  Origin: 'Origin',
   Slang: 'Slang',
-  like: 'like',
-  Category: 'Category'
+  Like: 'Like',
+  Category: 'Category',
+  Bookmark: 'Bookmark'
 };
 
 /**

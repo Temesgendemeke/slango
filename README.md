@@ -27,3 +27,7 @@ Slango is a modern web application designed to let users share and explore uniqu
 > crud on slang
 > account managmnet -> delete 
 > handle like and save
+> socials login 
+> authentication
+> lazy loader
+> laoding effect

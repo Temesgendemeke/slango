@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import React, { useActionState } from "react";
+import React, { startTransition, useActionState } from "react";
 import Image from "next/image";
 import friends_image2 from "@/assets/Feeling proud-amico.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -24,10 +24,10 @@ import { toast } from "sonner";
 
 const formSchema = z
   .object({
-    name: z
+    username: z
       .string()
-      .min(2, { message: "name must be at least 2 characters long." })
-      .max(30, { message: "name must not exceed 30 characters." }),
+      .min(2, { message: "username must be at least 2 characters long." })
+      .max(30, { message: "username must not exceed 30 characters." }),
     email: z.string().email({ message: "Please enter a valid email address." }),
     password: z
       .string()
@@ -53,7 +53,9 @@ const SignUpForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      await formAction(data);
+      startTransition(() => {
+      formAction(data); 
+    });
     } catch (error) {
       console.error("Signup failed:", error);
     }
@@ -61,7 +63,7 @@ const SignUpForm = () => {
 
   useEffect(() => {
     if (state.errorMessage.length) {
-      toast.message(state.errorMessage);
+      toast.error(state.errorMessage);
     }
   }, [state.errorMessage]);
 
@@ -79,17 +81,18 @@ const SignUpForm = () => {
           </p>
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit(onSubmit)}
+              // onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-8 mt-10 mb-5"
+              action={formAction}
             >
               <FormField
                 control={form.control}
-                name="name"
+                name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>name</FormLabel>
+                    <FormLabel>username</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your name" {...field} />
+                      <Input placeholder="Enter your username" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -121,7 +124,7 @@ const SignUpForm = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your password" {...field} />
+                      <Input placeholder="Enter your password" {...field} type="password"/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>

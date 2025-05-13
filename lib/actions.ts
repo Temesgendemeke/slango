@@ -4,18 +4,16 @@ import { redirect } from "next/navigation";
 import { auth } from "./auth/auth";
 import { APIError } from "better-auth/api";
 
-
-interface State{
-  errorMessage?: string | null,
+interface State {
+  errorMessage?: string | null;
 }
 
-export const signup = async (prevState:State, formdata: FormData) => {
+export const signup = async (prevState: State, formdata) => {
   const rowData = {
-    email: formdata.get("email") as string,
-    password: formdata.get("password") as string,
-    name: formdata.get("name") as string,
+    email: formdata.email as string,
+    password: formdata.password as string,
+    name: formdata.password as string,
   };
-
 
   try {
     await auth.api.signUpEmail({
@@ -27,11 +25,11 @@ export const signup = async (prevState:State, formdata: FormData) => {
     if (error instanceof APIError) {
       switch (error.status) {
         case "UNPROCESSABLE_ENTITY":
-          return ({errorMessage: "user already exists."})
+          return { errorMessage: "user already exists." };
         case "BAD_REQUEST":
-          return ({errorMessage:"Invalid Email."})
+          return { errorMessage: "Invalid Email." };
         default:
-          return ({errorMessage: "something went wrong."});
+          return { errorMessage: "something went wrong." };
       }
     } else {
       throw new Error("An unknown error occurred.");
@@ -41,18 +39,33 @@ export const signup = async (prevState:State, formdata: FormData) => {
   redirect("/");
 };
 
-export const login = async (formData: FormData) => {
+export const login = async (formData) => {
   const rowData = {
-    email: formData.get("email") as string,
-    password: formData.get("password") as string,
-    remberMe: formData.get("remeberme") as string,
+    email: formData.email as string,
+    password: formData.password as string,
+    remberMe: formData.remeberme as string,
   };
 
-  await auth.api.signInEmail({
-    body: {
-      ...rowData,
-    },
-  });
+  try {
+    await auth.api.signInEmail({
+      body: {
+        ...rowData,
+      },
+    });
+  } catch (error) {
+    if (error instanceof APIError) {
+      switch (error.status) {
+        case "UNPROCESSABLE_ENTITY":
+          return { errorMessage: "user already exists." };
+        case "BAD_REQUEST":
+          return { errorMessage: "Invalid Email." };
+        default:
+          return { errorMessage: "something went wrong." };
+      }
+    } else {
+      throw new Error("An unknown error occurred.");
+    }
+  }
 
   redirect("/");
 };

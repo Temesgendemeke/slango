@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useActionState, useEffect, useState } from "react";
 import Image from "next/image";
 import friends_image from "@/assets/Ethnic friendship-pana.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,6 +19,7 @@ import Link from "next/link";
 import SocialLogin from "@/components/SocialLogin";
 import { login } from "@/lib/actions";
 import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z
@@ -42,6 +43,14 @@ const LoginForm = () => {
     },
   });
   const [error, setEror] = useState<string>("");
+  const initalState = { errorMessage: "" };
+  const [state, formAction, pending] = useActionState(login, initalState);
+
+  useEffect(() => {
+    if (state.errorMessage.length) {
+      toast.error(state.errorMessage);
+    }
+  }, [state.errorMessage]);
 
   const onSubmit = async (data) => {
     try {
@@ -59,7 +68,11 @@ const LoginForm = () => {
       <div className="lg:flex-1 lg:mt-10 lg:p-10">
         <h1 className="text-5xl  font-bold text-center mb-10">Welcome back</h1>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8"
+            action={formAction}
+          >
             <p className="text-red-500">{error}</p>
             <FormField
               control={form.control}
@@ -115,13 +128,13 @@ const LoginForm = () => {
               />
 
               <Link
-                href="/acount/forgot-password"
+                href="login/forgot-password"
                 className="text-sm font-medium"
               >
                 Forget password?
               </Link>
             </div>
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full" disabled={pending}>
               Login
             </Button>
             <p className="text-sm text-center">

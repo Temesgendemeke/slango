@@ -6,9 +6,13 @@ import { Button } from "./ui/button";
 import { redirect } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import Logout from "./Logout";
+import { authStore } from "@/store/useAuthStore";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const user = authStore((store) => store.user);
+
   return (
     <div className="flex justify-between items-center border-b p-2 py-4">
       <Link href="/" className="text-4xl font-bold">
@@ -16,24 +20,30 @@ const Nav = () => {
       </Link>
 
       <div className="items-center gap-2 hidden md:flex">
-        <Button
-          onClick={() => redirect("/signup")}
-          className="transition duration-300 ease-in border-white bg-transparent hover:bg-primary  text-primary hover:text-secondary"
-        >
-          Sign Up
-        </Button>
-        <Button
-          onClick={() => redirect("/login")}
-          className="transition duration-300 ease-in border border-primary bg-transparent hover:bg-primary text-primary hover:text-secondary"
-        >
-          Login
-        </Button>
+        {user ? (
+          <Logout />
+        ) : (
+          <>
+            <Button
+              onClick={() => redirect("/signup")}
+              className="transition duration-300 ease-in border-white bg-transparent hover:bg-primary  text-primary hover:text-secondary"
+            >
+              Sign Up
+            </Button>
+            <Button
+              onClick={() => redirect("/login")}
+              className="transition duration-300 ease-in border border-primary bg-transparent hover:bg-primary text-primary hover:text-secondary"
+            >
+              Login
+            </Button>
+          </>
+        )}
         <ModeToggle />
       </div>
 
       <div className="md:hidden flex items-center gap-2">
         {isOpen ? (
-          <X onClick={()=> setIsOpen(!isOpen)}/>
+          <X onClick={() => setIsOpen(!isOpen)} />
         ) : (
           <Menu className="size-8" onClick={() => setIsOpen(!isOpen)} />
         )}

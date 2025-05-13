@@ -2,7 +2,7 @@
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { Schema, z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -36,6 +36,8 @@ const formSchema = z.object({
   language: z.string().length(2),
   country: z.string().length(2),
   founder: z.string().optional().default("unknown"),
+  pronouction: z.string().optional(),
+  example: z.string(),
 });
 
 const page = () => {
@@ -47,6 +49,8 @@ const page = () => {
       language: "en",
       country: "US",
       founder: "",
+      pronouction: "",
+      example: "",
     },
   });
 
@@ -77,6 +81,62 @@ const page = () => {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="language"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="form_label">Language</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl className="w-full">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a verified email to display" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="absolute">
+                    {languages.map((language, index) => (
+                      <SelectItem
+                        key={index}
+                        value={language.code}
+                        defaultChecked={language.code === "en"}
+                      >
+                        {language.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  You can manage email addresses in your{" "}
+                  <Link href="/examples/forms">email settings</Link>.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="pronouction"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="form_label">pronouanction</FormLabel>
+
+                <FormControl className="w-full">
+                  <Input type="text" value={field.value} />
+                </FormControl>
+
+                <FormDescription>
+                  You can manage email addresses in your{" "}
+                  <Link href="/examples/forms">email settings</Link>.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <FormField
             control={form.control}
             name="explanation"
@@ -148,42 +208,6 @@ const page = () => {
 
           <FormField
             control={form.control}
-            name="language"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="form_label">Language</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl className="w-full">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent className="absolute">
-                    {languages.map((language, index) => (
-                      <SelectItem
-                        key={index}
-                        value={language.code}
-                        defaultChecked={language.code === "en"}
-                      >
-                        {language.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormDescription>
-                  You can manage email addresses in your{" "}
-                  <Link href="/examples/forms">email settings</Link>.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
             name="country"
             render={({ field }) => (
               <FormItem>
@@ -223,6 +247,7 @@ const page = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="form_label">Example usage</FormLabel>
+
                 <FormControl>
                   <Input placeholder="shadcn" {...field} />
                 </FormControl>
