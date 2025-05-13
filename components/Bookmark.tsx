@@ -7,9 +7,17 @@ interface BookmarkProps {
   setIsBookmarked: (prev: boolean) => boolean;
 }
 
-const Bookmark = ({ id,isBookmarked, setSlang }: BookmarkProps) => {
-  const handleBookmark = () => {
-    setSlang((bookmarks) => bookmarks.map(bookmark=>(bookmark.id == id ? {...bookmark, bookmarked:!bookmark.bookmarked} : bookmark)));
+const Bookmark = ({ id, isBookmarked, setSlang }: BookmarkProps) => {
+  const handleBookmark = (e) => {
+    e.stopPropagation();
+
+    setSlang((bookmarks) =>
+      bookmarks.map((bookmark) =>
+        bookmark.id == id
+          ? { ...bookmark, bookmarked: !bookmark.bookmarked }
+          : bookmark
+      )
+    );
   };
   return (
     <div className="absolute right-2 cursor-pointer" onClick={handleBookmark}>

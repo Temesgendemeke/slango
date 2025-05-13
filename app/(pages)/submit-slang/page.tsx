@@ -25,12 +25,17 @@ import {
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import GoBack from "@/components/GoBack";
+import { flags } from "@/constants/flags";
+import { languages } from "@/constants/languages";
 
 const formSchema = z.object({
   slang: z.string().min(2, {
     message: "slang term must be at least 2 characters.",
   }),
   explanation: z.string().trim().nonempty(),
+  language: z.string().length(2),
+  country: z.string().length(2),
+  founder: z.string().optional().default("unknown"),
 });
 
 const page = () => {
@@ -39,13 +44,16 @@ const page = () => {
     defaultValues: {
       slang: "",
       explanation: "",
+      language: "en",
+      country: "US",
+      founder: "",
     },
   });
 
   const onSubmit = () => {};
   return (
     <div className="flex items-center flex-col w-full justify-center p-4">
-      <GoBack/>
+      <GoBack />
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -90,6 +98,26 @@ const page = () => {
           />
           <FormField
             control={form.control}
+            name="founder"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="form_label">Founder</FormLabel>
+                <FormControl>
+                  <Input
+                    type="text"
+                    placeholder="e.g., A term used to describe excitement or enthusiasm"
+                    {...field}
+                  />
+                </FormControl>
+                <FormDescription>
+                  Provide a clear and concise explanation of the slang term.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
@@ -117,17 +145,73 @@ const page = () => {
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
-            name="orgin"
+            name="language"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="form_label">origin</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
+                <FormLabel className="form_label">Language</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl className="w-full">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a verified email to display" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="absolute">
+                    {languages.map((language, index) => (
+                      <SelectItem
+                        key={index}
+                        value={language.code}
+                        defaultChecked={language.code === "en"}
+                      >
+                        {language.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormDescription>
-                  enter slang term or phrases you went to share{" "}
+                  You can manage email addresses in your{" "}
+                  <Link href="/examples/forms">email settings</Link>.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="country"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="form_label">Country</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl className="w-full">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a verified email to display" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="absolute">
+                    {flags.map((flag, index) => (
+                      <SelectItem
+                        key={index}
+                        value={flag.code}
+                        defaultChecked={flag.code == "US"}
+                      >
+                        {flag.emoji} {flag.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  You can manage email addresses in your{" "}
+                  <Link href="/examples/forms">email settings</Link>.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

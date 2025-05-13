@@ -19,3 +19,11 @@ Slango is a modern web application designed to let users share and explore uniqu
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Routing**: Next.js routing system
+
+
+> auth
+> foreget password
+> file upload like profile picure
+> crud on slang
+> account managmnet -> delete 
+> handle like and save
