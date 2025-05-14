@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import avater from "../../../assets/Rapper=fiftycent.png";
 import CustomCard from "@/components/CustomCard";
+import { Edit, Upload } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { authStore } from "@/store/useAuthStore";
 
 const page = () => {
   const user = {
@@ -78,14 +82,28 @@ const page = () => {
     },
   ]);
 
+  const [image, setImage] = useState();
+  const auth_user = authStore((state) => state.user);
+
   return (
     <div className="flex flex-col gap-4  items-center mt-10">
       <div>
-        <Image
-          alt="user avater"
-          src={avater}
-          className="rounded-full border border-primary p-4"
-        />
+        <div className="relative">
+          <Image
+            alt="user avater"
+            src={avater}
+            className="rounded-full border border-primary p-4"
+          />
+          {auth_user && (
+            <Label>
+              <Upload
+                onClick={(e) => setImage(e.target?.files[0])}
+                className="absolute bottom-5 right-5"
+              />
+              <Input type="file" className="hidden" />
+            </Label>
+          )}
+        </div>
         <h4 className="text-center text-2xl  font-bold mt-4">
           @{user.username}
         </h4>
@@ -107,10 +125,9 @@ const page = () => {
         </div>
       </div>
 
-      
       <div className="grid grid-cols-3 gap-2">
         {slang.map((item, index) => (
-          <CustomCard  key={index} item={item} setSlang={setSlang} />
+          <CustomCard key={index} item={item} setSlang={setSlang} />
         ))}
       </div>
     </div>

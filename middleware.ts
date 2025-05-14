@@ -1,5 +1,5 @@
 import { betterFetch } from "@better-fetch/fetch";
-import type { auth } from "@/lib/auth";
+import type { auth } from "@/lib/auth/auth";
 import { NextRequest, NextResponse } from "next/server";
 
 type Session = typeof auth.$Infer.Session;
@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     {
       baseURL: request.nextUrl.origin,
       headers: {
-        cookie: request.headers.get("cookie") || "", 
+        cookie: request.headers.get("cookie") || "",
       },
     }
   );
@@ -23,5 +23,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard", ], 
+  matcher: ["/dashboard", "/submit-slang"],
 };

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Schema, z } from "zod";
@@ -27,6 +27,10 @@ import Nav from "@/components/Nav";
 import GoBack from "@/components/GoBack";
 import { flags } from "@/constants/flags";
 import { languages } from "@/constants/languages";
+import { Trash2Icon } from "lucide-react";
+import { redirect } from "next/navigation";
+import { useSession } from "@/lib/auth/auth-client";
+import { authStore } from "@/store/useAuthStore";
 
 const formSchema = z.object({
   slang: z.string().min(2, {
@@ -35,9 +39,10 @@ const formSchema = z.object({
   explanation: z.string().trim().nonempty(),
   language: z.string().length(2),
   country: z.string().length(2),
-  founder: z.string().optional().default("unknown"),
-  pronouction: z.string().optional(),
-  example: z.string(),
+  originator: z.string().optional().default("unknown"),
+  englishPronunciation: z.string().optional(),
+  examples: z.array(z.string()).length(1),
+  category: z.string().optional(),
 });
 
 const page = () => {
@@ -48,11 +53,20 @@ const page = () => {
       explanation: "",
       language: "en",
       country: "US",
-      founder: "",
-      pronouction: "",
-      example: "",
+      originator: "",
+      englishPronunciation: "",
+      examples: [""],
+      category: "",
     },
   });
+
+  const user = authStore((store) => store.user);
+
+  // useEffect(() => {
+  //   if (!user) {
+  //     return redirect("/login");
+  //   }
+  // });
 
   const onSubmit = () => {};
   return (
@@ -117,25 +131,28 @@ const page = () => {
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="pronouction"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="form_label">pronouanction</FormLabel>
+          {form.watch("language") !== "en" && (
+            <FormField
+              control={form.control}
+              name="englishPronunciation"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="form_label">
+                    english pronunciation
+                  </FormLabel>
 
-                <FormControl className="w-full">
-                  <Input type="text" value={field.value} />
-                </FormControl>
+                  <FormControl className="w-full">
+                    <Input type="text" {...field} />
+                  </FormControl>
 
-                <FormDescription>
-                  You can manage email addresses in your{" "}
-                  <Link href="/examples/forms">email settings</Link>.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                  <FormDescription>
+                    Provide the English pronunciation of the slang term.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
 
           <FormField
             control={form.control}
@@ -158,10 +175,10 @@ const page = () => {
           />
           <FormField
             control={form.control}
-            name="founder"
+            name="originator"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="form_label">Founder</FormLabel>
+                <FormLabel className="form_label">Originator</FormLabel>
                 <FormControl>
                   <Input
                     type="text"
@@ -170,7 +187,8 @@ const page = () => {
                   />
                 </FormControl>
                 <FormDescription>
-                  Provide a clear and concise explanation of the slang term.
+                  Enter the name of the person or group who coined the slang
+                  term (optional).
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -178,7 +196,7 @@ const page = () => {
           />
           <FormField
             control={form.control}
-            name="email"
+            name="category"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="form_label">Category</FormLabel>
@@ -198,8 +216,7 @@ const page = () => {
                   </SelectContent>
                 </Select>
                 <FormDescription>
-                  You can manage email addresses in your{" "}
-                  <Link href="/examples/forms">email settings</Link>.
+                  Select a category that best describes the slang term.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -221,7 +238,7 @@ const page = () => {
                       <SelectValue placeholder="Select a verified email to display" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent className="absolute">
+                  <SelectContent className="">
                     {flags.map((flag, index) => (
                       <SelectItem
                         key={index}
@@ -234,31 +251,62 @@ const page = () => {
                   </SelectContent>
                 </Select>
                 <FormDescription>
-                  You can manage email addresses in your{" "}
-                  <Link href="/examples/forms">email settings</Link>.
+                  Select the country where this slang term is commonly used.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="example"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="form_label">Example usage</FormLabel>
 
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormDescription>
-                  show how slang term used in context
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button variant={"outline"}>add more example</Button>
+          {form.watch("examples")?.map((_, index) => (
+            <FormField
+              key={index}
+              control={form.control}
+              name={`examples.${index}`}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="form_label">
+                    Example usage {index + 1}
+                  </FormLabel>
+                  <FormControl>
+                    <div className="flex gap-1">
+                      <Input placeholder={`Example ${index + 1}`} {...field} />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => {
+                          const examples = form.getValues("examples");
+                          form.setValue(
+                            "examples",
+                            examples.filter((_, i) => i !== index)
+                          );
+                        }}
+                      >
+                        <Trash2Icon />
+                      </Button>
+                    </div>
+                  </FormControl>
+                  <FormDescription>
+                    Show how the slang term is used in context.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          ))}
+
+          <Button
+            variant={"outline"}
+            type="button"
+            onClick={() =>
+              form.setValue("examples", [
+                ...(form.getValues("examples") || []),
+                "",
+              ])
+            }
+          >
+            Add more example
+          </Button>
           <div className="flex  justify-end">
             <Button type="submit" className="block">
               SUBMIT SLANG

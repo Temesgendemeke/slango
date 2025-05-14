@@ -2,18 +2,22 @@
 
 import { useSession } from "@/lib/auth/auth-client";
 import { authStore } from "@/store/useAuthStore";
-import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const AuthSync = () => {
-  const sesstion = useSession();
+  const session = useSession();
   const setUser = authStore((state) => state.setUser);
+  const clearUser = authStore((s) => s.clearUser);
 
   useEffect(() => {
-    if (sesstion.data?.user) {
-      setUser(sesstion.data?.user);
+    if (session.data?.user) {
+      setUser(session.data?.user);
+    } else {
+      clearUser();
     }
-  }, [sesstion, setUser]);
+  }, [session, setUser]);
   return null;
 };
-
 export default AuthSync;

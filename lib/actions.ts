@@ -12,7 +12,7 @@ export const signup = async (prevState: State, formdata) => {
   const rowData = {
     email: formdata.email as string,
     password: formdata.password as string,
-    name: formdata.password as string,
+    name: formdata.username as string,
   };
 
   try {

@@ -11,6 +11,9 @@ import { EyeIcon, ThumbsUp } from "lucide-react";
 import Bookmark from "./Bookmark";
 import { redirect } from "next/navigation";
 import format_number from "../utils/format_number";
+import { authStore } from "@/store/useAuthStore";
+import { EllipsisVertical } from "lucide-react";
+import EditSlang from "./EditSlang";
 
 const CustomCard = ({ item, setSlang }) => {
   const handleClick = (e) => {
@@ -23,19 +26,26 @@ const CustomCard = ({ item, setSlang }) => {
     e.stopPropagation();
     e.preventDefault();
   };
+
+  const user = authStore((store) => store.user);
+
   return (
     <Card
       key={item.id}
       className="relative flex flex-col hover:bg-secondary transition ease-in duration-300"
       onClick={handleClick}
     >
+      {user ? (
+        <EditSlang />
+      ) : (
         <Bookmark
           id={item.id}
           isBookmarked={item.bookmarked}
           setSlang={setSlang}
           onClick={handleButtonClick}
         />
-      
+      )}
+
       <CardHeader>
         <CardTitle>{item.name}</CardTitle>
         <CardDescription>

@@ -50,12 +50,15 @@ const SignUpForm = () => {
 
   const initalState = { errorMessage: "" };
   const [state, formAction, pending] = useActionState(signup, initalState);
+  
 
   const onSubmit = async (data) => {
     try {
+      console.log(data);
+
       startTransition(() => {
-      formAction(data); 
-    });
+        formAction(data);
+      });
     } catch (error) {
       console.error("Signup failed:", error);
     }
@@ -81,9 +84,8 @@ const SignUpForm = () => {
           </p>
           <Form {...form}>
             <form
-              // onSubmit={form.handleSubmit(onSubmit)}
+              onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-8 mt-10 mb-5"
-              action={formAction}
             >
               <FormField
                 control={form.control}
@@ -124,7 +126,11 @@ const SignUpForm = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your password" {...field} type="password"/>
+                      <Input
+                        placeholder="Enter your password"
+                        {...field}
+                        type="password"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

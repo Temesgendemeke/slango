@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ModeToggle from "./ui/ModeToggle";
 import { Button } from "./ui/button";
@@ -8,10 +8,22 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Logout from "./Logout";
 import { authStore } from "@/store/useAuthStore";
+import { useSession } from "@/lib/auth/auth-client";
+import Account from "./Account";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const user = authStore((store) => store.user);
+  const setUser = authStore((store) => store.setUser);
+  const { data } = useSession();
+
+
+
+  useEffect(() => {
+    if (data?.user) {
+      setUser(data.user);
+    }
+  }, [user, data]);
 
   return (
     <div className="flex justify-between items-center border-b p-2 py-4">
@@ -19,10 +31,13 @@ const Nav = () => {
         SLANGO
       </Link>
 
+
       <div className="items-center gap-2 hidden md:flex">
         {user ? (
-          <Logout />
+          <Account />
         ) : (
+          // <Logout />
+
           <>
             <Button
               onClick={() => redirect("/signup")}
