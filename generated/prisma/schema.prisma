@@ -24,9 +24,9 @@ model User {
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
-  likes         Like[]
-  posts         Slang[]
-  bookmarks     Bookmark[]
+  likes         like[]
+  posts         slang[]
+  bookmarks     bookmark[]
 
   @@unique([email])
   @@map("user")
@@ -77,27 +77,32 @@ model Verification {
   @@map("verification")
 }
 
-model Slang {
-  id            String     @id @default(auto()) @map("_id") @db.ObjectId
-  name          String
-  example       String[]
-  explaination  String
-  like          Like[]
-  category      Category?  @relation("CategorySlangs", fields: [category_id], references: [id])
-  category_id   String?    @db.ObjectId
-  view          Int        @default(0)
-  posted_by     User       @relation(fields: [user_id], references: [id])
-  user_id       String
-  bookmarked_by Bookmark[]
-  createdAt     DateTime
-  updatedAt     DateTime
+model slang {
+  id                   String     @id @default(auto()) @map("_id") @db.ObjectId
+  name                 String
+  examples             String[]
+  explanation          String
+  like                 like[]
+  englishPronunciation String
+  category             category?  @relation("CategorySlangs", fields: [category_id], references: [id])
+  category_id          String?    @db.ObjectId
+  view                 Int        @default(0)
+  posted_by            User       @relation(fields: [user_id], references: [id])
+  user_id              String
+  originator           String
+  language             String
+  country              String
+  bookmarked_by        bookmark[]
+  slug                 String     @unique
+  createdAt            DateTime   @default(now())
+  updatedAt            DateTime   @updatedAt
 
   @@map("slang")
 }
 
-model Like {
+model like {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
-  slang    Slang  @relation(fields: [slang_id], references: [id])
+  slang    slang  @relation(fields: [slang_id], references: [id])
   slang_id String @db.ObjectId
   liked_by User   @relation(fields: [user_id], references: [id])
   user_id  String
@@ -105,17 +110,17 @@ model Like {
   @@map("like")
 }
 
-model Category {
+model category {
   id     String  @id @default(auto()) @map("_id") @db.ObjectId
-  name   String
-  slangs Slang[] @relation("CategorySlangs")
+  name   String  @unique
+  slangs slang[] @relation("CategorySlangs")
 
   @@map("category")
 }
 
-model Bookmark {
+model bookmark {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
-  Slang    Slang  @relation(fields: [slang_id], references: [id])
+  Slang    slang  @relation(fields: [slang_id], references: [id])
   slang_id String @db.ObjectId
   user     User   @relation(fields: [user_id], references: [id])
   user_id  String

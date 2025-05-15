@@ -9,7 +9,7 @@ const Menu = () => {
   ];
   const [active, setActive] = useState("recent")
   return (
-    <div className="flex  bg-card text-sm  w-fit rounded-xl overflow-hidden">
+    <div className="flex  bg-card text-sm  w-fit rounded-xl overflow-hidden border border-secondary shadow">
       {menu.map((item, index) => {
         return (
           <div

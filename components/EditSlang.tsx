@@ -60,10 +60,6 @@ const EditSlang = () => {
               <span>Edit</span>
             </DropdownMenuItem>
             <DropdownMenuItem
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-              }}
             >
               <Trash2 />
               <span>Delete</span>

@@ -1,7 +1,9 @@
 "use client";
+import CardSkeleton from "@/components/CardSkeleton";
 import CustomCard from "@/components/CustomCard";
 import Menu from "@/components/Menu";
 import { Input } from "@/components/ui/input";
+import { getSlangStore } from "@/store/slangStore";
 import { Search, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { title } from "process";
@@ -68,18 +70,34 @@ const page = () => {
     { title: "recent" },
     { title: "Popular" },
   ];
+  // const [slangs, setSlangs] = useState([]);
+  const getSlang = getSlangStore();
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredSlang, setFilteredSlang] = useState(slang);
+  const [filteredSlang, setFilteredSlang] = useState([]);
 
   useEffect(() => {
-    const res = searchTerm == "" ? slang.filter((item) => item.name.includes(searchTerm)) : slang
-    setFilteredSlang(res)
+    getSlang.execute();
+  }, []);
+
+  useEffect(() => {
+    setFilteredSlang(getSlang.data || []);
+  }, [getSlang.loading]);
+
+  useEffect(() => {
+    if (!getSlang.loading) {
+      const res =
+        searchTerm.trim() == ""
+          ? getSlang?.data
+          : getSlang.data.filter((item) => item.name.includes(searchTerm));
+      setFilteredSlang(res);
+    }
   }, [searchTerm]);
 
   return (
     <div className="px-2 ">
       <div className="flex flex-col md:flex-row gap-4 w-full justify-between md:items-center mt-10 ">
-        <Menu/>
+        <Menu />
+
 
         <div className="relative">
           <Input
@@ -93,11 +111,21 @@ const page = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 w-full">
-        {filteredSlang.map((item, index) => {
-          return <CustomCard key={index} item={item} setSlang={setSlang} />;
-        })}
-      </div>
+      {getSlang?.loading ? (
+        <CardSkeleton length={10} />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 w-full">
+          {filteredSlang?.length == 0 ? (
+            <h3 className="text-center w-full uppercase text-xl font-bold absolute left-1/2 transform -translate-x-1/2">
+              No Slang Found
+            </h3>
+          ) : (
+            filteredSlang.map((item, index) => {
+              return <CustomCard key={index} item={item} setSlang={setSlang} />;
+            })
+          )}
+        </div>
+      )}
     </div>
   );
 };

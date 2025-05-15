@@ -19,7 +19,7 @@ const CustomCard = ({ item, setSlang }) => {
   const handleClick = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    redirect("/slang");
+    redirect(`/slang/${item.slug}`);
   };
 
   const handleButtonClick = (e) => {
@@ -40,7 +40,7 @@ const CustomCard = ({ item, setSlang }) => {
       ) : (
         <Bookmark
           id={item.id}
-          isBookmarked={item.bookmarked}
+          isBookmarked={true}
           setSlang={setSlang}
           onClick={handleButtonClick}
         />
@@ -49,21 +49,22 @@ const CustomCard = ({ item, setSlang }) => {
       <CardHeader>
         <CardTitle>{item.name}</CardTitle>
         <CardDescription>
-          Added by {item.author} &#x2022; {item.date}
+          Added by {item.user_id} &#x2022; {item.updatedAt}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p>{item.example}</p>
+        <p>{item.explanation}</p>
+        <p className="bg-accent p-2 mt-2">{`"${item.examples[0]}"`}</p>
       </CardContent>
       <CardFooter className="flex justify-between w-full">
         <div className="flex gap-2 " onClick={handleButtonClick}>
           <ThumbsUp />
-          <span>{format_number(4000000)}</span>
+          <span>{format_number(item.like_count)}</span>
         </div>
 
         <div className="flex gap-2 " onClick={handleButtonClick}>
           <EyeIcon />
-          <span>{format_number(4343)}</span>
+          <span>{format_number(item.view)}</span>
         </div>
       </CardFooter>
     </Card>

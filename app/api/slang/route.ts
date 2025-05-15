@@ -1,15 +1,69 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import { ApiError } from "@/lib/errors";
-
-const prisma = new PrismaClient();
+import { db } from "@/lib/prisma";
+import generate_unique_slug from "@/utils/generate_unique";
 
 export async function GET() {
-  let slangs;
-  try{
-    slangs = await prisma.Slang.finMany();
-  }catch(err){
-    throw new ApiError(500, "Failed to fetch slangs")
+  try {
+    console.log("slangs");
+
+    const slangs = await db.slang.findMany({
+      include: {
+        _count: {
+          select: { like: true },
+        },
+      },
+    });
+
+    const result = slangs.map((slang) => ({
+      ...slang,
+      like_count: slang._count.like,
+    }));
+
+    return NextResponse.json(result);
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to fetch slangs", message: error },
+      { status: 500 }
+    );
   }
-  return NextResponse.json({ slangs , message:"wew"});
+}
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const slug = await generate_unique_slug(body.name);
+
+    const newSlang = await db.slang.create({
+      data: { ...body, slug },
+    });
+    return NextResponse.json(newSlang, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to create slang", message: error },
+
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(request: Request) {
+  const body = await request.json();
+
+  try {
+    const updated_slang = await db.slang.update({
+      where: {
+        id: body.id,
+      },
+      data: body,
+    });
+    return NextResponse.json({
+      message: "Upated sucessfuly",
+      slang: updated_slang,
+    });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to update slang", details: (error as Error).message },
+      { status: 500 }
+    );
+  }
 }

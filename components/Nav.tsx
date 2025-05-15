@@ -11,6 +11,7 @@ import { authStore } from "@/store/useAuthStore";
 import { useSession } from "@/lib/auth/auth-client";
 import Account from "./Account";
 
+
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const user = authStore((store) => store.user);
@@ -36,8 +37,6 @@ const Nav = () => {
         {user ? (
           <Account />
         ) : (
-          // <Logout />
-
           <>
             <Button
               onClick={() => redirect("/signup")}

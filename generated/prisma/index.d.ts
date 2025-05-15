@@ -34,25 +34,25 @@ export type Account = $Result.DefaultSelection<Prisma.$AccountPayload>
  */
 export type Verification = $Result.DefaultSelection<Prisma.$VerificationPayload>
 /**
- * Model Slang
+ * Model slang
  * 
  */
-export type Slang = $Result.DefaultSelection<Prisma.$SlangPayload>
+export type slang = $Result.DefaultSelection<Prisma.$slangPayload>
 /**
- * Model Like
+ * Model like
  * 
  */
-export type Like = $Result.DefaultSelection<Prisma.$LikePayload>
+export type like = $Result.DefaultSelection<Prisma.$likePayload>
 /**
- * Model Category
+ * Model category
  * 
  */
-export type Category = $Result.DefaultSelection<Prisma.$CategoryPayload>
+export type category = $Result.DefaultSelection<Prisma.$categoryPayload>
 /**
- * Model Bookmark
+ * Model bookmark
  * 
  */
-export type Bookmark = $Result.DefaultSelection<Prisma.$BookmarkPayload>
+export type bookmark = $Result.DefaultSelection<Prisma.$bookmarkPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -187,44 +187,44 @@ export class PrismaClient<
   get verification(): Prisma.VerificationDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.slang`: Exposes CRUD operations for the **Slang** model.
+   * `prisma.slang`: Exposes CRUD operations for the **slang** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Slangs
     * const slangs = await prisma.slang.findMany()
     * ```
     */
-  get slang(): Prisma.SlangDelegate<ExtArgs, ClientOptions>;
+  get slang(): Prisma.slangDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.like`: Exposes CRUD operations for the **Like** model.
+   * `prisma.like`: Exposes CRUD operations for the **like** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Likes
     * const likes = await prisma.like.findMany()
     * ```
     */
-  get like(): Prisma.LikeDelegate<ExtArgs, ClientOptions>;
+  get like(): Prisma.likeDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.category`: Exposes CRUD operations for the **Category** model.
+   * `prisma.category`: Exposes CRUD operations for the **category** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Categories
     * const categories = await prisma.category.findMany()
     * ```
     */
-  get category(): Prisma.CategoryDelegate<ExtArgs, ClientOptions>;
+  get category(): Prisma.categoryDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.bookmark`: Exposes CRUD operations for the **Bookmark** model.
+   * `prisma.bookmark`: Exposes CRUD operations for the **bookmark** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Bookmarks
     * const bookmarks = await prisma.bookmark.findMany()
     * ```
     */
-  get bookmark(): Prisma.BookmarkDelegate<ExtArgs, ClientOptions>;
+  get bookmark(): Prisma.bookmarkDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -669,10 +669,10 @@ export namespace Prisma {
     Session: 'Session',
     Account: 'Account',
     Verification: 'Verification',
-    Slang: 'Slang',
-    Like: 'Like',
-    Category: 'Category',
-    Bookmark: 'Bookmark'
+    slang: 'slang',
+    like: 'like',
+    category: 'category',
+    bookmark: 'bookmark'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -991,298 +991,298 @@ export namespace Prisma {
           }
         }
       }
-      Slang: {
-        payload: Prisma.$SlangPayload<ExtArgs>
-        fields: Prisma.SlangFieldRefs
+      slang: {
+        payload: Prisma.$slangPayload<ExtArgs>
+        fields: Prisma.slangFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.SlangFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload> | null
+            args: Prisma.slangFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.SlangFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>
+            args: Prisma.slangFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>
           }
           findFirst: {
-            args: Prisma.SlangFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload> | null
+            args: Prisma.slangFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.SlangFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>
+            args: Prisma.slangFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>
           }
           findMany: {
-            args: Prisma.SlangFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>[]
+            args: Prisma.slangFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>[]
           }
           create: {
-            args: Prisma.SlangCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>
+            args: Prisma.slangCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>
           }
           createMany: {
-            args: Prisma.SlangCreateManyArgs<ExtArgs>
+            args: Prisma.slangCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.SlangDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>
+            args: Prisma.slangDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>
           }
           update: {
-            args: Prisma.SlangUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>
+            args: Prisma.slangUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>
           }
           deleteMany: {
-            args: Prisma.SlangDeleteManyArgs<ExtArgs>
+            args: Prisma.slangDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.SlangUpdateManyArgs<ExtArgs>
+            args: Prisma.slangUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.SlangUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SlangPayload>
+            args: Prisma.slangUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$slangPayload>
           }
           aggregate: {
             args: Prisma.SlangAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateSlang>
           }
           groupBy: {
-            args: Prisma.SlangGroupByArgs<ExtArgs>
+            args: Prisma.slangGroupByArgs<ExtArgs>
             result: $Utils.Optional<SlangGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.SlangFindRawArgs<ExtArgs>
+            args: Prisma.slangFindRawArgs<ExtArgs>
             result: JsonObject
           }
           aggregateRaw: {
-            args: Prisma.SlangAggregateRawArgs<ExtArgs>
+            args: Prisma.slangAggregateRawArgs<ExtArgs>
             result: JsonObject
           }
           count: {
-            args: Prisma.SlangCountArgs<ExtArgs>
+            args: Prisma.slangCountArgs<ExtArgs>
             result: $Utils.Optional<SlangCountAggregateOutputType> | number
           }
         }
       }
-      Like: {
-        payload: Prisma.$LikePayload<ExtArgs>
-        fields: Prisma.LikeFieldRefs
+      like: {
+        payload: Prisma.$likePayload<ExtArgs>
+        fields: Prisma.likeFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.LikeFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload> | null
+            args: Prisma.likeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.LikeFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>
+            args: Prisma.likeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>
           }
           findFirst: {
-            args: Prisma.LikeFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload> | null
+            args: Prisma.likeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.LikeFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>
+            args: Prisma.likeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>
           }
           findMany: {
-            args: Prisma.LikeFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>[]
+            args: Prisma.likeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>[]
           }
           create: {
-            args: Prisma.LikeCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>
+            args: Prisma.likeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>
           }
           createMany: {
-            args: Prisma.LikeCreateManyArgs<ExtArgs>
+            args: Prisma.likeCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.LikeDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>
+            args: Prisma.likeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>
           }
           update: {
-            args: Prisma.LikeUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>
+            args: Prisma.likeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>
           }
           deleteMany: {
-            args: Prisma.LikeDeleteManyArgs<ExtArgs>
+            args: Prisma.likeDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.LikeUpdateManyArgs<ExtArgs>
+            args: Prisma.likeUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.LikeUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$LikePayload>
+            args: Prisma.likeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$likePayload>
           }
           aggregate: {
             args: Prisma.LikeAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateLike>
           }
           groupBy: {
-            args: Prisma.LikeGroupByArgs<ExtArgs>
+            args: Prisma.likeGroupByArgs<ExtArgs>
             result: $Utils.Optional<LikeGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.LikeFindRawArgs<ExtArgs>
+            args: Prisma.likeFindRawArgs<ExtArgs>
             result: JsonObject
           }
           aggregateRaw: {
-            args: Prisma.LikeAggregateRawArgs<ExtArgs>
+            args: Prisma.likeAggregateRawArgs<ExtArgs>
             result: JsonObject
           }
           count: {
-            args: Prisma.LikeCountArgs<ExtArgs>
+            args: Prisma.likeCountArgs<ExtArgs>
             result: $Utils.Optional<LikeCountAggregateOutputType> | number
           }
         }
       }
-      Category: {
-        payload: Prisma.$CategoryPayload<ExtArgs>
-        fields: Prisma.CategoryFieldRefs
+      category: {
+        payload: Prisma.$categoryPayload<ExtArgs>
+        fields: Prisma.categoryFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.CategoryFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload> | null
+            args: Prisma.categoryFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.CategoryFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>
+            args: Prisma.categoryFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>
           }
           findFirst: {
-            args: Prisma.CategoryFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload> | null
+            args: Prisma.categoryFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.CategoryFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>
+            args: Prisma.categoryFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>
           }
           findMany: {
-            args: Prisma.CategoryFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>[]
+            args: Prisma.categoryFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>[]
           }
           create: {
-            args: Prisma.CategoryCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>
+            args: Prisma.categoryCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>
           }
           createMany: {
-            args: Prisma.CategoryCreateManyArgs<ExtArgs>
+            args: Prisma.categoryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.CategoryDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>
+            args: Prisma.categoryDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>
           }
           update: {
-            args: Prisma.CategoryUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>
+            args: Prisma.categoryUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>
           }
           deleteMany: {
-            args: Prisma.CategoryDeleteManyArgs<ExtArgs>
+            args: Prisma.categoryDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.CategoryUpdateManyArgs<ExtArgs>
+            args: Prisma.categoryUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.CategoryUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CategoryPayload>
+            args: Prisma.categoryUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoryPayload>
           }
           aggregate: {
             args: Prisma.CategoryAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateCategory>
           }
           groupBy: {
-            args: Prisma.CategoryGroupByArgs<ExtArgs>
+            args: Prisma.categoryGroupByArgs<ExtArgs>
             result: $Utils.Optional<CategoryGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.CategoryFindRawArgs<ExtArgs>
+            args: Prisma.categoryFindRawArgs<ExtArgs>
             result: JsonObject
           }
           aggregateRaw: {
-            args: Prisma.CategoryAggregateRawArgs<ExtArgs>
+            args: Prisma.categoryAggregateRawArgs<ExtArgs>
             result: JsonObject
           }
           count: {
-            args: Prisma.CategoryCountArgs<ExtArgs>
+            args: Prisma.categoryCountArgs<ExtArgs>
             result: $Utils.Optional<CategoryCountAggregateOutputType> | number
           }
         }
       }
-      Bookmark: {
-        payload: Prisma.$BookmarkPayload<ExtArgs>
-        fields: Prisma.BookmarkFieldRefs
+      bookmark: {
+        payload: Prisma.$bookmarkPayload<ExtArgs>
+        fields: Prisma.bookmarkFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.BookmarkFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload> | null
+            args: Prisma.bookmarkFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.BookmarkFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>
+            args: Prisma.bookmarkFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>
           }
           findFirst: {
-            args: Prisma.BookmarkFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload> | null
+            args: Prisma.bookmarkFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.BookmarkFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>
+            args: Prisma.bookmarkFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>
           }
           findMany: {
-            args: Prisma.BookmarkFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>[]
+            args: Prisma.bookmarkFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>[]
           }
           create: {
-            args: Prisma.BookmarkCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>
+            args: Prisma.bookmarkCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>
           }
           createMany: {
-            args: Prisma.BookmarkCreateManyArgs<ExtArgs>
+            args: Prisma.bookmarkCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.BookmarkDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>
+            args: Prisma.bookmarkDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>
           }
           update: {
-            args: Prisma.BookmarkUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>
+            args: Prisma.bookmarkUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>
           }
           deleteMany: {
-            args: Prisma.BookmarkDeleteManyArgs<ExtArgs>
+            args: Prisma.bookmarkDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.BookmarkUpdateManyArgs<ExtArgs>
+            args: Prisma.bookmarkUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.BookmarkUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$BookmarkPayload>
+            args: Prisma.bookmarkUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$bookmarkPayload>
           }
           aggregate: {
             args: Prisma.BookmarkAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateBookmark>
           }
           groupBy: {
-            args: Prisma.BookmarkGroupByArgs<ExtArgs>
+            args: Prisma.bookmarkGroupByArgs<ExtArgs>
             result: $Utils.Optional<BookmarkGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.BookmarkFindRawArgs<ExtArgs>
+            args: Prisma.bookmarkFindRawArgs<ExtArgs>
             result: JsonObject
           }
           aggregateRaw: {
-            args: Prisma.BookmarkAggregateRawArgs<ExtArgs>
+            args: Prisma.bookmarkAggregateRawArgs<ExtArgs>
             result: JsonObject
           }
           count: {
-            args: Prisma.BookmarkCountArgs<ExtArgs>
+            args: Prisma.bookmarkCountArgs<ExtArgs>
             result: $Utils.Optional<BookmarkCountAggregateOutputType> | number
           }
         }
@@ -1362,10 +1362,10 @@ export namespace Prisma {
     session?: SessionOmit
     account?: AccountOmit
     verification?: VerificationOmit
-    slang?: SlangOmit
-    like?: LikeOmit
-    category?: CategoryOmit
-    bookmark?: BookmarkOmit
+    slang?: slangOmit
+    like?: likeOmit
+    category?: categoryOmit
+    bookmark?: bookmarkOmit
   }
 
   /* Types for Logging */
@@ -1504,21 +1504,21 @@ export namespace Prisma {
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountLikesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: LikeWhereInput
+    where?: likeWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountPostsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SlangWhereInput
+    where?: slangWhereInput
   }
 
   /**
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountBookmarksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
   }
 
 
@@ -1551,14 +1551,14 @@ export namespace Prisma {
    * SlangCountOutputType without action
    */
   export type SlangCountOutputTypeCountLikeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: LikeWhereInput
+    where?: likeWhereInput
   }
 
   /**
    * SlangCountOutputType without action
    */
   export type SlangCountOutputTypeCountBookmarked_byArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
   }
 
 
@@ -1589,7 +1589,7 @@ export namespace Prisma {
    * CategoryCountOutputType without action
    */
   export type CategoryCountOutputTypeCountSlangsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SlangWhereInput
+    where?: slangWhereInput
   }
 
 
@@ -1812,9 +1812,9 @@ export namespace Prisma {
     objects: {
       sessions: Prisma.$SessionPayload<ExtArgs>[]
       accounts: Prisma.$AccountPayload<ExtArgs>[]
-      likes: Prisma.$LikePayload<ExtArgs>[]
-      posts: Prisma.$SlangPayload<ExtArgs>[]
-      bookmarks: Prisma.$BookmarkPayload<ExtArgs>[]
+      likes: Prisma.$likePayload<ExtArgs>[]
+      posts: Prisma.$slangPayload<ExtArgs>[]
+      bookmarks: Prisma.$bookmarkPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2189,9 +2189,9 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     sessions<T extends User$sessionsArgs<ExtArgs> = {}>(args?: Subset<T, User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     accounts<T extends User$accountsArgs<ExtArgs> = {}>(args?: Subset<T, User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    likes<T extends User$likesArgs<ExtArgs> = {}>(args?: Subset<T, User$likesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    posts<T extends User$postsArgs<ExtArgs> = {}>(args?: Subset<T, User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    bookmarks<T extends User$bookmarksArgs<ExtArgs> = {}>(args?: Subset<T, User$bookmarksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    likes<T extends User$likesArgs<ExtArgs> = {}>(args?: Subset<T, User$likesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    posts<T extends User$postsArgs<ExtArgs> = {}>(args?: Subset<T, User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    bookmarks<T extends User$bookmarksArgs<ExtArgs> = {}>(args?: Subset<T, User$bookmarksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2650,20 +2650,20 @@ export namespace Prisma {
    */
   export type User$likesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
-    where?: LikeWhereInput
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
-    cursor?: LikeWhereUniqueInput
+    include?: likeInclude<ExtArgs> | null
+    where?: likeWhereInput
+    orderBy?: likeOrderByWithRelationInput | likeOrderByWithRelationInput[]
+    cursor?: likeWhereUniqueInput
     take?: number
     skip?: number
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
@@ -2674,20 +2674,20 @@ export namespace Prisma {
    */
   export type User$postsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
-    where?: SlangWhereInput
-    orderBy?: SlangOrderByWithRelationInput | SlangOrderByWithRelationInput[]
-    cursor?: SlangWhereUniqueInput
+    include?: slangInclude<ExtArgs> | null
+    where?: slangWhereInput
+    orderBy?: slangOrderByWithRelationInput | slangOrderByWithRelationInput[]
+    cursor?: slangWhereUniqueInput
     take?: number
     skip?: number
     distinct?: SlangScalarFieldEnum | SlangScalarFieldEnum[]
@@ -2698,20 +2698,20 @@ export namespace Prisma {
    */
   export type User$bookmarksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
-    where?: BookmarkWhereInput
-    orderBy?: BookmarkOrderByWithRelationInput | BookmarkOrderByWithRelationInput[]
-    cursor?: BookmarkWhereUniqueInput
+    include?: bookmarkInclude<ExtArgs> | null
+    where?: bookmarkWhereInput
+    orderBy?: bookmarkOrderByWithRelationInput | bookmarkOrderByWithRelationInput[]
+    cursor?: bookmarkWhereUniqueInput
     take?: number
     skip?: number
     distinct?: BookmarkScalarFieldEnum | BookmarkScalarFieldEnum[]
@@ -5759,7 +5759,7 @@ export namespace Prisma {
 
 
   /**
-   * Model Slang
+   * Model slang
    */
 
   export type AggregateSlang = {
@@ -5781,10 +5781,15 @@ export namespace Prisma {
   export type SlangMinAggregateOutputType = {
     id: string | null
     name: string | null
-    explaination: string | null
+    explanation: string | null
+    englishPronunciation: string | null
     category_id: string | null
     view: number | null
     user_id: string | null
+    originator: string | null
+    language: string | null
+    country: string | null
+    slug: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5792,10 +5797,15 @@ export namespace Prisma {
   export type SlangMaxAggregateOutputType = {
     id: string | null
     name: string | null
-    explaination: string | null
+    explanation: string | null
+    englishPronunciation: string | null
     category_id: string | null
     view: number | null
     user_id: string | null
+    originator: string | null
+    language: string | null
+    country: string | null
+    slug: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5803,11 +5813,16 @@ export namespace Prisma {
   export type SlangCountAggregateOutputType = {
     id: number
     name: number
-    example: number
-    explaination: number
+    examples: number
+    explanation: number
+    englishPronunciation: number
     category_id: number
     view: number
     user_id: number
+    originator: number
+    language: number
+    country: number
+    slug: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -5825,10 +5840,15 @@ export namespace Prisma {
   export type SlangMinAggregateInputType = {
     id?: true
     name?: true
-    explaination?: true
+    explanation?: true
+    englishPronunciation?: true
     category_id?: true
     view?: true
     user_id?: true
+    originator?: true
+    language?: true
+    country?: true
+    slug?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5836,10 +5856,15 @@ export namespace Prisma {
   export type SlangMaxAggregateInputType = {
     id?: true
     name?: true
-    explaination?: true
+    explanation?: true
+    englishPronunciation?: true
     category_id?: true
     view?: true
     user_id?: true
+    originator?: true
+    language?: true
+    country?: true
+    slug?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5847,11 +5872,16 @@ export namespace Prisma {
   export type SlangCountAggregateInputType = {
     id?: true
     name?: true
-    example?: true
-    explaination?: true
+    examples?: true
+    explanation?: true
+    englishPronunciation?: true
     category_id?: true
     view?: true
     user_id?: true
+    originator?: true
+    language?: true
+    country?: true
+    slug?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5859,37 +5889,37 @@ export namespace Prisma {
 
   export type SlangAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Slang to aggregate.
+     * Filter which slang to aggregate.
      */
-    where?: SlangWhereInput
+    where?: slangWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Slangs to fetch.
+     * Determine the order of slangs to fetch.
      */
-    orderBy?: SlangOrderByWithRelationInput | SlangOrderByWithRelationInput[]
+    orderBy?: slangOrderByWithRelationInput | slangOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: SlangWhereUniqueInput
+    cursor?: slangWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Slangs from the position of the cursor.
+     * Take `±n` slangs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Slangs.
+     * Skip the first `n` slangs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Slangs
+     * Count returned slangs
     **/
     _count?: true | SlangCountAggregateInputType
     /**
@@ -5929,11 +5959,11 @@ export namespace Prisma {
 
 
 
-  export type SlangGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SlangWhereInput
-    orderBy?: SlangOrderByWithAggregationInput | SlangOrderByWithAggregationInput[]
+  export type slangGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: slangWhereInput
+    orderBy?: slangOrderByWithAggregationInput | slangOrderByWithAggregationInput[]
     by: SlangScalarFieldEnum[] | SlangScalarFieldEnum
-    having?: SlangScalarWhereWithAggregatesInput
+    having?: slangScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: SlangCountAggregateInputType | true
@@ -5946,11 +5976,16 @@ export namespace Prisma {
   export type SlangGroupByOutputType = {
     id: string
     name: string
-    example: string[]
-    explaination: string
+    examples: string[]
+    explanation: string
+    englishPronunciation: string
     category_id: string | null
     view: number
     user_id: string
+    originator: string
+    language: string
+    country: string
+    slug: string
     createdAt: Date
     updatedAt: Date
     _count: SlangCountAggregateOutputType | null
@@ -5960,7 +5995,7 @@ export namespace Prisma {
     _max: SlangMaxAggregateOutputType | null
   }
 
-  type GetSlangGroupByPayload<T extends SlangGroupByArgs> = Prisma.PrismaPromise<
+  type GetSlangGroupByPayload<T extends slangGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<SlangGroupByOutputType, T['by']> &
         {
@@ -5974,80 +6009,95 @@ export namespace Prisma {
     >
 
 
-  export type SlangSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type slangSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    example?: boolean
-    explaination?: boolean
+    examples?: boolean
+    explanation?: boolean
+    englishPronunciation?: boolean
     category_id?: boolean
     view?: boolean
     user_id?: boolean
+    originator?: boolean
+    language?: boolean
+    country?: boolean
+    slug?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    like?: boolean | Slang$likeArgs<ExtArgs>
-    category?: boolean | Slang$categoryArgs<ExtArgs>
+    like?: boolean | slang$likeArgs<ExtArgs>
+    category?: boolean | slang$categoryArgs<ExtArgs>
     posted_by?: boolean | UserDefaultArgs<ExtArgs>
-    bookmarked_by?: boolean | Slang$bookmarked_byArgs<ExtArgs>
+    bookmarked_by?: boolean | slang$bookmarked_byArgs<ExtArgs>
     _count?: boolean | SlangCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["slang"]>
 
 
 
-  export type SlangSelectScalar = {
+  export type slangSelectScalar = {
     id?: boolean
     name?: boolean
-    example?: boolean
-    explaination?: boolean
+    examples?: boolean
+    explanation?: boolean
+    englishPronunciation?: boolean
     category_id?: boolean
     view?: boolean
     user_id?: boolean
+    originator?: boolean
+    language?: boolean
+    country?: boolean
+    slug?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type SlangOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "example" | "explaination" | "category_id" | "view" | "user_id" | "createdAt" | "updatedAt", ExtArgs["result"]["slang"]>
-  export type SlangInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    like?: boolean | Slang$likeArgs<ExtArgs>
-    category?: boolean | Slang$categoryArgs<ExtArgs>
+  export type slangOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "examples" | "explanation" | "englishPronunciation" | "category_id" | "view" | "user_id" | "originator" | "language" | "country" | "slug" | "createdAt" | "updatedAt", ExtArgs["result"]["slang"]>
+  export type slangInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    like?: boolean | slang$likeArgs<ExtArgs>
+    category?: boolean | slang$categoryArgs<ExtArgs>
     posted_by?: boolean | UserDefaultArgs<ExtArgs>
-    bookmarked_by?: boolean | Slang$bookmarked_byArgs<ExtArgs>
+    bookmarked_by?: boolean | slang$bookmarked_byArgs<ExtArgs>
     _count?: boolean | SlangCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $SlangPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Slang"
+  export type $slangPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "slang"
     objects: {
-      like: Prisma.$LikePayload<ExtArgs>[]
-      category: Prisma.$CategoryPayload<ExtArgs> | null
+      like: Prisma.$likePayload<ExtArgs>[]
+      category: Prisma.$categoryPayload<ExtArgs> | null
       posted_by: Prisma.$UserPayload<ExtArgs>
-      bookmarked_by: Prisma.$BookmarkPayload<ExtArgs>[]
+      bookmarked_by: Prisma.$bookmarkPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
-      example: string[]
-      explaination: string
+      examples: string[]
+      explanation: string
+      englishPronunciation: string
       category_id: string | null
       view: number
       user_id: string
+      originator: string
+      language: string
+      country: string
+      slug: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["slang"]>
     composites: {}
   }
 
-  type SlangGetPayload<S extends boolean | null | undefined | SlangDefaultArgs> = $Result.GetResult<Prisma.$SlangPayload, S>
+  type slangGetPayload<S extends boolean | null | undefined | slangDefaultArgs> = $Result.GetResult<Prisma.$slangPayload, S>
 
-  type SlangCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<SlangFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type slangCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<slangFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: SlangCountAggregateInputType | true
     }
 
-  export interface SlangDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Slang'], meta: { name: 'Slang' } }
+  export interface slangDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['slang'], meta: { name: 'slang' } }
     /**
      * Find zero or one Slang that matches the filter.
-     * @param {SlangFindUniqueArgs} args - Arguments to find a Slang
+     * @param {slangFindUniqueArgs} args - Arguments to find a Slang
      * @example
      * // Get one Slang
      * const slang = await prisma.slang.findUnique({
@@ -6056,12 +6106,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends SlangFindUniqueArgs>(args: SelectSubset<T, SlangFindUniqueArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends slangFindUniqueArgs>(args: SelectSubset<T, slangFindUniqueArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Slang that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {SlangFindUniqueOrThrowArgs} args - Arguments to find a Slang
+     * @param {slangFindUniqueOrThrowArgs} args - Arguments to find a Slang
      * @example
      * // Get one Slang
      * const slang = await prisma.slang.findUniqueOrThrow({
@@ -6070,13 +6120,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends SlangFindUniqueOrThrowArgs>(args: SelectSubset<T, SlangFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends slangFindUniqueOrThrowArgs>(args: SelectSubset<T, slangFindUniqueOrThrowArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Slang that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SlangFindFirstArgs} args - Arguments to find a Slang
+     * @param {slangFindFirstArgs} args - Arguments to find a Slang
      * @example
      * // Get one Slang
      * const slang = await prisma.slang.findFirst({
@@ -6085,14 +6135,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends SlangFindFirstArgs>(args?: SelectSubset<T, SlangFindFirstArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends slangFindFirstArgs>(args?: SelectSubset<T, slangFindFirstArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Slang that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SlangFindFirstOrThrowArgs} args - Arguments to find a Slang
+     * @param {slangFindFirstOrThrowArgs} args - Arguments to find a Slang
      * @example
      * // Get one Slang
      * const slang = await prisma.slang.findFirstOrThrow({
@@ -6101,13 +6151,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends SlangFindFirstOrThrowArgs>(args?: SelectSubset<T, SlangFindFirstOrThrowArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends slangFindFirstOrThrowArgs>(args?: SelectSubset<T, slangFindFirstOrThrowArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Slangs that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SlangFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {slangFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Slangs
      * const slangs = await prisma.slang.findMany()
@@ -6119,11 +6169,11 @@ export namespace Prisma {
      * const slangWithIdOnly = await prisma.slang.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends SlangFindManyArgs>(args?: SelectSubset<T, SlangFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends slangFindManyArgs>(args?: SelectSubset<T, slangFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Slang.
-     * @param {SlangCreateArgs} args - Arguments to create a Slang.
+     * @param {slangCreateArgs} args - Arguments to create a Slang.
      * @example
      * // Create one Slang
      * const Slang = await prisma.slang.create({
@@ -6133,11 +6183,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends SlangCreateArgs>(args: SelectSubset<T, SlangCreateArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends slangCreateArgs>(args: SelectSubset<T, slangCreateArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Slangs.
-     * @param {SlangCreateManyArgs} args - Arguments to create many Slangs.
+     * @param {slangCreateManyArgs} args - Arguments to create many Slangs.
      * @example
      * // Create many Slangs
      * const slang = await prisma.slang.createMany({
@@ -6147,11 +6197,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends SlangCreateManyArgs>(args?: SelectSubset<T, SlangCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends slangCreateManyArgs>(args?: SelectSubset<T, slangCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Slang.
-     * @param {SlangDeleteArgs} args - Arguments to delete one Slang.
+     * @param {slangDeleteArgs} args - Arguments to delete one Slang.
      * @example
      * // Delete one Slang
      * const Slang = await prisma.slang.delete({
@@ -6161,11 +6211,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends SlangDeleteArgs>(args: SelectSubset<T, SlangDeleteArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends slangDeleteArgs>(args: SelectSubset<T, slangDeleteArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Slang.
-     * @param {SlangUpdateArgs} args - Arguments to update one Slang.
+     * @param {slangUpdateArgs} args - Arguments to update one Slang.
      * @example
      * // Update one Slang
      * const slang = await prisma.slang.update({
@@ -6178,11 +6228,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends SlangUpdateArgs>(args: SelectSubset<T, SlangUpdateArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends slangUpdateArgs>(args: SelectSubset<T, slangUpdateArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Slangs.
-     * @param {SlangDeleteManyArgs} args - Arguments to filter Slangs to delete.
+     * @param {slangDeleteManyArgs} args - Arguments to filter Slangs to delete.
      * @example
      * // Delete a few Slangs
      * const { count } = await prisma.slang.deleteMany({
@@ -6192,13 +6242,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends SlangDeleteManyArgs>(args?: SelectSubset<T, SlangDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends slangDeleteManyArgs>(args?: SelectSubset<T, slangDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Slangs.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SlangUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {slangUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Slangs
      * const slang = await prisma.slang.updateMany({
@@ -6211,11 +6261,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends SlangUpdateManyArgs>(args: SelectSubset<T, SlangUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends slangUpdateManyArgs>(args: SelectSubset<T, slangUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Slang.
-     * @param {SlangUpsertArgs} args - Arguments to update or create a Slang.
+     * @param {slangUpsertArgs} args - Arguments to update or create a Slang.
      * @example
      * // Update or create a Slang
      * const slang = await prisma.slang.upsert({
@@ -6230,21 +6280,21 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends SlangUpsertArgs>(args: SelectSubset<T, SlangUpsertArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends slangUpsertArgs>(args: SelectSubset<T, slangUpsertArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Slangs that matches the filter.
-     * @param {SlangFindRawArgs} args - Select which filters you would like to apply.
+     * @param {slangFindRawArgs} args - Select which filters you would like to apply.
      * @example
      * const slang = await prisma.slang.findRaw({
      *   filter: { age: { $gt: 25 } }
      * })
      */
-    findRaw(args?: SlangFindRawArgs): Prisma.PrismaPromise<JsonObject>
+    findRaw(args?: slangFindRawArgs): Prisma.PrismaPromise<JsonObject>
 
     /**
      * Perform aggregation operations on a Slang.
-     * @param {SlangAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * @param {slangAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
      * const slang = await prisma.slang.aggregateRaw({
      *   pipeline: [
@@ -6253,14 +6303,14 @@ export namespace Prisma {
      *   ]
      * })
      */
-    aggregateRaw(args?: SlangAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
+    aggregateRaw(args?: slangAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
 
 
     /**
      * Count the number of Slangs.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SlangCountArgs} args - Arguments to filter Slangs to count.
+     * @param {slangCountArgs} args - Arguments to filter Slangs to count.
      * @example
      * // Count the number of Slangs
      * const count = await prisma.slang.count({
@@ -6269,8 +6319,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends SlangCountArgs>(
-      args?: Subset<T, SlangCountArgs>,
+    count<T extends slangCountArgs>(
+      args?: Subset<T, slangCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -6309,7 +6359,7 @@ export namespace Prisma {
      * Group by Slang.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SlangGroupByArgs} args - Group by arguments.
+     * @param {slangGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -6324,14 +6374,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends SlangGroupByArgs,
+      T extends slangGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: SlangGroupByArgs['orderBy'] }
-        : { orderBy?: SlangGroupByArgs['orderBy'] },
+        ? { orderBy: slangGroupByArgs['orderBy'] }
+        : { orderBy?: slangGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -6380,25 +6430,25 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, SlangGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSlangGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, slangGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSlangGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Slang model
+   * Fields of the slang model
    */
-  readonly fields: SlangFieldRefs;
+  readonly fields: slangFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Slang.
+   * The delegate class that acts as a "Promise-like" for slang.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__SlangClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__slangClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    like<T extends Slang$likeArgs<ExtArgs> = {}>(args?: Subset<T, Slang$likeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    category<T extends Slang$categoryArgs<ExtArgs> = {}>(args?: Subset<T, Slang$categoryArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    like<T extends slang$likeArgs<ExtArgs> = {}>(args?: Subset<T, slang$likeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    category<T extends slang$categoryArgs<ExtArgs> = {}>(args?: Subset<T, slang$categoryArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     posted_by<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    bookmarked_by<T extends Slang$bookmarked_byArgs<ExtArgs> = {}>(args?: Subset<T, Slang$bookmarked_byArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    bookmarked_by<T extends slang$bookmarked_byArgs<ExtArgs> = {}>(args?: Subset<T, slang$bookmarked_byArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6425,363 +6475,368 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Slang model
+   * Fields of the slang model
    */
-  interface SlangFieldRefs {
-    readonly id: FieldRef<"Slang", 'String'>
-    readonly name: FieldRef<"Slang", 'String'>
-    readonly example: FieldRef<"Slang", 'String[]'>
-    readonly explaination: FieldRef<"Slang", 'String'>
-    readonly category_id: FieldRef<"Slang", 'String'>
-    readonly view: FieldRef<"Slang", 'Int'>
-    readonly user_id: FieldRef<"Slang", 'String'>
-    readonly createdAt: FieldRef<"Slang", 'DateTime'>
-    readonly updatedAt: FieldRef<"Slang", 'DateTime'>
+  interface slangFieldRefs {
+    readonly id: FieldRef<"slang", 'String'>
+    readonly name: FieldRef<"slang", 'String'>
+    readonly examples: FieldRef<"slang", 'String[]'>
+    readonly explanation: FieldRef<"slang", 'String'>
+    readonly englishPronunciation: FieldRef<"slang", 'String'>
+    readonly category_id: FieldRef<"slang", 'String'>
+    readonly view: FieldRef<"slang", 'Int'>
+    readonly user_id: FieldRef<"slang", 'String'>
+    readonly originator: FieldRef<"slang", 'String'>
+    readonly language: FieldRef<"slang", 'String'>
+    readonly country: FieldRef<"slang", 'String'>
+    readonly slug: FieldRef<"slang", 'String'>
+    readonly createdAt: FieldRef<"slang", 'DateTime'>
+    readonly updatedAt: FieldRef<"slang", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Slang findUnique
+   * slang findUnique
    */
-  export type SlangFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * Filter, which Slang to fetch.
+     * Filter, which slang to fetch.
      */
-    where: SlangWhereUniqueInput
+    where: slangWhereUniqueInput
   }
 
   /**
-   * Slang findUniqueOrThrow
+   * slang findUniqueOrThrow
    */
-  export type SlangFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * Filter, which Slang to fetch.
+     * Filter, which slang to fetch.
      */
-    where: SlangWhereUniqueInput
+    where: slangWhereUniqueInput
   }
 
   /**
-   * Slang findFirst
+   * slang findFirst
    */
-  export type SlangFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * Filter, which Slang to fetch.
+     * Filter, which slang to fetch.
      */
-    where?: SlangWhereInput
+    where?: slangWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Slangs to fetch.
+     * Determine the order of slangs to fetch.
      */
-    orderBy?: SlangOrderByWithRelationInput | SlangOrderByWithRelationInput[]
+    orderBy?: slangOrderByWithRelationInput | slangOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Slangs.
+     * Sets the position for searching for slangs.
      */
-    cursor?: SlangWhereUniqueInput
+    cursor?: slangWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Slangs from the position of the cursor.
+     * Take `±n` slangs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Slangs.
+     * Skip the first `n` slangs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Slangs.
+     * Filter by unique combinations of slangs.
      */
     distinct?: SlangScalarFieldEnum | SlangScalarFieldEnum[]
   }
 
   /**
-   * Slang findFirstOrThrow
+   * slang findFirstOrThrow
    */
-  export type SlangFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * Filter, which Slang to fetch.
+     * Filter, which slang to fetch.
      */
-    where?: SlangWhereInput
+    where?: slangWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Slangs to fetch.
+     * Determine the order of slangs to fetch.
      */
-    orderBy?: SlangOrderByWithRelationInput | SlangOrderByWithRelationInput[]
+    orderBy?: slangOrderByWithRelationInput | slangOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Slangs.
+     * Sets the position for searching for slangs.
      */
-    cursor?: SlangWhereUniqueInput
+    cursor?: slangWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Slangs from the position of the cursor.
+     * Take `±n` slangs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Slangs.
+     * Skip the first `n` slangs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Slangs.
+     * Filter by unique combinations of slangs.
      */
     distinct?: SlangScalarFieldEnum | SlangScalarFieldEnum[]
   }
 
   /**
-   * Slang findMany
+   * slang findMany
    */
-  export type SlangFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * Filter, which Slangs to fetch.
+     * Filter, which slangs to fetch.
      */
-    where?: SlangWhereInput
+    where?: slangWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Slangs to fetch.
+     * Determine the order of slangs to fetch.
      */
-    orderBy?: SlangOrderByWithRelationInput | SlangOrderByWithRelationInput[]
+    orderBy?: slangOrderByWithRelationInput | slangOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Slangs.
+     * Sets the position for listing slangs.
      */
-    cursor?: SlangWhereUniqueInput
+    cursor?: slangWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Slangs from the position of the cursor.
+     * Take `±n` slangs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Slangs.
+     * Skip the first `n` slangs.
      */
     skip?: number
     distinct?: SlangScalarFieldEnum | SlangScalarFieldEnum[]
   }
 
   /**
-   * Slang create
+   * slang create
    */
-  export type SlangCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * The data needed to create a Slang.
+     * The data needed to create a slang.
      */
-    data: XOR<SlangCreateInput, SlangUncheckedCreateInput>
+    data: XOR<slangCreateInput, slangUncheckedCreateInput>
   }
 
   /**
-   * Slang createMany
+   * slang createMany
    */
-  export type SlangCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Slangs.
+     * The data used to create many slangs.
      */
-    data: SlangCreateManyInput | SlangCreateManyInput[]
+    data: slangCreateManyInput | slangCreateManyInput[]
   }
 
   /**
-   * Slang update
+   * slang update
    */
-  export type SlangUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * The data needed to update a Slang.
+     * The data needed to update a slang.
      */
-    data: XOR<SlangUpdateInput, SlangUncheckedUpdateInput>
+    data: XOR<slangUpdateInput, slangUncheckedUpdateInput>
     /**
-     * Choose, which Slang to update.
+     * Choose, which slang to update.
      */
-    where: SlangWhereUniqueInput
+    where: slangWhereUniqueInput
   }
 
   /**
-   * Slang updateMany
+   * slang updateMany
    */
-  export type SlangUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Slangs.
+     * The data used to update slangs.
      */
-    data: XOR<SlangUpdateManyMutationInput, SlangUncheckedUpdateManyInput>
+    data: XOR<slangUpdateManyMutationInput, slangUncheckedUpdateManyInput>
     /**
-     * Filter which Slangs to update
+     * Filter which slangs to update
      */
-    where?: SlangWhereInput
+    where?: slangWhereInput
     /**
-     * Limit how many Slangs to update.
+     * Limit how many slangs to update.
      */
     limit?: number
   }
 
   /**
-   * Slang upsert
+   * slang upsert
    */
-  export type SlangUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * The filter to search for the Slang to update in case it exists.
+     * The filter to search for the slang to update in case it exists.
      */
-    where: SlangWhereUniqueInput
+    where: slangWhereUniqueInput
     /**
-     * In case the Slang found by the `where` argument doesn't exist, create a new Slang with this data.
+     * In case the slang found by the `where` argument doesn't exist, create a new slang with this data.
      */
-    create: XOR<SlangCreateInput, SlangUncheckedCreateInput>
+    create: XOR<slangCreateInput, slangUncheckedCreateInput>
     /**
-     * In case the Slang was found with the provided `where` argument, update it with this data.
+     * In case the slang was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<SlangUpdateInput, SlangUncheckedUpdateInput>
+    update: XOR<slangUpdateInput, slangUncheckedUpdateInput>
   }
 
   /**
-   * Slang delete
+   * slang delete
    */
-  export type SlangDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
     /**
-     * Filter which Slang to delete.
+     * Filter which slang to delete.
      */
-    where: SlangWhereUniqueInput
+    where: slangWhereUniqueInput
   }
 
   /**
-   * Slang deleteMany
+   * slang deleteMany
    */
-  export type SlangDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Slangs to delete
+     * Filter which slangs to delete
      */
-    where?: SlangWhereInput
+    where?: slangWhereInput
     /**
-     * Limit how many Slangs to delete.
+     * Limit how many slangs to delete.
      */
     limit?: number
   }
 
   /**
-   * Slang findRaw
+   * slang findRaw
    */
-  export type SlangFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -6793,9 +6848,9 @@ export namespace Prisma {
   }
 
   /**
-   * Slang aggregateRaw
+   * slang aggregateRaw
    */
-  export type SlangAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -6807,93 +6862,93 @@ export namespace Prisma {
   }
 
   /**
-   * Slang.like
+   * slang.like
    */
-  export type Slang$likeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slang$likeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
-    where?: LikeWhereInput
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
-    cursor?: LikeWhereUniqueInput
+    include?: likeInclude<ExtArgs> | null
+    where?: likeWhereInput
+    orderBy?: likeOrderByWithRelationInput | likeOrderByWithRelationInput[]
+    cursor?: likeWhereUniqueInput
     take?: number
     skip?: number
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
   }
 
   /**
-   * Slang.category
+   * slang.category
    */
-  export type Slang$categoryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slang$categoryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
-    where?: CategoryWhereInput
+    include?: categoryInclude<ExtArgs> | null
+    where?: categoryWhereInput
   }
 
   /**
-   * Slang.bookmarked_by
+   * slang.bookmarked_by
    */
-  export type Slang$bookmarked_byArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slang$bookmarked_byArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
-    where?: BookmarkWhereInput
-    orderBy?: BookmarkOrderByWithRelationInput | BookmarkOrderByWithRelationInput[]
-    cursor?: BookmarkWhereUniqueInput
+    include?: bookmarkInclude<ExtArgs> | null
+    where?: bookmarkWhereInput
+    orderBy?: bookmarkOrderByWithRelationInput | bookmarkOrderByWithRelationInput[]
+    cursor?: bookmarkWhereUniqueInput
     take?: number
     skip?: number
     distinct?: BookmarkScalarFieldEnum | BookmarkScalarFieldEnum[]
   }
 
   /**
-   * Slang without action
+   * slang without action
    */
-  export type SlangDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type slangDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
+    include?: slangInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Like
+   * Model like
    */
 
   export type AggregateLike = {
@@ -6943,37 +6998,37 @@ export namespace Prisma {
 
   export type LikeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Like to aggregate.
+     * Filter which like to aggregate.
      */
-    where?: LikeWhereInput
+    where?: likeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Likes to fetch.
+     * Determine the order of likes to fetch.
      */
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
+    orderBy?: likeOrderByWithRelationInput | likeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: LikeWhereUniqueInput
+    cursor?: likeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Likes from the position of the cursor.
+     * Take `±n` likes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Likes.
+     * Skip the first `n` likes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Likes
+     * Count returned likes
     **/
     _count?: true | LikeCountAggregateInputType
     /**
@@ -7001,11 +7056,11 @@ export namespace Prisma {
 
 
 
-  export type LikeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: LikeWhereInput
-    orderBy?: LikeOrderByWithAggregationInput | LikeOrderByWithAggregationInput[]
+  export type likeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: likeWhereInput
+    orderBy?: likeOrderByWithAggregationInput | likeOrderByWithAggregationInput[]
     by: LikeScalarFieldEnum[] | LikeScalarFieldEnum
-    having?: LikeScalarWhereWithAggregatesInput
+    having?: likeScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: LikeCountAggregateInputType | true
@@ -7022,7 +7077,7 @@ export namespace Prisma {
     _max: LikeMaxAggregateOutputType | null
   }
 
-  type GetLikeGroupByPayload<T extends LikeGroupByArgs> = Prisma.PrismaPromise<
+  type GetLikeGroupByPayload<T extends likeGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<LikeGroupByOutputType, T['by']> &
         {
@@ -7036,32 +7091,32 @@ export namespace Prisma {
     >
 
 
-  export type LikeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type likeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     slang_id?: boolean
     user_id?: boolean
-    slang?: boolean | SlangDefaultArgs<ExtArgs>
+    slang?: boolean | slangDefaultArgs<ExtArgs>
     liked_by?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["like"]>
 
 
 
-  export type LikeSelectScalar = {
+  export type likeSelectScalar = {
     id?: boolean
     slang_id?: boolean
     user_id?: boolean
   }
 
-  export type LikeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slang_id" | "user_id", ExtArgs["result"]["like"]>
-  export type LikeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    slang?: boolean | SlangDefaultArgs<ExtArgs>
+  export type likeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slang_id" | "user_id", ExtArgs["result"]["like"]>
+  export type likeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    slang?: boolean | slangDefaultArgs<ExtArgs>
     liked_by?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $LikePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Like"
+  export type $likePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "like"
     objects: {
-      slang: Prisma.$SlangPayload<ExtArgs>
+      slang: Prisma.$slangPayload<ExtArgs>
       liked_by: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -7072,18 +7127,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type LikeGetPayload<S extends boolean | null | undefined | LikeDefaultArgs> = $Result.GetResult<Prisma.$LikePayload, S>
+  type likeGetPayload<S extends boolean | null | undefined | likeDefaultArgs> = $Result.GetResult<Prisma.$likePayload, S>
 
-  type LikeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<LikeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type likeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<likeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: LikeCountAggregateInputType | true
     }
 
-  export interface LikeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Like'], meta: { name: 'Like' } }
+  export interface likeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['like'], meta: { name: 'like' } }
     /**
      * Find zero or one Like that matches the filter.
-     * @param {LikeFindUniqueArgs} args - Arguments to find a Like
+     * @param {likeFindUniqueArgs} args - Arguments to find a Like
      * @example
      * // Get one Like
      * const like = await prisma.like.findUnique({
@@ -7092,12 +7147,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends LikeFindUniqueArgs>(args: SelectSubset<T, LikeFindUniqueArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends likeFindUniqueArgs>(args: SelectSubset<T, likeFindUniqueArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Like that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {LikeFindUniqueOrThrowArgs} args - Arguments to find a Like
+     * @param {likeFindUniqueOrThrowArgs} args - Arguments to find a Like
      * @example
      * // Get one Like
      * const like = await prisma.like.findUniqueOrThrow({
@@ -7106,13 +7161,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends LikeFindUniqueOrThrowArgs>(args: SelectSubset<T, LikeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends likeFindUniqueOrThrowArgs>(args: SelectSubset<T, likeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Like that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {LikeFindFirstArgs} args - Arguments to find a Like
+     * @param {likeFindFirstArgs} args - Arguments to find a Like
      * @example
      * // Get one Like
      * const like = await prisma.like.findFirst({
@@ -7121,14 +7176,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends LikeFindFirstArgs>(args?: SelectSubset<T, LikeFindFirstArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends likeFindFirstArgs>(args?: SelectSubset<T, likeFindFirstArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Like that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {LikeFindFirstOrThrowArgs} args - Arguments to find a Like
+     * @param {likeFindFirstOrThrowArgs} args - Arguments to find a Like
      * @example
      * // Get one Like
      * const like = await prisma.like.findFirstOrThrow({
@@ -7137,13 +7192,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends LikeFindFirstOrThrowArgs>(args?: SelectSubset<T, LikeFindFirstOrThrowArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends likeFindFirstOrThrowArgs>(args?: SelectSubset<T, likeFindFirstOrThrowArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Likes that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {LikeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {likeFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Likes
      * const likes = await prisma.like.findMany()
@@ -7155,11 +7210,11 @@ export namespace Prisma {
      * const likeWithIdOnly = await prisma.like.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends LikeFindManyArgs>(args?: SelectSubset<T, LikeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends likeFindManyArgs>(args?: SelectSubset<T, likeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Like.
-     * @param {LikeCreateArgs} args - Arguments to create a Like.
+     * @param {likeCreateArgs} args - Arguments to create a Like.
      * @example
      * // Create one Like
      * const Like = await prisma.like.create({
@@ -7169,11 +7224,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends LikeCreateArgs>(args: SelectSubset<T, LikeCreateArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends likeCreateArgs>(args: SelectSubset<T, likeCreateArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Likes.
-     * @param {LikeCreateManyArgs} args - Arguments to create many Likes.
+     * @param {likeCreateManyArgs} args - Arguments to create many Likes.
      * @example
      * // Create many Likes
      * const like = await prisma.like.createMany({
@@ -7183,11 +7238,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends LikeCreateManyArgs>(args?: SelectSubset<T, LikeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends likeCreateManyArgs>(args?: SelectSubset<T, likeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Like.
-     * @param {LikeDeleteArgs} args - Arguments to delete one Like.
+     * @param {likeDeleteArgs} args - Arguments to delete one Like.
      * @example
      * // Delete one Like
      * const Like = await prisma.like.delete({
@@ -7197,11 +7252,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends LikeDeleteArgs>(args: SelectSubset<T, LikeDeleteArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends likeDeleteArgs>(args: SelectSubset<T, likeDeleteArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Like.
-     * @param {LikeUpdateArgs} args - Arguments to update one Like.
+     * @param {likeUpdateArgs} args - Arguments to update one Like.
      * @example
      * // Update one Like
      * const like = await prisma.like.update({
@@ -7214,11 +7269,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends LikeUpdateArgs>(args: SelectSubset<T, LikeUpdateArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends likeUpdateArgs>(args: SelectSubset<T, likeUpdateArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Likes.
-     * @param {LikeDeleteManyArgs} args - Arguments to filter Likes to delete.
+     * @param {likeDeleteManyArgs} args - Arguments to filter Likes to delete.
      * @example
      * // Delete a few Likes
      * const { count } = await prisma.like.deleteMany({
@@ -7228,13 +7283,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends LikeDeleteManyArgs>(args?: SelectSubset<T, LikeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends likeDeleteManyArgs>(args?: SelectSubset<T, likeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Likes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {LikeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {likeUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Likes
      * const like = await prisma.like.updateMany({
@@ -7247,11 +7302,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends LikeUpdateManyArgs>(args: SelectSubset<T, LikeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends likeUpdateManyArgs>(args: SelectSubset<T, likeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Like.
-     * @param {LikeUpsertArgs} args - Arguments to update or create a Like.
+     * @param {likeUpsertArgs} args - Arguments to update or create a Like.
      * @example
      * // Update or create a Like
      * const like = await prisma.like.upsert({
@@ -7266,21 +7321,21 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends LikeUpsertArgs>(args: SelectSubset<T, LikeUpsertArgs<ExtArgs>>): Prisma__LikeClient<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends likeUpsertArgs>(args: SelectSubset<T, likeUpsertArgs<ExtArgs>>): Prisma__likeClient<$Result.GetResult<Prisma.$likePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Likes that matches the filter.
-     * @param {LikeFindRawArgs} args - Select which filters you would like to apply.
+     * @param {likeFindRawArgs} args - Select which filters you would like to apply.
      * @example
      * const like = await prisma.like.findRaw({
      *   filter: { age: { $gt: 25 } }
      * })
      */
-    findRaw(args?: LikeFindRawArgs): Prisma.PrismaPromise<JsonObject>
+    findRaw(args?: likeFindRawArgs): Prisma.PrismaPromise<JsonObject>
 
     /**
      * Perform aggregation operations on a Like.
-     * @param {LikeAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * @param {likeAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
      * const like = await prisma.like.aggregateRaw({
      *   pipeline: [
@@ -7289,14 +7344,14 @@ export namespace Prisma {
      *   ]
      * })
      */
-    aggregateRaw(args?: LikeAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
+    aggregateRaw(args?: likeAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
 
 
     /**
      * Count the number of Likes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {LikeCountArgs} args - Arguments to filter Likes to count.
+     * @param {likeCountArgs} args - Arguments to filter Likes to count.
      * @example
      * // Count the number of Likes
      * const count = await prisma.like.count({
@@ -7305,8 +7360,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends LikeCountArgs>(
-      args?: Subset<T, LikeCountArgs>,
+    count<T extends likeCountArgs>(
+      args?: Subset<T, likeCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -7345,7 +7400,7 @@ export namespace Prisma {
      * Group by Like.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {LikeGroupByArgs} args - Group by arguments.
+     * @param {likeGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -7360,14 +7415,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends LikeGroupByArgs,
+      T extends likeGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: LikeGroupByArgs['orderBy'] }
-        : { orderBy?: LikeGroupByArgs['orderBy'] },
+        ? { orderBy: likeGroupByArgs['orderBy'] }
+        : { orderBy?: likeGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -7416,22 +7471,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, LikeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLikeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, likeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLikeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Like model
+   * Fields of the like model
    */
-  readonly fields: LikeFieldRefs;
+  readonly fields: likeFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Like.
+   * The delegate class that acts as a "Promise-like" for like.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__LikeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__likeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    slang<T extends SlangDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SlangDefaultArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    slang<T extends slangDefaultArgs<ExtArgs> = {}>(args?: Subset<T, slangDefaultArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     liked_by<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -7459,357 +7514,357 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Like model
+   * Fields of the like model
    */
-  interface LikeFieldRefs {
-    readonly id: FieldRef<"Like", 'String'>
-    readonly slang_id: FieldRef<"Like", 'String'>
-    readonly user_id: FieldRef<"Like", 'String'>
+  interface likeFieldRefs {
+    readonly id: FieldRef<"like", 'String'>
+    readonly slang_id: FieldRef<"like", 'String'>
+    readonly user_id: FieldRef<"like", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Like findUnique
+   * like findUnique
    */
-  export type LikeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * Filter, which Like to fetch.
+     * Filter, which like to fetch.
      */
-    where: LikeWhereUniqueInput
+    where: likeWhereUniqueInput
   }
 
   /**
-   * Like findUniqueOrThrow
+   * like findUniqueOrThrow
    */
-  export type LikeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * Filter, which Like to fetch.
+     * Filter, which like to fetch.
      */
-    where: LikeWhereUniqueInput
+    where: likeWhereUniqueInput
   }
 
   /**
-   * Like findFirst
+   * like findFirst
    */
-  export type LikeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * Filter, which Like to fetch.
+     * Filter, which like to fetch.
      */
-    where?: LikeWhereInput
+    where?: likeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Likes to fetch.
+     * Determine the order of likes to fetch.
      */
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
+    orderBy?: likeOrderByWithRelationInput | likeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Likes.
+     * Sets the position for searching for likes.
      */
-    cursor?: LikeWhereUniqueInput
+    cursor?: likeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Likes from the position of the cursor.
+     * Take `±n` likes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Likes.
+     * Skip the first `n` likes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Likes.
+     * Filter by unique combinations of likes.
      */
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
   }
 
   /**
-   * Like findFirstOrThrow
+   * like findFirstOrThrow
    */
-  export type LikeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * Filter, which Like to fetch.
+     * Filter, which like to fetch.
      */
-    where?: LikeWhereInput
+    where?: likeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Likes to fetch.
+     * Determine the order of likes to fetch.
      */
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
+    orderBy?: likeOrderByWithRelationInput | likeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Likes.
+     * Sets the position for searching for likes.
      */
-    cursor?: LikeWhereUniqueInput
+    cursor?: likeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Likes from the position of the cursor.
+     * Take `±n` likes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Likes.
+     * Skip the first `n` likes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Likes.
+     * Filter by unique combinations of likes.
      */
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
   }
 
   /**
-   * Like findMany
+   * like findMany
    */
-  export type LikeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * Filter, which Likes to fetch.
+     * Filter, which likes to fetch.
      */
-    where?: LikeWhereInput
+    where?: likeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Likes to fetch.
+     * Determine the order of likes to fetch.
      */
-    orderBy?: LikeOrderByWithRelationInput | LikeOrderByWithRelationInput[]
+    orderBy?: likeOrderByWithRelationInput | likeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Likes.
+     * Sets the position for listing likes.
      */
-    cursor?: LikeWhereUniqueInput
+    cursor?: likeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Likes from the position of the cursor.
+     * Take `±n` likes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Likes.
+     * Skip the first `n` likes.
      */
     skip?: number
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
   }
 
   /**
-   * Like create
+   * like create
    */
-  export type LikeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * The data needed to create a Like.
+     * The data needed to create a like.
      */
-    data: XOR<LikeCreateInput, LikeUncheckedCreateInput>
+    data: XOR<likeCreateInput, likeUncheckedCreateInput>
   }
 
   /**
-   * Like createMany
+   * like createMany
    */
-  export type LikeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Likes.
+     * The data used to create many likes.
      */
-    data: LikeCreateManyInput | LikeCreateManyInput[]
+    data: likeCreateManyInput | likeCreateManyInput[]
   }
 
   /**
-   * Like update
+   * like update
    */
-  export type LikeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * The data needed to update a Like.
+     * The data needed to update a like.
      */
-    data: XOR<LikeUpdateInput, LikeUncheckedUpdateInput>
+    data: XOR<likeUpdateInput, likeUncheckedUpdateInput>
     /**
-     * Choose, which Like to update.
+     * Choose, which like to update.
      */
-    where: LikeWhereUniqueInput
+    where: likeWhereUniqueInput
   }
 
   /**
-   * Like updateMany
+   * like updateMany
    */
-  export type LikeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Likes.
+     * The data used to update likes.
      */
-    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyInput>
+    data: XOR<likeUpdateManyMutationInput, likeUncheckedUpdateManyInput>
     /**
-     * Filter which Likes to update
+     * Filter which likes to update
      */
-    where?: LikeWhereInput
+    where?: likeWhereInput
     /**
-     * Limit how many Likes to update.
+     * Limit how many likes to update.
      */
     limit?: number
   }
 
   /**
-   * Like upsert
+   * like upsert
    */
-  export type LikeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * The filter to search for the Like to update in case it exists.
+     * The filter to search for the like to update in case it exists.
      */
-    where: LikeWhereUniqueInput
+    where: likeWhereUniqueInput
     /**
-     * In case the Like found by the `where` argument doesn't exist, create a new Like with this data.
+     * In case the like found by the `where` argument doesn't exist, create a new like with this data.
      */
-    create: XOR<LikeCreateInput, LikeUncheckedCreateInput>
+    create: XOR<likeCreateInput, likeUncheckedCreateInput>
     /**
-     * In case the Like was found with the provided `where` argument, update it with this data.
+     * In case the like was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<LikeUpdateInput, LikeUncheckedUpdateInput>
+    update: XOR<likeUpdateInput, likeUncheckedUpdateInput>
   }
 
   /**
-   * Like delete
+   * like delete
    */
-  export type LikeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
     /**
-     * Filter which Like to delete.
+     * Filter which like to delete.
      */
-    where: LikeWhereUniqueInput
+    where: likeWhereUniqueInput
   }
 
   /**
-   * Like deleteMany
+   * like deleteMany
    */
-  export type LikeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Likes to delete
+     * Filter which likes to delete
      */
-    where?: LikeWhereInput
+    where?: likeWhereInput
     /**
-     * Limit how many Likes to delete.
+     * Limit how many likes to delete.
      */
     limit?: number
   }
 
   /**
-   * Like findRaw
+   * like findRaw
    */
-  export type LikeFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -7821,9 +7876,9 @@ export namespace Prisma {
   }
 
   /**
-   * Like aggregateRaw
+   * like aggregateRaw
    */
-  export type LikeAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -7835,26 +7890,26 @@ export namespace Prisma {
   }
 
   /**
-   * Like without action
+   * like without action
    */
-  export type LikeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type likeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Like
+     * Select specific fields to fetch from the like
      */
-    select?: LikeSelect<ExtArgs> | null
+    select?: likeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Like
+     * Omit specific fields from the like
      */
-    omit?: LikeOmit<ExtArgs> | null
+    omit?: likeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: LikeInclude<ExtArgs> | null
+    include?: likeInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Category
+   * Model category
    */
 
   export type AggregateCategory = {
@@ -7898,37 +7953,37 @@ export namespace Prisma {
 
   export type CategoryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Category to aggregate.
+     * Filter which category to aggregate.
      */
-    where?: CategoryWhereInput
+    where?: categoryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Categories to fetch.
+     * Determine the order of categories to fetch.
      */
-    orderBy?: CategoryOrderByWithRelationInput | CategoryOrderByWithRelationInput[]
+    orderBy?: categoryOrderByWithRelationInput | categoryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: CategoryWhereUniqueInput
+    cursor?: categoryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Categories from the position of the cursor.
+     * Take `±n` categories from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Categories.
+     * Skip the first `n` categories.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Categories
+     * Count returned categories
     **/
     _count?: true | CategoryCountAggregateInputType
     /**
@@ -7956,11 +8011,11 @@ export namespace Prisma {
 
 
 
-  export type CategoryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CategoryWhereInput
-    orderBy?: CategoryOrderByWithAggregationInput | CategoryOrderByWithAggregationInput[]
+  export type categoryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: categoryWhereInput
+    orderBy?: categoryOrderByWithAggregationInput | categoryOrderByWithAggregationInput[]
     by: CategoryScalarFieldEnum[] | CategoryScalarFieldEnum
-    having?: CategoryScalarWhereWithAggregatesInput
+    having?: categoryScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: CategoryCountAggregateInputType | true
@@ -7976,7 +8031,7 @@ export namespace Prisma {
     _max: CategoryMaxAggregateOutputType | null
   }
 
-  type GetCategoryGroupByPayload<T extends CategoryGroupByArgs> = Prisma.PrismaPromise<
+  type GetCategoryGroupByPayload<T extends categoryGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<CategoryGroupByOutputType, T['by']> &
         {
@@ -7990,30 +8045,30 @@ export namespace Prisma {
     >
 
 
-  export type CategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type categorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    slangs?: boolean | Category$slangsArgs<ExtArgs>
+    slangs?: boolean | category$slangsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
 
 
-  export type CategorySelectScalar = {
+  export type categorySelectScalar = {
     id?: boolean
     name?: boolean
   }
 
-  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["category"]>
-  export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    slangs?: boolean | Category$slangsArgs<ExtArgs>
+  export type categoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["category"]>
+  export type categoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    slangs?: boolean | category$slangsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }
 
-  export type $CategoryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Category"
+  export type $categoryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "category"
     objects: {
-      slangs: Prisma.$SlangPayload<ExtArgs>[]
+      slangs: Prisma.$slangPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -8022,18 +8077,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type CategoryGetPayload<S extends boolean | null | undefined | CategoryDefaultArgs> = $Result.GetResult<Prisma.$CategoryPayload, S>
+  type categoryGetPayload<S extends boolean | null | undefined | categoryDefaultArgs> = $Result.GetResult<Prisma.$categoryPayload, S>
 
-  type CategoryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<CategoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type categoryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<categoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: CategoryCountAggregateInputType | true
     }
 
-  export interface CategoryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Category'], meta: { name: 'Category' } }
+  export interface categoryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['category'], meta: { name: 'category' } }
     /**
      * Find zero or one Category that matches the filter.
-     * @param {CategoryFindUniqueArgs} args - Arguments to find a Category
+     * @param {categoryFindUniqueArgs} args - Arguments to find a Category
      * @example
      * // Get one Category
      * const category = await prisma.category.findUnique({
@@ -8042,12 +8097,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends CategoryFindUniqueArgs>(args: SelectSubset<T, CategoryFindUniqueArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends categoryFindUniqueArgs>(args: SelectSubset<T, categoryFindUniqueArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Category that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {CategoryFindUniqueOrThrowArgs} args - Arguments to find a Category
+     * @param {categoryFindUniqueOrThrowArgs} args - Arguments to find a Category
      * @example
      * // Get one Category
      * const category = await prisma.category.findUniqueOrThrow({
@@ -8056,13 +8111,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends CategoryFindUniqueOrThrowArgs>(args: SelectSubset<T, CategoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends categoryFindUniqueOrThrowArgs>(args: SelectSubset<T, categoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Category that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CategoryFindFirstArgs} args - Arguments to find a Category
+     * @param {categoryFindFirstArgs} args - Arguments to find a Category
      * @example
      * // Get one Category
      * const category = await prisma.category.findFirst({
@@ -8071,14 +8126,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends CategoryFindFirstArgs>(args?: SelectSubset<T, CategoryFindFirstArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends categoryFindFirstArgs>(args?: SelectSubset<T, categoryFindFirstArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Category that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CategoryFindFirstOrThrowArgs} args - Arguments to find a Category
+     * @param {categoryFindFirstOrThrowArgs} args - Arguments to find a Category
      * @example
      * // Get one Category
      * const category = await prisma.category.findFirstOrThrow({
@@ -8087,13 +8142,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends CategoryFindFirstOrThrowArgs>(args?: SelectSubset<T, CategoryFindFirstOrThrowArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends categoryFindFirstOrThrowArgs>(args?: SelectSubset<T, categoryFindFirstOrThrowArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Categories that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CategoryFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {categoryFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Categories
      * const categories = await prisma.category.findMany()
@@ -8105,11 +8160,11 @@ export namespace Prisma {
      * const categoryWithIdOnly = await prisma.category.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends CategoryFindManyArgs>(args?: SelectSubset<T, CategoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends categoryFindManyArgs>(args?: SelectSubset<T, categoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Category.
-     * @param {CategoryCreateArgs} args - Arguments to create a Category.
+     * @param {categoryCreateArgs} args - Arguments to create a Category.
      * @example
      * // Create one Category
      * const Category = await prisma.category.create({
@@ -8119,11 +8174,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends CategoryCreateArgs>(args: SelectSubset<T, CategoryCreateArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends categoryCreateArgs>(args: SelectSubset<T, categoryCreateArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Categories.
-     * @param {CategoryCreateManyArgs} args - Arguments to create many Categories.
+     * @param {categoryCreateManyArgs} args - Arguments to create many Categories.
      * @example
      * // Create many Categories
      * const category = await prisma.category.createMany({
@@ -8133,11 +8188,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends CategoryCreateManyArgs>(args?: SelectSubset<T, CategoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends categoryCreateManyArgs>(args?: SelectSubset<T, categoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Category.
-     * @param {CategoryDeleteArgs} args - Arguments to delete one Category.
+     * @param {categoryDeleteArgs} args - Arguments to delete one Category.
      * @example
      * // Delete one Category
      * const Category = await prisma.category.delete({
@@ -8147,11 +8202,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends CategoryDeleteArgs>(args: SelectSubset<T, CategoryDeleteArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends categoryDeleteArgs>(args: SelectSubset<T, categoryDeleteArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Category.
-     * @param {CategoryUpdateArgs} args - Arguments to update one Category.
+     * @param {categoryUpdateArgs} args - Arguments to update one Category.
      * @example
      * // Update one Category
      * const category = await prisma.category.update({
@@ -8164,11 +8219,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends CategoryUpdateArgs>(args: SelectSubset<T, CategoryUpdateArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends categoryUpdateArgs>(args: SelectSubset<T, categoryUpdateArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Categories.
-     * @param {CategoryDeleteManyArgs} args - Arguments to filter Categories to delete.
+     * @param {categoryDeleteManyArgs} args - Arguments to filter Categories to delete.
      * @example
      * // Delete a few Categories
      * const { count } = await prisma.category.deleteMany({
@@ -8178,13 +8233,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends CategoryDeleteManyArgs>(args?: SelectSubset<T, CategoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends categoryDeleteManyArgs>(args?: SelectSubset<T, categoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Categories.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CategoryUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {categoryUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Categories
      * const category = await prisma.category.updateMany({
@@ -8197,11 +8252,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends CategoryUpdateManyArgs>(args: SelectSubset<T, CategoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends categoryUpdateManyArgs>(args: SelectSubset<T, categoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Category.
-     * @param {CategoryUpsertArgs} args - Arguments to update or create a Category.
+     * @param {categoryUpsertArgs} args - Arguments to update or create a Category.
      * @example
      * // Update or create a Category
      * const category = await prisma.category.upsert({
@@ -8216,21 +8271,21 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends CategoryUpsertArgs>(args: SelectSubset<T, CategoryUpsertArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends categoryUpsertArgs>(args: SelectSubset<T, categoryUpsertArgs<ExtArgs>>): Prisma__categoryClient<$Result.GetResult<Prisma.$categoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Categories that matches the filter.
-     * @param {CategoryFindRawArgs} args - Select which filters you would like to apply.
+     * @param {categoryFindRawArgs} args - Select which filters you would like to apply.
      * @example
      * const category = await prisma.category.findRaw({
      *   filter: { age: { $gt: 25 } }
      * })
      */
-    findRaw(args?: CategoryFindRawArgs): Prisma.PrismaPromise<JsonObject>
+    findRaw(args?: categoryFindRawArgs): Prisma.PrismaPromise<JsonObject>
 
     /**
      * Perform aggregation operations on a Category.
-     * @param {CategoryAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * @param {categoryAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
      * const category = await prisma.category.aggregateRaw({
      *   pipeline: [
@@ -8239,14 +8294,14 @@ export namespace Prisma {
      *   ]
      * })
      */
-    aggregateRaw(args?: CategoryAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
+    aggregateRaw(args?: categoryAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
 
 
     /**
      * Count the number of Categories.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CategoryCountArgs} args - Arguments to filter Categories to count.
+     * @param {categoryCountArgs} args - Arguments to filter Categories to count.
      * @example
      * // Count the number of Categories
      * const count = await prisma.category.count({
@@ -8255,8 +8310,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends CategoryCountArgs>(
-      args?: Subset<T, CategoryCountArgs>,
+    count<T extends categoryCountArgs>(
+      args?: Subset<T, categoryCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -8295,7 +8350,7 @@ export namespace Prisma {
      * Group by Category.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CategoryGroupByArgs} args - Group by arguments.
+     * @param {categoryGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -8310,14 +8365,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends CategoryGroupByArgs,
+      T extends categoryGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: CategoryGroupByArgs['orderBy'] }
-        : { orderBy?: CategoryGroupByArgs['orderBy'] },
+        ? { orderBy: categoryGroupByArgs['orderBy'] }
+        : { orderBy?: categoryGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -8366,22 +8421,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, CategoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCategoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, categoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCategoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Category model
+   * Fields of the category model
    */
-  readonly fields: CategoryFieldRefs;
+  readonly fields: categoryFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Category.
+   * The delegate class that acts as a "Promise-like" for category.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__CategoryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__categoryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    slangs<T extends Category$slangsArgs<ExtArgs> = {}>(args?: Subset<T, Category$slangsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    slangs<T extends category$slangsArgs<ExtArgs> = {}>(args?: Subset<T, category$slangsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8408,356 +8463,356 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Category model
+   * Fields of the category model
    */
-  interface CategoryFieldRefs {
-    readonly id: FieldRef<"Category", 'String'>
-    readonly name: FieldRef<"Category", 'String'>
+  interface categoryFieldRefs {
+    readonly id: FieldRef<"category", 'String'>
+    readonly name: FieldRef<"category", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Category findUnique
+   * category findUnique
    */
-  export type CategoryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * Filter, which Category to fetch.
+     * Filter, which category to fetch.
      */
-    where: CategoryWhereUniqueInput
+    where: categoryWhereUniqueInput
   }
 
   /**
-   * Category findUniqueOrThrow
+   * category findUniqueOrThrow
    */
-  export type CategoryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * Filter, which Category to fetch.
+     * Filter, which category to fetch.
      */
-    where: CategoryWhereUniqueInput
+    where: categoryWhereUniqueInput
   }
 
   /**
-   * Category findFirst
+   * category findFirst
    */
-  export type CategoryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * Filter, which Category to fetch.
+     * Filter, which category to fetch.
      */
-    where?: CategoryWhereInput
+    where?: categoryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Categories to fetch.
+     * Determine the order of categories to fetch.
      */
-    orderBy?: CategoryOrderByWithRelationInput | CategoryOrderByWithRelationInput[]
+    orderBy?: categoryOrderByWithRelationInput | categoryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Categories.
+     * Sets the position for searching for categories.
      */
-    cursor?: CategoryWhereUniqueInput
+    cursor?: categoryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Categories from the position of the cursor.
+     * Take `±n` categories from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Categories.
+     * Skip the first `n` categories.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Categories.
+     * Filter by unique combinations of categories.
      */
     distinct?: CategoryScalarFieldEnum | CategoryScalarFieldEnum[]
   }
 
   /**
-   * Category findFirstOrThrow
+   * category findFirstOrThrow
    */
-  export type CategoryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * Filter, which Category to fetch.
+     * Filter, which category to fetch.
      */
-    where?: CategoryWhereInput
+    where?: categoryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Categories to fetch.
+     * Determine the order of categories to fetch.
      */
-    orderBy?: CategoryOrderByWithRelationInput | CategoryOrderByWithRelationInput[]
+    orderBy?: categoryOrderByWithRelationInput | categoryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Categories.
+     * Sets the position for searching for categories.
      */
-    cursor?: CategoryWhereUniqueInput
+    cursor?: categoryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Categories from the position of the cursor.
+     * Take `±n` categories from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Categories.
+     * Skip the first `n` categories.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Categories.
+     * Filter by unique combinations of categories.
      */
     distinct?: CategoryScalarFieldEnum | CategoryScalarFieldEnum[]
   }
 
   /**
-   * Category findMany
+   * category findMany
    */
-  export type CategoryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * Filter, which Categories to fetch.
+     * Filter, which categories to fetch.
      */
-    where?: CategoryWhereInput
+    where?: categoryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Categories to fetch.
+     * Determine the order of categories to fetch.
      */
-    orderBy?: CategoryOrderByWithRelationInput | CategoryOrderByWithRelationInput[]
+    orderBy?: categoryOrderByWithRelationInput | categoryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Categories.
+     * Sets the position for listing categories.
      */
-    cursor?: CategoryWhereUniqueInput
+    cursor?: categoryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Categories from the position of the cursor.
+     * Take `±n` categories from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Categories.
+     * Skip the first `n` categories.
      */
     skip?: number
     distinct?: CategoryScalarFieldEnum | CategoryScalarFieldEnum[]
   }
 
   /**
-   * Category create
+   * category create
    */
-  export type CategoryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * The data needed to create a Category.
+     * The data needed to create a category.
      */
-    data: XOR<CategoryCreateInput, CategoryUncheckedCreateInput>
+    data: XOR<categoryCreateInput, categoryUncheckedCreateInput>
   }
 
   /**
-   * Category createMany
+   * category createMany
    */
-  export type CategoryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Categories.
+     * The data used to create many categories.
      */
-    data: CategoryCreateManyInput | CategoryCreateManyInput[]
+    data: categoryCreateManyInput | categoryCreateManyInput[]
   }
 
   /**
-   * Category update
+   * category update
    */
-  export type CategoryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * The data needed to update a Category.
+     * The data needed to update a category.
      */
-    data: XOR<CategoryUpdateInput, CategoryUncheckedUpdateInput>
+    data: XOR<categoryUpdateInput, categoryUncheckedUpdateInput>
     /**
-     * Choose, which Category to update.
+     * Choose, which category to update.
      */
-    where: CategoryWhereUniqueInput
+    where: categoryWhereUniqueInput
   }
 
   /**
-   * Category updateMany
+   * category updateMany
    */
-  export type CategoryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Categories.
+     * The data used to update categories.
      */
-    data: XOR<CategoryUpdateManyMutationInput, CategoryUncheckedUpdateManyInput>
+    data: XOR<categoryUpdateManyMutationInput, categoryUncheckedUpdateManyInput>
     /**
-     * Filter which Categories to update
+     * Filter which categories to update
      */
-    where?: CategoryWhereInput
+    where?: categoryWhereInput
     /**
-     * Limit how many Categories to update.
+     * Limit how many categories to update.
      */
     limit?: number
   }
 
   /**
-   * Category upsert
+   * category upsert
    */
-  export type CategoryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * The filter to search for the Category to update in case it exists.
+     * The filter to search for the category to update in case it exists.
      */
-    where: CategoryWhereUniqueInput
+    where: categoryWhereUniqueInput
     /**
-     * In case the Category found by the `where` argument doesn't exist, create a new Category with this data.
+     * In case the category found by the `where` argument doesn't exist, create a new category with this data.
      */
-    create: XOR<CategoryCreateInput, CategoryUncheckedCreateInput>
+    create: XOR<categoryCreateInput, categoryUncheckedCreateInput>
     /**
-     * In case the Category was found with the provided `where` argument, update it with this data.
+     * In case the category was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<CategoryUpdateInput, CategoryUncheckedUpdateInput>
+    update: XOR<categoryUpdateInput, categoryUncheckedUpdateInput>
   }
 
   /**
-   * Category delete
+   * category delete
    */
-  export type CategoryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
     /**
-     * Filter which Category to delete.
+     * Filter which category to delete.
      */
-    where: CategoryWhereUniqueInput
+    where: categoryWhereUniqueInput
   }
 
   /**
-   * Category deleteMany
+   * category deleteMany
    */
-  export type CategoryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Categories to delete
+     * Filter which categories to delete
      */
-    where?: CategoryWhereInput
+    where?: categoryWhereInput
     /**
-     * Limit how many Categories to delete.
+     * Limit how many categories to delete.
      */
     limit?: number
   }
 
   /**
-   * Category findRaw
+   * category findRaw
    */
-  export type CategoryFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -8769,9 +8824,9 @@ export namespace Prisma {
   }
 
   /**
-   * Category aggregateRaw
+   * category aggregateRaw
    */
-  export type CategoryAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -8783,50 +8838,50 @@ export namespace Prisma {
   }
 
   /**
-   * Category.slangs
+   * category.slangs
    */
-  export type Category$slangsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type category$slangsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Slang
+     * Select specific fields to fetch from the slang
      */
-    select?: SlangSelect<ExtArgs> | null
+    select?: slangSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Slang
+     * Omit specific fields from the slang
      */
-    omit?: SlangOmit<ExtArgs> | null
+    omit?: slangOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SlangInclude<ExtArgs> | null
-    where?: SlangWhereInput
-    orderBy?: SlangOrderByWithRelationInput | SlangOrderByWithRelationInput[]
-    cursor?: SlangWhereUniqueInput
+    include?: slangInclude<ExtArgs> | null
+    where?: slangWhereInput
+    orderBy?: slangOrderByWithRelationInput | slangOrderByWithRelationInput[]
+    cursor?: slangWhereUniqueInput
     take?: number
     skip?: number
     distinct?: SlangScalarFieldEnum | SlangScalarFieldEnum[]
   }
 
   /**
-   * Category without action
+   * category without action
    */
-  export type CategoryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type categoryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Category
+     * Select specific fields to fetch from the category
      */
-    select?: CategorySelect<ExtArgs> | null
+    select?: categorySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Category
+     * Omit specific fields from the category
      */
-    omit?: CategoryOmit<ExtArgs> | null
+    omit?: categoryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CategoryInclude<ExtArgs> | null
+    include?: categoryInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Bookmark
+   * Model bookmark
    */
 
   export type AggregateBookmark = {
@@ -8876,37 +8931,37 @@ export namespace Prisma {
 
   export type BookmarkAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Bookmark to aggregate.
+     * Filter which bookmark to aggregate.
      */
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Bookmarks to fetch.
+     * Determine the order of bookmarks to fetch.
      */
-    orderBy?: BookmarkOrderByWithRelationInput | BookmarkOrderByWithRelationInput[]
+    orderBy?: bookmarkOrderByWithRelationInput | bookmarkOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: BookmarkWhereUniqueInput
+    cursor?: bookmarkWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Bookmarks from the position of the cursor.
+     * Take `±n` bookmarks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Bookmarks.
+     * Skip the first `n` bookmarks.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Bookmarks
+     * Count returned bookmarks
     **/
     _count?: true | BookmarkCountAggregateInputType
     /**
@@ -8934,11 +8989,11 @@ export namespace Prisma {
 
 
 
-  export type BookmarkGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BookmarkWhereInput
-    orderBy?: BookmarkOrderByWithAggregationInput | BookmarkOrderByWithAggregationInput[]
+  export type bookmarkGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: bookmarkWhereInput
+    orderBy?: bookmarkOrderByWithAggregationInput | bookmarkOrderByWithAggregationInput[]
     by: BookmarkScalarFieldEnum[] | BookmarkScalarFieldEnum
-    having?: BookmarkScalarWhereWithAggregatesInput
+    having?: bookmarkScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: BookmarkCountAggregateInputType | true
@@ -8955,7 +9010,7 @@ export namespace Prisma {
     _max: BookmarkMaxAggregateOutputType | null
   }
 
-  type GetBookmarkGroupByPayload<T extends BookmarkGroupByArgs> = Prisma.PrismaPromise<
+  type GetBookmarkGroupByPayload<T extends bookmarkGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<BookmarkGroupByOutputType, T['by']> &
         {
@@ -8969,32 +9024,32 @@ export namespace Prisma {
     >
 
 
-  export type BookmarkSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type bookmarkSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     slang_id?: boolean
     user_id?: boolean
-    Slang?: boolean | SlangDefaultArgs<ExtArgs>
+    Slang?: boolean | slangDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["bookmark"]>
 
 
 
-  export type BookmarkSelectScalar = {
+  export type bookmarkSelectScalar = {
     id?: boolean
     slang_id?: boolean
     user_id?: boolean
   }
 
-  export type BookmarkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slang_id" | "user_id", ExtArgs["result"]["bookmark"]>
-  export type BookmarkInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Slang?: boolean | SlangDefaultArgs<ExtArgs>
+  export type bookmarkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slang_id" | "user_id", ExtArgs["result"]["bookmark"]>
+  export type bookmarkInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Slang?: boolean | slangDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $BookmarkPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Bookmark"
+  export type $bookmarkPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "bookmark"
     objects: {
-      Slang: Prisma.$SlangPayload<ExtArgs>
+      Slang: Prisma.$slangPayload<ExtArgs>
       user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -9005,18 +9060,18 @@ export namespace Prisma {
     composites: {}
   }
 
-  type BookmarkGetPayload<S extends boolean | null | undefined | BookmarkDefaultArgs> = $Result.GetResult<Prisma.$BookmarkPayload, S>
+  type bookmarkGetPayload<S extends boolean | null | undefined | bookmarkDefaultArgs> = $Result.GetResult<Prisma.$bookmarkPayload, S>
 
-  type BookmarkCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<BookmarkFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type bookmarkCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<bookmarkFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: BookmarkCountAggregateInputType | true
     }
 
-  export interface BookmarkDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Bookmark'], meta: { name: 'Bookmark' } }
+  export interface bookmarkDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['bookmark'], meta: { name: 'bookmark' } }
     /**
      * Find zero or one Bookmark that matches the filter.
-     * @param {BookmarkFindUniqueArgs} args - Arguments to find a Bookmark
+     * @param {bookmarkFindUniqueArgs} args - Arguments to find a Bookmark
      * @example
      * // Get one Bookmark
      * const bookmark = await prisma.bookmark.findUnique({
@@ -9025,12 +9080,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends BookmarkFindUniqueArgs>(args: SelectSubset<T, BookmarkFindUniqueArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends bookmarkFindUniqueArgs>(args: SelectSubset<T, bookmarkFindUniqueArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Bookmark that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {BookmarkFindUniqueOrThrowArgs} args - Arguments to find a Bookmark
+     * @param {bookmarkFindUniqueOrThrowArgs} args - Arguments to find a Bookmark
      * @example
      * // Get one Bookmark
      * const bookmark = await prisma.bookmark.findUniqueOrThrow({
@@ -9039,13 +9094,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends BookmarkFindUniqueOrThrowArgs>(args: SelectSubset<T, BookmarkFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends bookmarkFindUniqueOrThrowArgs>(args: SelectSubset<T, bookmarkFindUniqueOrThrowArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Bookmark that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookmarkFindFirstArgs} args - Arguments to find a Bookmark
+     * @param {bookmarkFindFirstArgs} args - Arguments to find a Bookmark
      * @example
      * // Get one Bookmark
      * const bookmark = await prisma.bookmark.findFirst({
@@ -9054,14 +9109,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends BookmarkFindFirstArgs>(args?: SelectSubset<T, BookmarkFindFirstArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends bookmarkFindFirstArgs>(args?: SelectSubset<T, bookmarkFindFirstArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Bookmark that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookmarkFindFirstOrThrowArgs} args - Arguments to find a Bookmark
+     * @param {bookmarkFindFirstOrThrowArgs} args - Arguments to find a Bookmark
      * @example
      * // Get one Bookmark
      * const bookmark = await prisma.bookmark.findFirstOrThrow({
@@ -9070,13 +9125,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends BookmarkFindFirstOrThrowArgs>(args?: SelectSubset<T, BookmarkFindFirstOrThrowArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends bookmarkFindFirstOrThrowArgs>(args?: SelectSubset<T, bookmarkFindFirstOrThrowArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Bookmarks that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookmarkFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {bookmarkFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Bookmarks
      * const bookmarks = await prisma.bookmark.findMany()
@@ -9088,11 +9143,11 @@ export namespace Prisma {
      * const bookmarkWithIdOnly = await prisma.bookmark.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends BookmarkFindManyArgs>(args?: SelectSubset<T, BookmarkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends bookmarkFindManyArgs>(args?: SelectSubset<T, bookmarkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Bookmark.
-     * @param {BookmarkCreateArgs} args - Arguments to create a Bookmark.
+     * @param {bookmarkCreateArgs} args - Arguments to create a Bookmark.
      * @example
      * // Create one Bookmark
      * const Bookmark = await prisma.bookmark.create({
@@ -9102,11 +9157,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends BookmarkCreateArgs>(args: SelectSubset<T, BookmarkCreateArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends bookmarkCreateArgs>(args: SelectSubset<T, bookmarkCreateArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Bookmarks.
-     * @param {BookmarkCreateManyArgs} args - Arguments to create many Bookmarks.
+     * @param {bookmarkCreateManyArgs} args - Arguments to create many Bookmarks.
      * @example
      * // Create many Bookmarks
      * const bookmark = await prisma.bookmark.createMany({
@@ -9116,11 +9171,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends BookmarkCreateManyArgs>(args?: SelectSubset<T, BookmarkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends bookmarkCreateManyArgs>(args?: SelectSubset<T, bookmarkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Bookmark.
-     * @param {BookmarkDeleteArgs} args - Arguments to delete one Bookmark.
+     * @param {bookmarkDeleteArgs} args - Arguments to delete one Bookmark.
      * @example
      * // Delete one Bookmark
      * const Bookmark = await prisma.bookmark.delete({
@@ -9130,11 +9185,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends BookmarkDeleteArgs>(args: SelectSubset<T, BookmarkDeleteArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends bookmarkDeleteArgs>(args: SelectSubset<T, bookmarkDeleteArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Bookmark.
-     * @param {BookmarkUpdateArgs} args - Arguments to update one Bookmark.
+     * @param {bookmarkUpdateArgs} args - Arguments to update one Bookmark.
      * @example
      * // Update one Bookmark
      * const bookmark = await prisma.bookmark.update({
@@ -9147,11 +9202,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends BookmarkUpdateArgs>(args: SelectSubset<T, BookmarkUpdateArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends bookmarkUpdateArgs>(args: SelectSubset<T, bookmarkUpdateArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Bookmarks.
-     * @param {BookmarkDeleteManyArgs} args - Arguments to filter Bookmarks to delete.
+     * @param {bookmarkDeleteManyArgs} args - Arguments to filter Bookmarks to delete.
      * @example
      * // Delete a few Bookmarks
      * const { count } = await prisma.bookmark.deleteMany({
@@ -9161,13 +9216,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends BookmarkDeleteManyArgs>(args?: SelectSubset<T, BookmarkDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends bookmarkDeleteManyArgs>(args?: SelectSubset<T, bookmarkDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Bookmarks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookmarkUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {bookmarkUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Bookmarks
      * const bookmark = await prisma.bookmark.updateMany({
@@ -9180,11 +9235,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends BookmarkUpdateManyArgs>(args: SelectSubset<T, BookmarkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends bookmarkUpdateManyArgs>(args: SelectSubset<T, bookmarkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Bookmark.
-     * @param {BookmarkUpsertArgs} args - Arguments to update or create a Bookmark.
+     * @param {bookmarkUpsertArgs} args - Arguments to update or create a Bookmark.
      * @example
      * // Update or create a Bookmark
      * const bookmark = await prisma.bookmark.upsert({
@@ -9199,21 +9254,21 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends BookmarkUpsertArgs>(args: SelectSubset<T, BookmarkUpsertArgs<ExtArgs>>): Prisma__BookmarkClient<$Result.GetResult<Prisma.$BookmarkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends bookmarkUpsertArgs>(args: SelectSubset<T, bookmarkUpsertArgs<ExtArgs>>): Prisma__bookmarkClient<$Result.GetResult<Prisma.$bookmarkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Bookmarks that matches the filter.
-     * @param {BookmarkFindRawArgs} args - Select which filters you would like to apply.
+     * @param {bookmarkFindRawArgs} args - Select which filters you would like to apply.
      * @example
      * const bookmark = await prisma.bookmark.findRaw({
      *   filter: { age: { $gt: 25 } }
      * })
      */
-    findRaw(args?: BookmarkFindRawArgs): Prisma.PrismaPromise<JsonObject>
+    findRaw(args?: bookmarkFindRawArgs): Prisma.PrismaPromise<JsonObject>
 
     /**
      * Perform aggregation operations on a Bookmark.
-     * @param {BookmarkAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * @param {bookmarkAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
      * const bookmark = await prisma.bookmark.aggregateRaw({
      *   pipeline: [
@@ -9222,14 +9277,14 @@ export namespace Prisma {
      *   ]
      * })
      */
-    aggregateRaw(args?: BookmarkAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
+    aggregateRaw(args?: bookmarkAggregateRawArgs): Prisma.PrismaPromise<JsonObject>
 
 
     /**
      * Count the number of Bookmarks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookmarkCountArgs} args - Arguments to filter Bookmarks to count.
+     * @param {bookmarkCountArgs} args - Arguments to filter Bookmarks to count.
      * @example
      * // Count the number of Bookmarks
      * const count = await prisma.bookmark.count({
@@ -9238,8 +9293,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends BookmarkCountArgs>(
-      args?: Subset<T, BookmarkCountArgs>,
+    count<T extends bookmarkCountArgs>(
+      args?: Subset<T, bookmarkCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -9278,7 +9333,7 @@ export namespace Prisma {
      * Group by Bookmark.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {BookmarkGroupByArgs} args - Group by arguments.
+     * @param {bookmarkGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -9293,14 +9348,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends BookmarkGroupByArgs,
+      T extends bookmarkGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: BookmarkGroupByArgs['orderBy'] }
-        : { orderBy?: BookmarkGroupByArgs['orderBy'] },
+        ? { orderBy: bookmarkGroupByArgs['orderBy'] }
+        : { orderBy?: bookmarkGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -9349,22 +9404,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, BookmarkGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBookmarkGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, bookmarkGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBookmarkGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Bookmark model
+   * Fields of the bookmark model
    */
-  readonly fields: BookmarkFieldRefs;
+  readonly fields: bookmarkFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Bookmark.
+   * The delegate class that acts as a "Promise-like" for bookmark.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__BookmarkClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__bookmarkClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Slang<T extends SlangDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SlangDefaultArgs<ExtArgs>>): Prisma__SlangClient<$Result.GetResult<Prisma.$SlangPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    Slang<T extends slangDefaultArgs<ExtArgs> = {}>(args?: Subset<T, slangDefaultArgs<ExtArgs>>): Prisma__slangClient<$Result.GetResult<Prisma.$slangPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -9392,357 +9447,357 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Bookmark model
+   * Fields of the bookmark model
    */
-  interface BookmarkFieldRefs {
-    readonly id: FieldRef<"Bookmark", 'String'>
-    readonly slang_id: FieldRef<"Bookmark", 'String'>
-    readonly user_id: FieldRef<"Bookmark", 'String'>
+  interface bookmarkFieldRefs {
+    readonly id: FieldRef<"bookmark", 'String'>
+    readonly slang_id: FieldRef<"bookmark", 'String'>
+    readonly user_id: FieldRef<"bookmark", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Bookmark findUnique
+   * bookmark findUnique
    */
-  export type BookmarkFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * Filter, which Bookmark to fetch.
+     * Filter, which bookmark to fetch.
      */
-    where: BookmarkWhereUniqueInput
+    where: bookmarkWhereUniqueInput
   }
 
   /**
-   * Bookmark findUniqueOrThrow
+   * bookmark findUniqueOrThrow
    */
-  export type BookmarkFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * Filter, which Bookmark to fetch.
+     * Filter, which bookmark to fetch.
      */
-    where: BookmarkWhereUniqueInput
+    where: bookmarkWhereUniqueInput
   }
 
   /**
-   * Bookmark findFirst
+   * bookmark findFirst
    */
-  export type BookmarkFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * Filter, which Bookmark to fetch.
+     * Filter, which bookmark to fetch.
      */
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Bookmarks to fetch.
+     * Determine the order of bookmarks to fetch.
      */
-    orderBy?: BookmarkOrderByWithRelationInput | BookmarkOrderByWithRelationInput[]
+    orderBy?: bookmarkOrderByWithRelationInput | bookmarkOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Bookmarks.
+     * Sets the position for searching for bookmarks.
      */
-    cursor?: BookmarkWhereUniqueInput
+    cursor?: bookmarkWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Bookmarks from the position of the cursor.
+     * Take `±n` bookmarks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Bookmarks.
+     * Skip the first `n` bookmarks.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Bookmarks.
+     * Filter by unique combinations of bookmarks.
      */
     distinct?: BookmarkScalarFieldEnum | BookmarkScalarFieldEnum[]
   }
 
   /**
-   * Bookmark findFirstOrThrow
+   * bookmark findFirstOrThrow
    */
-  export type BookmarkFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * Filter, which Bookmark to fetch.
+     * Filter, which bookmark to fetch.
      */
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Bookmarks to fetch.
+     * Determine the order of bookmarks to fetch.
      */
-    orderBy?: BookmarkOrderByWithRelationInput | BookmarkOrderByWithRelationInput[]
+    orderBy?: bookmarkOrderByWithRelationInput | bookmarkOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Bookmarks.
+     * Sets the position for searching for bookmarks.
      */
-    cursor?: BookmarkWhereUniqueInput
+    cursor?: bookmarkWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Bookmarks from the position of the cursor.
+     * Take `±n` bookmarks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Bookmarks.
+     * Skip the first `n` bookmarks.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Bookmarks.
+     * Filter by unique combinations of bookmarks.
      */
     distinct?: BookmarkScalarFieldEnum | BookmarkScalarFieldEnum[]
   }
 
   /**
-   * Bookmark findMany
+   * bookmark findMany
    */
-  export type BookmarkFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * Filter, which Bookmarks to fetch.
+     * Filter, which bookmarks to fetch.
      */
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Bookmarks to fetch.
+     * Determine the order of bookmarks to fetch.
      */
-    orderBy?: BookmarkOrderByWithRelationInput | BookmarkOrderByWithRelationInput[]
+    orderBy?: bookmarkOrderByWithRelationInput | bookmarkOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Bookmarks.
+     * Sets the position for listing bookmarks.
      */
-    cursor?: BookmarkWhereUniqueInput
+    cursor?: bookmarkWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Bookmarks from the position of the cursor.
+     * Take `±n` bookmarks from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Bookmarks.
+     * Skip the first `n` bookmarks.
      */
     skip?: number
     distinct?: BookmarkScalarFieldEnum | BookmarkScalarFieldEnum[]
   }
 
   /**
-   * Bookmark create
+   * bookmark create
    */
-  export type BookmarkCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * The data needed to create a Bookmark.
+     * The data needed to create a bookmark.
      */
-    data: XOR<BookmarkCreateInput, BookmarkUncheckedCreateInput>
+    data: XOR<bookmarkCreateInput, bookmarkUncheckedCreateInput>
   }
 
   /**
-   * Bookmark createMany
+   * bookmark createMany
    */
-  export type BookmarkCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Bookmarks.
+     * The data used to create many bookmarks.
      */
-    data: BookmarkCreateManyInput | BookmarkCreateManyInput[]
+    data: bookmarkCreateManyInput | bookmarkCreateManyInput[]
   }
 
   /**
-   * Bookmark update
+   * bookmark update
    */
-  export type BookmarkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * The data needed to update a Bookmark.
+     * The data needed to update a bookmark.
      */
-    data: XOR<BookmarkUpdateInput, BookmarkUncheckedUpdateInput>
+    data: XOR<bookmarkUpdateInput, bookmarkUncheckedUpdateInput>
     /**
-     * Choose, which Bookmark to update.
+     * Choose, which bookmark to update.
      */
-    where: BookmarkWhereUniqueInput
+    where: bookmarkWhereUniqueInput
   }
 
   /**
-   * Bookmark updateMany
+   * bookmark updateMany
    */
-  export type BookmarkUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Bookmarks.
+     * The data used to update bookmarks.
      */
-    data: XOR<BookmarkUpdateManyMutationInput, BookmarkUncheckedUpdateManyInput>
+    data: XOR<bookmarkUpdateManyMutationInput, bookmarkUncheckedUpdateManyInput>
     /**
-     * Filter which Bookmarks to update
+     * Filter which bookmarks to update
      */
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
     /**
-     * Limit how many Bookmarks to update.
+     * Limit how many bookmarks to update.
      */
     limit?: number
   }
 
   /**
-   * Bookmark upsert
+   * bookmark upsert
    */
-  export type BookmarkUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * The filter to search for the Bookmark to update in case it exists.
+     * The filter to search for the bookmark to update in case it exists.
      */
-    where: BookmarkWhereUniqueInput
+    where: bookmarkWhereUniqueInput
     /**
-     * In case the Bookmark found by the `where` argument doesn't exist, create a new Bookmark with this data.
+     * In case the bookmark found by the `where` argument doesn't exist, create a new bookmark with this data.
      */
-    create: XOR<BookmarkCreateInput, BookmarkUncheckedCreateInput>
+    create: XOR<bookmarkCreateInput, bookmarkUncheckedCreateInput>
     /**
-     * In case the Bookmark was found with the provided `where` argument, update it with this data.
+     * In case the bookmark was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<BookmarkUpdateInput, BookmarkUncheckedUpdateInput>
+    update: XOR<bookmarkUpdateInput, bookmarkUncheckedUpdateInput>
   }
 
   /**
-   * Bookmark delete
+   * bookmark delete
    */
-  export type BookmarkDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
     /**
-     * Filter which Bookmark to delete.
+     * Filter which bookmark to delete.
      */
-    where: BookmarkWhereUniqueInput
+    where: bookmarkWhereUniqueInput
   }
 
   /**
-   * Bookmark deleteMany
+   * bookmark deleteMany
    */
-  export type BookmarkDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Bookmarks to delete
+     * Filter which bookmarks to delete
      */
-    where?: BookmarkWhereInput
+    where?: bookmarkWhereInput
     /**
-     * Limit how many Bookmarks to delete.
+     * Limit how many bookmarks to delete.
      */
     limit?: number
   }
 
   /**
-   * Bookmark findRaw
+   * bookmark findRaw
    */
-  export type BookmarkFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -9754,9 +9809,9 @@ export namespace Prisma {
   }
 
   /**
-   * Bookmark aggregateRaw
+   * bookmark aggregateRaw
    */
-  export type BookmarkAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -9768,21 +9823,21 @@ export namespace Prisma {
   }
 
   /**
-   * Bookmark without action
+   * bookmark without action
    */
-  export type BookmarkDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type bookmarkDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Bookmark
+     * Select specific fields to fetch from the bookmark
      */
-    select?: BookmarkSelect<ExtArgs> | null
+    select?: bookmarkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Bookmark
+     * Omit specific fields from the bookmark
      */
-    omit?: BookmarkOmit<ExtArgs> | null
+    omit?: bookmarkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookmarkInclude<ExtArgs> | null
+    include?: bookmarkInclude<ExtArgs> | null
   }
 
 
@@ -9851,11 +9906,16 @@ export namespace Prisma {
   export const SlangScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    example: 'example',
-    explaination: 'explaination',
+    examples: 'examples',
+    explanation: 'explanation',
+    englishPronunciation: 'englishPronunciation',
     category_id: 'category_id',
     view: 'view',
     user_id: 'user_id',
+    originator: 'originator',
+    language: 'language',
+    country: 'country',
+    slug: 'slug',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -10004,9 +10064,9 @@ export namespace Prisma {
     updatedAt?: SortOrder
     sessions?: SessionOrderByRelationAggregateInput
     accounts?: AccountOrderByRelationAggregateInput
-    likes?: LikeOrderByRelationAggregateInput
-    posts?: SlangOrderByRelationAggregateInput
-    bookmarks?: BookmarkOrderByRelationAggregateInput
+    likes?: likeOrderByRelationAggregateInput
+    posts?: slangOrderByRelationAggregateInput
+    bookmarks?: bookmarkOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -10275,226 +10335,251 @@ export namespace Prisma {
     updatedAt?: DateTimeNullableWithAggregatesFilter<"Verification"> | Date | string | null
   }
 
-  export type SlangWhereInput = {
-    AND?: SlangWhereInput | SlangWhereInput[]
-    OR?: SlangWhereInput[]
-    NOT?: SlangWhereInput | SlangWhereInput[]
-    id?: StringFilter<"Slang"> | string
-    name?: StringFilter<"Slang"> | string
-    example?: StringNullableListFilter<"Slang">
-    explaination?: StringFilter<"Slang"> | string
-    category_id?: StringNullableFilter<"Slang"> | string | null
-    view?: IntFilter<"Slang"> | number
-    user_id?: StringFilter<"Slang"> | string
-    createdAt?: DateTimeFilter<"Slang"> | Date | string
-    updatedAt?: DateTimeFilter<"Slang"> | Date | string
+  export type slangWhereInput = {
+    AND?: slangWhereInput | slangWhereInput[]
+    OR?: slangWhereInput[]
+    NOT?: slangWhereInput | slangWhereInput[]
+    id?: StringFilter<"slang"> | string
+    name?: StringFilter<"slang"> | string
+    examples?: StringNullableListFilter<"slang">
+    explanation?: StringFilter<"slang"> | string
+    englishPronunciation?: StringFilter<"slang"> | string
+    category_id?: StringNullableFilter<"slang"> | string | null
+    view?: IntFilter<"slang"> | number
+    user_id?: StringFilter<"slang"> | string
+    originator?: StringFilter<"slang"> | string
+    language?: StringFilter<"slang"> | string
+    country?: StringFilter<"slang"> | string
+    slug?: StringFilter<"slang"> | string
+    createdAt?: DateTimeFilter<"slang"> | Date | string
+    updatedAt?: DateTimeFilter<"slang"> | Date | string
     like?: LikeListRelationFilter
-    category?: XOR<CategoryNullableScalarRelationFilter, CategoryWhereInput> | null
+    category?: XOR<CategoryNullableScalarRelationFilter, categoryWhereInput> | null
     posted_by?: XOR<UserScalarRelationFilter, UserWhereInput>
     bookmarked_by?: BookmarkListRelationFilter
   }
 
-  export type SlangOrderByWithRelationInput = {
+  export type slangOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    example?: SortOrder
-    explaination?: SortOrder
+    examples?: SortOrder
+    explanation?: SortOrder
+    englishPronunciation?: SortOrder
     category_id?: SortOrder
     view?: SortOrder
     user_id?: SortOrder
+    originator?: SortOrder
+    language?: SortOrder
+    country?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    like?: LikeOrderByRelationAggregateInput
-    category?: CategoryOrderByWithRelationInput
+    like?: likeOrderByRelationAggregateInput
+    category?: categoryOrderByWithRelationInput
     posted_by?: UserOrderByWithRelationInput
-    bookmarked_by?: BookmarkOrderByRelationAggregateInput
+    bookmarked_by?: bookmarkOrderByRelationAggregateInput
   }
 
-  export type SlangWhereUniqueInput = Prisma.AtLeast<{
+  export type slangWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: SlangWhereInput | SlangWhereInput[]
-    OR?: SlangWhereInput[]
-    NOT?: SlangWhereInput | SlangWhereInput[]
-    name?: StringFilter<"Slang"> | string
-    example?: StringNullableListFilter<"Slang">
-    explaination?: StringFilter<"Slang"> | string
-    category_id?: StringNullableFilter<"Slang"> | string | null
-    view?: IntFilter<"Slang"> | number
-    user_id?: StringFilter<"Slang"> | string
-    createdAt?: DateTimeFilter<"Slang"> | Date | string
-    updatedAt?: DateTimeFilter<"Slang"> | Date | string
+    slug?: string
+    AND?: slangWhereInput | slangWhereInput[]
+    OR?: slangWhereInput[]
+    NOT?: slangWhereInput | slangWhereInput[]
+    name?: StringFilter<"slang"> | string
+    examples?: StringNullableListFilter<"slang">
+    explanation?: StringFilter<"slang"> | string
+    englishPronunciation?: StringFilter<"slang"> | string
+    category_id?: StringNullableFilter<"slang"> | string | null
+    view?: IntFilter<"slang"> | number
+    user_id?: StringFilter<"slang"> | string
+    originator?: StringFilter<"slang"> | string
+    language?: StringFilter<"slang"> | string
+    country?: StringFilter<"slang"> | string
+    createdAt?: DateTimeFilter<"slang"> | Date | string
+    updatedAt?: DateTimeFilter<"slang"> | Date | string
     like?: LikeListRelationFilter
-    category?: XOR<CategoryNullableScalarRelationFilter, CategoryWhereInput> | null
+    category?: XOR<CategoryNullableScalarRelationFilter, categoryWhereInput> | null
     posted_by?: XOR<UserScalarRelationFilter, UserWhereInput>
     bookmarked_by?: BookmarkListRelationFilter
-  }, "id">
+  }, "id" | "slug">
 
-  export type SlangOrderByWithAggregationInput = {
+  export type slangOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    example?: SortOrder
-    explaination?: SortOrder
+    examples?: SortOrder
+    explanation?: SortOrder
+    englishPronunciation?: SortOrder
     category_id?: SortOrder
     view?: SortOrder
     user_id?: SortOrder
+    originator?: SortOrder
+    language?: SortOrder
+    country?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: SlangCountOrderByAggregateInput
-    _avg?: SlangAvgOrderByAggregateInput
-    _max?: SlangMaxOrderByAggregateInput
-    _min?: SlangMinOrderByAggregateInput
-    _sum?: SlangSumOrderByAggregateInput
+    _count?: slangCountOrderByAggregateInput
+    _avg?: slangAvgOrderByAggregateInput
+    _max?: slangMaxOrderByAggregateInput
+    _min?: slangMinOrderByAggregateInput
+    _sum?: slangSumOrderByAggregateInput
   }
 
-  export type SlangScalarWhereWithAggregatesInput = {
-    AND?: SlangScalarWhereWithAggregatesInput | SlangScalarWhereWithAggregatesInput[]
-    OR?: SlangScalarWhereWithAggregatesInput[]
-    NOT?: SlangScalarWhereWithAggregatesInput | SlangScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Slang"> | string
-    name?: StringWithAggregatesFilter<"Slang"> | string
-    example?: StringNullableListFilter<"Slang">
-    explaination?: StringWithAggregatesFilter<"Slang"> | string
-    category_id?: StringNullableWithAggregatesFilter<"Slang"> | string | null
-    view?: IntWithAggregatesFilter<"Slang"> | number
-    user_id?: StringWithAggregatesFilter<"Slang"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Slang"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Slang"> | Date | string
+  export type slangScalarWhereWithAggregatesInput = {
+    AND?: slangScalarWhereWithAggregatesInput | slangScalarWhereWithAggregatesInput[]
+    OR?: slangScalarWhereWithAggregatesInput[]
+    NOT?: slangScalarWhereWithAggregatesInput | slangScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"slang"> | string
+    name?: StringWithAggregatesFilter<"slang"> | string
+    examples?: StringNullableListFilter<"slang">
+    explanation?: StringWithAggregatesFilter<"slang"> | string
+    englishPronunciation?: StringWithAggregatesFilter<"slang"> | string
+    category_id?: StringNullableWithAggregatesFilter<"slang"> | string | null
+    view?: IntWithAggregatesFilter<"slang"> | number
+    user_id?: StringWithAggregatesFilter<"slang"> | string
+    originator?: StringWithAggregatesFilter<"slang"> | string
+    language?: StringWithAggregatesFilter<"slang"> | string
+    country?: StringWithAggregatesFilter<"slang"> | string
+    slug?: StringWithAggregatesFilter<"slang"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"slang"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"slang"> | Date | string
   }
 
-  export type LikeWhereInput = {
-    AND?: LikeWhereInput | LikeWhereInput[]
-    OR?: LikeWhereInput[]
-    NOT?: LikeWhereInput | LikeWhereInput[]
-    id?: StringFilter<"Like"> | string
-    slang_id?: StringFilter<"Like"> | string
-    user_id?: StringFilter<"Like"> | string
-    slang?: XOR<SlangScalarRelationFilter, SlangWhereInput>
+  export type likeWhereInput = {
+    AND?: likeWhereInput | likeWhereInput[]
+    OR?: likeWhereInput[]
+    NOT?: likeWhereInput | likeWhereInput[]
+    id?: StringFilter<"like"> | string
+    slang_id?: StringFilter<"like"> | string
+    user_id?: StringFilter<"like"> | string
+    slang?: XOR<SlangScalarRelationFilter, slangWhereInput>
     liked_by?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type LikeOrderByWithRelationInput = {
+  export type likeOrderByWithRelationInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
-    slang?: SlangOrderByWithRelationInput
+    slang?: slangOrderByWithRelationInput
     liked_by?: UserOrderByWithRelationInput
   }
 
-  export type LikeWhereUniqueInput = Prisma.AtLeast<{
+  export type likeWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: LikeWhereInput | LikeWhereInput[]
-    OR?: LikeWhereInput[]
-    NOT?: LikeWhereInput | LikeWhereInput[]
-    slang_id?: StringFilter<"Like"> | string
-    user_id?: StringFilter<"Like"> | string
-    slang?: XOR<SlangScalarRelationFilter, SlangWhereInput>
+    AND?: likeWhereInput | likeWhereInput[]
+    OR?: likeWhereInput[]
+    NOT?: likeWhereInput | likeWhereInput[]
+    slang_id?: StringFilter<"like"> | string
+    user_id?: StringFilter<"like"> | string
+    slang?: XOR<SlangScalarRelationFilter, slangWhereInput>
     liked_by?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
-  export type LikeOrderByWithAggregationInput = {
+  export type likeOrderByWithAggregationInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
-    _count?: LikeCountOrderByAggregateInput
-    _max?: LikeMaxOrderByAggregateInput
-    _min?: LikeMinOrderByAggregateInput
+    _count?: likeCountOrderByAggregateInput
+    _max?: likeMaxOrderByAggregateInput
+    _min?: likeMinOrderByAggregateInput
   }
 
-  export type LikeScalarWhereWithAggregatesInput = {
-    AND?: LikeScalarWhereWithAggregatesInput | LikeScalarWhereWithAggregatesInput[]
-    OR?: LikeScalarWhereWithAggregatesInput[]
-    NOT?: LikeScalarWhereWithAggregatesInput | LikeScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Like"> | string
-    slang_id?: StringWithAggregatesFilter<"Like"> | string
-    user_id?: StringWithAggregatesFilter<"Like"> | string
+  export type likeScalarWhereWithAggregatesInput = {
+    AND?: likeScalarWhereWithAggregatesInput | likeScalarWhereWithAggregatesInput[]
+    OR?: likeScalarWhereWithAggregatesInput[]
+    NOT?: likeScalarWhereWithAggregatesInput | likeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"like"> | string
+    slang_id?: StringWithAggregatesFilter<"like"> | string
+    user_id?: StringWithAggregatesFilter<"like"> | string
   }
 
-  export type CategoryWhereInput = {
-    AND?: CategoryWhereInput | CategoryWhereInput[]
-    OR?: CategoryWhereInput[]
-    NOT?: CategoryWhereInput | CategoryWhereInput[]
-    id?: StringFilter<"Category"> | string
-    name?: StringFilter<"Category"> | string
+  export type categoryWhereInput = {
+    AND?: categoryWhereInput | categoryWhereInput[]
+    OR?: categoryWhereInput[]
+    NOT?: categoryWhereInput | categoryWhereInput[]
+    id?: StringFilter<"category"> | string
+    name?: StringFilter<"category"> | string
     slangs?: SlangListRelationFilter
   }
 
-  export type CategoryOrderByWithRelationInput = {
+  export type categoryOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    slangs?: SlangOrderByRelationAggregateInput
+    slangs?: slangOrderByRelationAggregateInput
   }
 
-  export type CategoryWhereUniqueInput = Prisma.AtLeast<{
+  export type categoryWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: CategoryWhereInput | CategoryWhereInput[]
-    OR?: CategoryWhereInput[]
-    NOT?: CategoryWhereInput | CategoryWhereInput[]
-    name?: StringFilter<"Category"> | string
+    name?: string
+    AND?: categoryWhereInput | categoryWhereInput[]
+    OR?: categoryWhereInput[]
+    NOT?: categoryWhereInput | categoryWhereInput[]
     slangs?: SlangListRelationFilter
-  }, "id">
+  }, "id" | "name">
 
-  export type CategoryOrderByWithAggregationInput = {
+  export type categoryOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    _count?: CategoryCountOrderByAggregateInput
-    _max?: CategoryMaxOrderByAggregateInput
-    _min?: CategoryMinOrderByAggregateInput
+    _count?: categoryCountOrderByAggregateInput
+    _max?: categoryMaxOrderByAggregateInput
+    _min?: categoryMinOrderByAggregateInput
   }
 
-  export type CategoryScalarWhereWithAggregatesInput = {
-    AND?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
-    OR?: CategoryScalarWhereWithAggregatesInput[]
-    NOT?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Category"> | string
-    name?: StringWithAggregatesFilter<"Category"> | string
+  export type categoryScalarWhereWithAggregatesInput = {
+    AND?: categoryScalarWhereWithAggregatesInput | categoryScalarWhereWithAggregatesInput[]
+    OR?: categoryScalarWhereWithAggregatesInput[]
+    NOT?: categoryScalarWhereWithAggregatesInput | categoryScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"category"> | string
+    name?: StringWithAggregatesFilter<"category"> | string
   }
 
-  export type BookmarkWhereInput = {
-    AND?: BookmarkWhereInput | BookmarkWhereInput[]
-    OR?: BookmarkWhereInput[]
-    NOT?: BookmarkWhereInput | BookmarkWhereInput[]
-    id?: StringFilter<"Bookmark"> | string
-    slang_id?: StringFilter<"Bookmark"> | string
-    user_id?: StringFilter<"Bookmark"> | string
-    Slang?: XOR<SlangScalarRelationFilter, SlangWhereInput>
+  export type bookmarkWhereInput = {
+    AND?: bookmarkWhereInput | bookmarkWhereInput[]
+    OR?: bookmarkWhereInput[]
+    NOT?: bookmarkWhereInput | bookmarkWhereInput[]
+    id?: StringFilter<"bookmark"> | string
+    slang_id?: StringFilter<"bookmark"> | string
+    user_id?: StringFilter<"bookmark"> | string
+    Slang?: XOR<SlangScalarRelationFilter, slangWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type BookmarkOrderByWithRelationInput = {
+  export type bookmarkOrderByWithRelationInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
-    Slang?: SlangOrderByWithRelationInput
+    Slang?: slangOrderByWithRelationInput
     user?: UserOrderByWithRelationInput
   }
 
-  export type BookmarkWhereUniqueInput = Prisma.AtLeast<{
+  export type bookmarkWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: BookmarkWhereInput | BookmarkWhereInput[]
-    OR?: BookmarkWhereInput[]
-    NOT?: BookmarkWhereInput | BookmarkWhereInput[]
-    slang_id?: StringFilter<"Bookmark"> | string
-    user_id?: StringFilter<"Bookmark"> | string
-    Slang?: XOR<SlangScalarRelationFilter, SlangWhereInput>
+    AND?: bookmarkWhereInput | bookmarkWhereInput[]
+    OR?: bookmarkWhereInput[]
+    NOT?: bookmarkWhereInput | bookmarkWhereInput[]
+    slang_id?: StringFilter<"bookmark"> | string
+    user_id?: StringFilter<"bookmark"> | string
+    Slang?: XOR<SlangScalarRelationFilter, slangWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
-  export type BookmarkOrderByWithAggregationInput = {
+  export type bookmarkOrderByWithAggregationInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
-    _count?: BookmarkCountOrderByAggregateInput
-    _max?: BookmarkMaxOrderByAggregateInput
-    _min?: BookmarkMinOrderByAggregateInput
+    _count?: bookmarkCountOrderByAggregateInput
+    _max?: bookmarkMaxOrderByAggregateInput
+    _min?: bookmarkMinOrderByAggregateInput
   }
 
-  export type BookmarkScalarWhereWithAggregatesInput = {
-    AND?: BookmarkScalarWhereWithAggregatesInput | BookmarkScalarWhereWithAggregatesInput[]
-    OR?: BookmarkScalarWhereWithAggregatesInput[]
-    NOT?: BookmarkScalarWhereWithAggregatesInput | BookmarkScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Bookmark"> | string
-    slang_id?: StringWithAggregatesFilter<"Bookmark"> | string
-    user_id?: StringWithAggregatesFilter<"Bookmark"> | string
+  export type bookmarkScalarWhereWithAggregatesInput = {
+    AND?: bookmarkScalarWhereWithAggregatesInput | bookmarkScalarWhereWithAggregatesInput[]
+    OR?: bookmarkScalarWhereWithAggregatesInput[]
+    NOT?: bookmarkScalarWhereWithAggregatesInput | bookmarkScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"bookmark"> | string
+    slang_id?: StringWithAggregatesFilter<"bookmark"> | string
+    user_id?: StringWithAggregatesFilter<"bookmark"> | string
   }
 
   export type UserCreateInput = {
@@ -10507,9 +10592,9 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionCreateNestedManyWithoutUserInput
     accounts?: AccountCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutLiked_byInput
-    posts?: SlangCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkCreateNestedManyWithoutUserInput
+    likes?: likeCreateNestedManyWithoutLiked_byInput
+    posts?: slangCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -10522,9 +10607,9 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutLiked_byInput
-    posts?: SlangUncheckedCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkUncheckedCreateNestedManyWithoutUserInput
+    likes?: likeUncheckedCreateNestedManyWithoutLiked_byInput
+    posts?: slangUncheckedCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -10536,9 +10621,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUpdateManyWithoutUserNestedInput
     accounts?: AccountUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUpdateManyWithoutUserNestedInput
+    likes?: likeUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -10550,9 +10635,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUncheckedUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUncheckedUpdateManyWithoutUserNestedInput
+    likes?: likeUncheckedUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUncheckedUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -10821,197 +10906,232 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type SlangCreateInput = {
+  export type slangCreateInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeCreateNestedManyWithoutSlangInput
-    category?: CategoryCreateNestedOneWithoutSlangsInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeCreateNestedManyWithoutSlangInput
+    category?: categoryCreateNestedOneWithoutSlangsInput
     posted_by: UserCreateNestedOneWithoutPostsInput
-    bookmarked_by?: BookmarkCreateNestedManyWithoutSlangInput
+    bookmarked_by?: bookmarkCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangUncheckedCreateInput = {
+  export type slangUncheckedCreateInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     category_id?: string | null
     view?: number
     user_id: string
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeUncheckedCreateNestedManyWithoutSlangInput
-    bookmarked_by?: BookmarkUncheckedCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeUncheckedCreateNestedManyWithoutSlangInput
+    bookmarked_by?: bookmarkUncheckedCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangUpdateInput = {
+  export type slangUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUpdateManyWithoutSlangNestedInput
-    category?: CategoryUpdateOneWithoutSlangsNestedInput
+    like?: likeUpdateManyWithoutSlangNestedInput
+    category?: categoryUpdateOneWithoutSlangsNestedInput
     posted_by?: UserUpdateOneRequiredWithoutPostsNestedInput
-    bookmarked_by?: BookmarkUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangUncheckedUpdateInput = {
+  export type slangUncheckedUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     category_id?: NullableStringFieldUpdateOperationsInput | string | null
     view?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUncheckedUpdateManyWithoutSlangNestedInput
-    bookmarked_by?: BookmarkUncheckedUpdateManyWithoutSlangNestedInput
+    like?: likeUncheckedUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUncheckedUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangCreateManyInput = {
+  export type slangCreateManyInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     category_id?: string | null
     view?: number
     user_id: string
-    createdAt: Date | string
-    updatedAt: Date | string
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type SlangUpdateManyMutationInput = {
+  export type slangUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SlangUncheckedUpdateManyInput = {
+  export type slangUncheckedUpdateManyInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     category_id?: NullableStringFieldUpdateOperationsInput | string | null
     view?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type LikeCreateInput = {
+  export type likeCreateInput = {
     id?: string
-    slang: SlangCreateNestedOneWithoutLikeInput
+    slang: slangCreateNestedOneWithoutLikeInput
     liked_by: UserCreateNestedOneWithoutLikesInput
   }
 
-  export type LikeUncheckedCreateInput = {
+  export type likeUncheckedCreateInput = {
     id?: string
     slang_id: string
     user_id: string
   }
 
-  export type LikeUpdateInput = {
-    slang?: SlangUpdateOneRequiredWithoutLikeNestedInput
+  export type likeUpdateInput = {
+    slang?: slangUpdateOneRequiredWithoutLikeNestedInput
     liked_by?: UserUpdateOneRequiredWithoutLikesNestedInput
   }
 
-  export type LikeUncheckedUpdateInput = {
+  export type likeUncheckedUpdateInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type LikeCreateManyInput = {
+  export type likeCreateManyInput = {
     id?: string
     slang_id: string
     user_id: string
   }
 
-  export type LikeUpdateManyMutationInput = {
+  export type likeUpdateManyMutationInput = {
 
   }
 
-  export type LikeUncheckedUpdateManyInput = {
+  export type likeUncheckedUpdateManyInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CategoryCreateInput = {
+  export type categoryCreateInput = {
     id?: string
     name: string
-    slangs?: SlangCreateNestedManyWithoutCategoryInput
+    slangs?: slangCreateNestedManyWithoutCategoryInput
   }
 
-  export type CategoryUncheckedCreateInput = {
+  export type categoryUncheckedCreateInput = {
     id?: string
     name: string
-    slangs?: SlangUncheckedCreateNestedManyWithoutCategoryInput
+    slangs?: slangUncheckedCreateNestedManyWithoutCategoryInput
   }
 
-  export type CategoryUpdateInput = {
+  export type categoryUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    slangs?: SlangUpdateManyWithoutCategoryNestedInput
+    slangs?: slangUpdateManyWithoutCategoryNestedInput
   }
 
-  export type CategoryUncheckedUpdateInput = {
+  export type categoryUncheckedUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    slangs?: SlangUncheckedUpdateManyWithoutCategoryNestedInput
+    slangs?: slangUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
-  export type CategoryCreateManyInput = {
+  export type categoryCreateManyInput = {
     id?: string
     name: string
   }
 
-  export type CategoryUpdateManyMutationInput = {
+  export type categoryUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CategoryUncheckedUpdateManyInput = {
+  export type categoryUncheckedUpdateManyInput = {
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BookmarkCreateInput = {
+  export type bookmarkCreateInput = {
     id?: string
-    Slang: SlangCreateNestedOneWithoutBookmarked_byInput
+    Slang: slangCreateNestedOneWithoutBookmarked_byInput
     user: UserCreateNestedOneWithoutBookmarksInput
   }
 
-  export type BookmarkUncheckedCreateInput = {
+  export type bookmarkUncheckedCreateInput = {
     id?: string
     slang_id: string
     user_id: string
   }
 
-  export type BookmarkUpdateInput = {
-    Slang?: SlangUpdateOneRequiredWithoutBookmarked_byNestedInput
+  export type bookmarkUpdateInput = {
+    Slang?: slangUpdateOneRequiredWithoutBookmarked_byNestedInput
     user?: UserUpdateOneRequiredWithoutBookmarksNestedInput
   }
 
-  export type BookmarkUncheckedUpdateInput = {
+  export type bookmarkUncheckedUpdateInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BookmarkCreateManyInput = {
+  export type bookmarkCreateManyInput = {
     id?: string
     slang_id: string
     user_id: string
   }
 
-  export type BookmarkUpdateManyMutationInput = {
+  export type bookmarkUpdateManyMutationInput = {
 
   }
 
-  export type BookmarkUncheckedUpdateManyInput = {
+  export type bookmarkUncheckedUpdateManyInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
     user_id?: StringFieldUpdateOperationsInput | string
   }
@@ -11076,21 +11196,21 @@ export namespace Prisma {
   }
 
   export type LikeListRelationFilter = {
-    every?: LikeWhereInput
-    some?: LikeWhereInput
-    none?: LikeWhereInput
+    every?: likeWhereInput
+    some?: likeWhereInput
+    none?: likeWhereInput
   }
 
   export type SlangListRelationFilter = {
-    every?: SlangWhereInput
-    some?: SlangWhereInput
-    none?: SlangWhereInput
+    every?: slangWhereInput
+    some?: slangWhereInput
+    none?: slangWhereInput
   }
 
   export type BookmarkListRelationFilter = {
-    every?: BookmarkWhereInput
-    some?: BookmarkWhereInput
-    none?: BookmarkWhereInput
+    every?: bookmarkWhereInput
+    some?: bookmarkWhereInput
+    none?: bookmarkWhereInput
   }
 
   export type SessionOrderByRelationAggregateInput = {
@@ -11101,15 +11221,15 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type LikeOrderByRelationAggregateInput = {
+  export type likeOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type SlangOrderByRelationAggregateInput = {
+  export type slangOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type BookmarkOrderByRelationAggregateInput = {
+  export type bookmarkOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -11362,49 +11482,64 @@ export namespace Prisma {
   }
 
   export type CategoryNullableScalarRelationFilter = {
-    is?: CategoryWhereInput | null
-    isNot?: CategoryWhereInput | null
+    is?: categoryWhereInput | null
+    isNot?: categoryWhereInput | null
   }
 
-  export type SlangCountOrderByAggregateInput = {
+  export type slangCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    example?: SortOrder
-    explaination?: SortOrder
+    examples?: SortOrder
+    explanation?: SortOrder
+    englishPronunciation?: SortOrder
     category_id?: SortOrder
     view?: SortOrder
     user_id?: SortOrder
+    originator?: SortOrder
+    language?: SortOrder
+    country?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type SlangAvgOrderByAggregateInput = {
+  export type slangAvgOrderByAggregateInput = {
     view?: SortOrder
   }
 
-  export type SlangMaxOrderByAggregateInput = {
+  export type slangMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    explaination?: SortOrder
+    explanation?: SortOrder
+    englishPronunciation?: SortOrder
     category_id?: SortOrder
     view?: SortOrder
     user_id?: SortOrder
+    originator?: SortOrder
+    language?: SortOrder
+    country?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type SlangMinOrderByAggregateInput = {
+  export type slangMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    explaination?: SortOrder
+    explanation?: SortOrder
+    englishPronunciation?: SortOrder
     category_id?: SortOrder
     view?: SortOrder
     user_id?: SortOrder
+    originator?: SortOrder
+    language?: SortOrder
+    country?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type SlangSumOrderByAggregateInput = {
+  export type slangSumOrderByAggregateInput = {
     view?: SortOrder
   }
 
@@ -11425,56 +11560,56 @@ export namespace Prisma {
   }
 
   export type SlangScalarRelationFilter = {
-    is?: SlangWhereInput
-    isNot?: SlangWhereInput
+    is?: slangWhereInput
+    isNot?: slangWhereInput
   }
 
-  export type LikeCountOrderByAggregateInput = {
+  export type likeCountOrderByAggregateInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
   }
 
-  export type LikeMaxOrderByAggregateInput = {
+  export type likeMaxOrderByAggregateInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
   }
 
-  export type LikeMinOrderByAggregateInput = {
+  export type likeMinOrderByAggregateInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
   }
 
-  export type CategoryCountOrderByAggregateInput = {
+  export type categoryCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
   }
 
-  export type CategoryMaxOrderByAggregateInput = {
+  export type categoryMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
   }
 
-  export type CategoryMinOrderByAggregateInput = {
+  export type categoryMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
   }
 
-  export type BookmarkCountOrderByAggregateInput = {
+  export type bookmarkCountOrderByAggregateInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
   }
 
-  export type BookmarkMaxOrderByAggregateInput = {
+  export type bookmarkMaxOrderByAggregateInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
   }
 
-  export type BookmarkMinOrderByAggregateInput = {
+  export type bookmarkMinOrderByAggregateInput = {
     id?: SortOrder
     slang_id?: SortOrder
     user_id?: SortOrder
@@ -11494,25 +11629,25 @@ export namespace Prisma {
     connect?: AccountWhereUniqueInput | AccountWhereUniqueInput[]
   }
 
-  export type LikeCreateNestedManyWithoutLiked_byInput = {
-    create?: XOR<LikeCreateWithoutLiked_byInput, LikeUncheckedCreateWithoutLiked_byInput> | LikeCreateWithoutLiked_byInput[] | LikeUncheckedCreateWithoutLiked_byInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutLiked_byInput | LikeCreateOrConnectWithoutLiked_byInput[]
-    createMany?: LikeCreateManyLiked_byInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+  export type likeCreateNestedManyWithoutLiked_byInput = {
+    create?: XOR<likeCreateWithoutLiked_byInput, likeUncheckedCreateWithoutLiked_byInput> | likeCreateWithoutLiked_byInput[] | likeUncheckedCreateWithoutLiked_byInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutLiked_byInput | likeCreateOrConnectWithoutLiked_byInput[]
+    createMany?: likeCreateManyLiked_byInputEnvelope
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
   }
 
-  export type SlangCreateNestedManyWithoutPosted_byInput = {
-    create?: XOR<SlangCreateWithoutPosted_byInput, SlangUncheckedCreateWithoutPosted_byInput> | SlangCreateWithoutPosted_byInput[] | SlangUncheckedCreateWithoutPosted_byInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutPosted_byInput | SlangCreateOrConnectWithoutPosted_byInput[]
-    createMany?: SlangCreateManyPosted_byInputEnvelope
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
+  export type slangCreateNestedManyWithoutPosted_byInput = {
+    create?: XOR<slangCreateWithoutPosted_byInput, slangUncheckedCreateWithoutPosted_byInput> | slangCreateWithoutPosted_byInput[] | slangUncheckedCreateWithoutPosted_byInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutPosted_byInput | slangCreateOrConnectWithoutPosted_byInput[]
+    createMany?: slangCreateManyPosted_byInputEnvelope
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
   }
 
-  export type BookmarkCreateNestedManyWithoutUserInput = {
-    create?: XOR<BookmarkCreateWithoutUserInput, BookmarkUncheckedCreateWithoutUserInput> | BookmarkCreateWithoutUserInput[] | BookmarkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutUserInput | BookmarkCreateOrConnectWithoutUserInput[]
-    createMany?: BookmarkCreateManyUserInputEnvelope
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
+  export type bookmarkCreateNestedManyWithoutUserInput = {
+    create?: XOR<bookmarkCreateWithoutUserInput, bookmarkUncheckedCreateWithoutUserInput> | bookmarkCreateWithoutUserInput[] | bookmarkUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutUserInput | bookmarkCreateOrConnectWithoutUserInput[]
+    createMany?: bookmarkCreateManyUserInputEnvelope
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
   }
 
   export type SessionUncheckedCreateNestedManyWithoutUserInput = {
@@ -11529,25 +11664,25 @@ export namespace Prisma {
     connect?: AccountWhereUniqueInput | AccountWhereUniqueInput[]
   }
 
-  export type LikeUncheckedCreateNestedManyWithoutLiked_byInput = {
-    create?: XOR<LikeCreateWithoutLiked_byInput, LikeUncheckedCreateWithoutLiked_byInput> | LikeCreateWithoutLiked_byInput[] | LikeUncheckedCreateWithoutLiked_byInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutLiked_byInput | LikeCreateOrConnectWithoutLiked_byInput[]
-    createMany?: LikeCreateManyLiked_byInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+  export type likeUncheckedCreateNestedManyWithoutLiked_byInput = {
+    create?: XOR<likeCreateWithoutLiked_byInput, likeUncheckedCreateWithoutLiked_byInput> | likeCreateWithoutLiked_byInput[] | likeUncheckedCreateWithoutLiked_byInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutLiked_byInput | likeCreateOrConnectWithoutLiked_byInput[]
+    createMany?: likeCreateManyLiked_byInputEnvelope
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
   }
 
-  export type SlangUncheckedCreateNestedManyWithoutPosted_byInput = {
-    create?: XOR<SlangCreateWithoutPosted_byInput, SlangUncheckedCreateWithoutPosted_byInput> | SlangCreateWithoutPosted_byInput[] | SlangUncheckedCreateWithoutPosted_byInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutPosted_byInput | SlangCreateOrConnectWithoutPosted_byInput[]
-    createMany?: SlangCreateManyPosted_byInputEnvelope
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
+  export type slangUncheckedCreateNestedManyWithoutPosted_byInput = {
+    create?: XOR<slangCreateWithoutPosted_byInput, slangUncheckedCreateWithoutPosted_byInput> | slangCreateWithoutPosted_byInput[] | slangUncheckedCreateWithoutPosted_byInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutPosted_byInput | slangCreateOrConnectWithoutPosted_byInput[]
+    createMany?: slangCreateManyPosted_byInputEnvelope
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
   }
 
-  export type BookmarkUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<BookmarkCreateWithoutUserInput, BookmarkUncheckedCreateWithoutUserInput> | BookmarkCreateWithoutUserInput[] | BookmarkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutUserInput | BookmarkCreateOrConnectWithoutUserInput[]
-    createMany?: BookmarkCreateManyUserInputEnvelope
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
+  export type bookmarkUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<bookmarkCreateWithoutUserInput, bookmarkUncheckedCreateWithoutUserInput> | bookmarkCreateWithoutUserInput[] | bookmarkUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutUserInput | bookmarkCreateOrConnectWithoutUserInput[]
+    createMany?: bookmarkCreateManyUserInputEnvelope
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -11595,46 +11730,46 @@ export namespace Prisma {
     deleteMany?: AccountScalarWhereInput | AccountScalarWhereInput[]
   }
 
-  export type LikeUpdateManyWithoutLiked_byNestedInput = {
-    create?: XOR<LikeCreateWithoutLiked_byInput, LikeUncheckedCreateWithoutLiked_byInput> | LikeCreateWithoutLiked_byInput[] | LikeUncheckedCreateWithoutLiked_byInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutLiked_byInput | LikeCreateOrConnectWithoutLiked_byInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutLiked_byInput | LikeUpsertWithWhereUniqueWithoutLiked_byInput[]
-    createMany?: LikeCreateManyLiked_byInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutLiked_byInput | LikeUpdateWithWhereUniqueWithoutLiked_byInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutLiked_byInput | LikeUpdateManyWithWhereWithoutLiked_byInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  export type likeUpdateManyWithoutLiked_byNestedInput = {
+    create?: XOR<likeCreateWithoutLiked_byInput, likeUncheckedCreateWithoutLiked_byInput> | likeCreateWithoutLiked_byInput[] | likeUncheckedCreateWithoutLiked_byInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutLiked_byInput | likeCreateOrConnectWithoutLiked_byInput[]
+    upsert?: likeUpsertWithWhereUniqueWithoutLiked_byInput | likeUpsertWithWhereUniqueWithoutLiked_byInput[]
+    createMany?: likeCreateManyLiked_byInputEnvelope
+    set?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    disconnect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    delete?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    update?: likeUpdateWithWhereUniqueWithoutLiked_byInput | likeUpdateWithWhereUniqueWithoutLiked_byInput[]
+    updateMany?: likeUpdateManyWithWhereWithoutLiked_byInput | likeUpdateManyWithWhereWithoutLiked_byInput[]
+    deleteMany?: likeScalarWhereInput | likeScalarWhereInput[]
   }
 
-  export type SlangUpdateManyWithoutPosted_byNestedInput = {
-    create?: XOR<SlangCreateWithoutPosted_byInput, SlangUncheckedCreateWithoutPosted_byInput> | SlangCreateWithoutPosted_byInput[] | SlangUncheckedCreateWithoutPosted_byInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutPosted_byInput | SlangCreateOrConnectWithoutPosted_byInput[]
-    upsert?: SlangUpsertWithWhereUniqueWithoutPosted_byInput | SlangUpsertWithWhereUniqueWithoutPosted_byInput[]
-    createMany?: SlangCreateManyPosted_byInputEnvelope
-    set?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    disconnect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    delete?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    update?: SlangUpdateWithWhereUniqueWithoutPosted_byInput | SlangUpdateWithWhereUniqueWithoutPosted_byInput[]
-    updateMany?: SlangUpdateManyWithWhereWithoutPosted_byInput | SlangUpdateManyWithWhereWithoutPosted_byInput[]
-    deleteMany?: SlangScalarWhereInput | SlangScalarWhereInput[]
+  export type slangUpdateManyWithoutPosted_byNestedInput = {
+    create?: XOR<slangCreateWithoutPosted_byInput, slangUncheckedCreateWithoutPosted_byInput> | slangCreateWithoutPosted_byInput[] | slangUncheckedCreateWithoutPosted_byInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutPosted_byInput | slangCreateOrConnectWithoutPosted_byInput[]
+    upsert?: slangUpsertWithWhereUniqueWithoutPosted_byInput | slangUpsertWithWhereUniqueWithoutPosted_byInput[]
+    createMany?: slangCreateManyPosted_byInputEnvelope
+    set?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    disconnect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    delete?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    update?: slangUpdateWithWhereUniqueWithoutPosted_byInput | slangUpdateWithWhereUniqueWithoutPosted_byInput[]
+    updateMany?: slangUpdateManyWithWhereWithoutPosted_byInput | slangUpdateManyWithWhereWithoutPosted_byInput[]
+    deleteMany?: slangScalarWhereInput | slangScalarWhereInput[]
   }
 
-  export type BookmarkUpdateManyWithoutUserNestedInput = {
-    create?: XOR<BookmarkCreateWithoutUserInput, BookmarkUncheckedCreateWithoutUserInput> | BookmarkCreateWithoutUserInput[] | BookmarkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutUserInput | BookmarkCreateOrConnectWithoutUserInput[]
-    upsert?: BookmarkUpsertWithWhereUniqueWithoutUserInput | BookmarkUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: BookmarkCreateManyUserInputEnvelope
-    set?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    disconnect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    delete?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    update?: BookmarkUpdateWithWhereUniqueWithoutUserInput | BookmarkUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: BookmarkUpdateManyWithWhereWithoutUserInput | BookmarkUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: BookmarkScalarWhereInput | BookmarkScalarWhereInput[]
+  export type bookmarkUpdateManyWithoutUserNestedInput = {
+    create?: XOR<bookmarkCreateWithoutUserInput, bookmarkUncheckedCreateWithoutUserInput> | bookmarkCreateWithoutUserInput[] | bookmarkUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutUserInput | bookmarkCreateOrConnectWithoutUserInput[]
+    upsert?: bookmarkUpsertWithWhereUniqueWithoutUserInput | bookmarkUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: bookmarkCreateManyUserInputEnvelope
+    set?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    disconnect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    delete?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    update?: bookmarkUpdateWithWhereUniqueWithoutUserInput | bookmarkUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: bookmarkUpdateManyWithWhereWithoutUserInput | bookmarkUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: bookmarkScalarWhereInput | bookmarkScalarWhereInput[]
   }
 
   export type SessionUncheckedUpdateManyWithoutUserNestedInput = {
@@ -11665,46 +11800,46 @@ export namespace Prisma {
     deleteMany?: AccountScalarWhereInput | AccountScalarWhereInput[]
   }
 
-  export type LikeUncheckedUpdateManyWithoutLiked_byNestedInput = {
-    create?: XOR<LikeCreateWithoutLiked_byInput, LikeUncheckedCreateWithoutLiked_byInput> | LikeCreateWithoutLiked_byInput[] | LikeUncheckedCreateWithoutLiked_byInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutLiked_byInput | LikeCreateOrConnectWithoutLiked_byInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutLiked_byInput | LikeUpsertWithWhereUniqueWithoutLiked_byInput[]
-    createMany?: LikeCreateManyLiked_byInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutLiked_byInput | LikeUpdateWithWhereUniqueWithoutLiked_byInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutLiked_byInput | LikeUpdateManyWithWhereWithoutLiked_byInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  export type likeUncheckedUpdateManyWithoutLiked_byNestedInput = {
+    create?: XOR<likeCreateWithoutLiked_byInput, likeUncheckedCreateWithoutLiked_byInput> | likeCreateWithoutLiked_byInput[] | likeUncheckedCreateWithoutLiked_byInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutLiked_byInput | likeCreateOrConnectWithoutLiked_byInput[]
+    upsert?: likeUpsertWithWhereUniqueWithoutLiked_byInput | likeUpsertWithWhereUniqueWithoutLiked_byInput[]
+    createMany?: likeCreateManyLiked_byInputEnvelope
+    set?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    disconnect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    delete?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    update?: likeUpdateWithWhereUniqueWithoutLiked_byInput | likeUpdateWithWhereUniqueWithoutLiked_byInput[]
+    updateMany?: likeUpdateManyWithWhereWithoutLiked_byInput | likeUpdateManyWithWhereWithoutLiked_byInput[]
+    deleteMany?: likeScalarWhereInput | likeScalarWhereInput[]
   }
 
-  export type SlangUncheckedUpdateManyWithoutPosted_byNestedInput = {
-    create?: XOR<SlangCreateWithoutPosted_byInput, SlangUncheckedCreateWithoutPosted_byInput> | SlangCreateWithoutPosted_byInput[] | SlangUncheckedCreateWithoutPosted_byInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutPosted_byInput | SlangCreateOrConnectWithoutPosted_byInput[]
-    upsert?: SlangUpsertWithWhereUniqueWithoutPosted_byInput | SlangUpsertWithWhereUniqueWithoutPosted_byInput[]
-    createMany?: SlangCreateManyPosted_byInputEnvelope
-    set?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    disconnect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    delete?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    update?: SlangUpdateWithWhereUniqueWithoutPosted_byInput | SlangUpdateWithWhereUniqueWithoutPosted_byInput[]
-    updateMany?: SlangUpdateManyWithWhereWithoutPosted_byInput | SlangUpdateManyWithWhereWithoutPosted_byInput[]
-    deleteMany?: SlangScalarWhereInput | SlangScalarWhereInput[]
+  export type slangUncheckedUpdateManyWithoutPosted_byNestedInput = {
+    create?: XOR<slangCreateWithoutPosted_byInput, slangUncheckedCreateWithoutPosted_byInput> | slangCreateWithoutPosted_byInput[] | slangUncheckedCreateWithoutPosted_byInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutPosted_byInput | slangCreateOrConnectWithoutPosted_byInput[]
+    upsert?: slangUpsertWithWhereUniqueWithoutPosted_byInput | slangUpsertWithWhereUniqueWithoutPosted_byInput[]
+    createMany?: slangCreateManyPosted_byInputEnvelope
+    set?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    disconnect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    delete?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    update?: slangUpdateWithWhereUniqueWithoutPosted_byInput | slangUpdateWithWhereUniqueWithoutPosted_byInput[]
+    updateMany?: slangUpdateManyWithWhereWithoutPosted_byInput | slangUpdateManyWithWhereWithoutPosted_byInput[]
+    deleteMany?: slangScalarWhereInput | slangScalarWhereInput[]
   }
 
-  export type BookmarkUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<BookmarkCreateWithoutUserInput, BookmarkUncheckedCreateWithoutUserInput> | BookmarkCreateWithoutUserInput[] | BookmarkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutUserInput | BookmarkCreateOrConnectWithoutUserInput[]
-    upsert?: BookmarkUpsertWithWhereUniqueWithoutUserInput | BookmarkUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: BookmarkCreateManyUserInputEnvelope
-    set?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    disconnect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    delete?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    update?: BookmarkUpdateWithWhereUniqueWithoutUserInput | BookmarkUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: BookmarkUpdateManyWithWhereWithoutUserInput | BookmarkUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: BookmarkScalarWhereInput | BookmarkScalarWhereInput[]
+  export type bookmarkUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<bookmarkCreateWithoutUserInput, bookmarkUncheckedCreateWithoutUserInput> | bookmarkCreateWithoutUserInput[] | bookmarkUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutUserInput | bookmarkCreateOrConnectWithoutUserInput[]
+    upsert?: bookmarkUpsertWithWhereUniqueWithoutUserInput | bookmarkUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: bookmarkCreateManyUserInputEnvelope
+    set?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    disconnect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    delete?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    update?: bookmarkUpdateWithWhereUniqueWithoutUserInput | bookmarkUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: bookmarkUpdateManyWithWhereWithoutUserInput | bookmarkUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: bookmarkScalarWhereInput | bookmarkScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutSessionsInput = {
@@ -11740,21 +11875,21 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutAccountsInput, UserUpdateWithoutAccountsInput>, UserUncheckedUpdateWithoutAccountsInput>
   }
 
-  export type SlangCreateexampleInput = {
+  export type slangCreateexamplesInput = {
     set: string[]
   }
 
-  export type LikeCreateNestedManyWithoutSlangInput = {
-    create?: XOR<LikeCreateWithoutSlangInput, LikeUncheckedCreateWithoutSlangInput> | LikeCreateWithoutSlangInput[] | LikeUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutSlangInput | LikeCreateOrConnectWithoutSlangInput[]
-    createMany?: LikeCreateManySlangInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+  export type likeCreateNestedManyWithoutSlangInput = {
+    create?: XOR<likeCreateWithoutSlangInput, likeUncheckedCreateWithoutSlangInput> | likeCreateWithoutSlangInput[] | likeUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutSlangInput | likeCreateOrConnectWithoutSlangInput[]
+    createMany?: likeCreateManySlangInputEnvelope
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
   }
 
-  export type CategoryCreateNestedOneWithoutSlangsInput = {
-    create?: XOR<CategoryCreateWithoutSlangsInput, CategoryUncheckedCreateWithoutSlangsInput>
-    connectOrCreate?: CategoryCreateOrConnectWithoutSlangsInput
-    connect?: CategoryWhereUniqueInput
+  export type categoryCreateNestedOneWithoutSlangsInput = {
+    create?: XOR<categoryCreateWithoutSlangsInput, categoryUncheckedCreateWithoutSlangsInput>
+    connectOrCreate?: categoryCreateOrConnectWithoutSlangsInput
+    connect?: categoryWhereUniqueInput
   }
 
   export type UserCreateNestedOneWithoutPostsInput = {
@@ -11763,28 +11898,28 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type BookmarkCreateNestedManyWithoutSlangInput = {
-    create?: XOR<BookmarkCreateWithoutSlangInput, BookmarkUncheckedCreateWithoutSlangInput> | BookmarkCreateWithoutSlangInput[] | BookmarkUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutSlangInput | BookmarkCreateOrConnectWithoutSlangInput[]
-    createMany?: BookmarkCreateManySlangInputEnvelope
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
+  export type bookmarkCreateNestedManyWithoutSlangInput = {
+    create?: XOR<bookmarkCreateWithoutSlangInput, bookmarkUncheckedCreateWithoutSlangInput> | bookmarkCreateWithoutSlangInput[] | bookmarkUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutSlangInput | bookmarkCreateOrConnectWithoutSlangInput[]
+    createMany?: bookmarkCreateManySlangInputEnvelope
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
   }
 
-  export type LikeUncheckedCreateNestedManyWithoutSlangInput = {
-    create?: XOR<LikeCreateWithoutSlangInput, LikeUncheckedCreateWithoutSlangInput> | LikeCreateWithoutSlangInput[] | LikeUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutSlangInput | LikeCreateOrConnectWithoutSlangInput[]
-    createMany?: LikeCreateManySlangInputEnvelope
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+  export type likeUncheckedCreateNestedManyWithoutSlangInput = {
+    create?: XOR<likeCreateWithoutSlangInput, likeUncheckedCreateWithoutSlangInput> | likeCreateWithoutSlangInput[] | likeUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutSlangInput | likeCreateOrConnectWithoutSlangInput[]
+    createMany?: likeCreateManySlangInputEnvelope
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
   }
 
-  export type BookmarkUncheckedCreateNestedManyWithoutSlangInput = {
-    create?: XOR<BookmarkCreateWithoutSlangInput, BookmarkUncheckedCreateWithoutSlangInput> | BookmarkCreateWithoutSlangInput[] | BookmarkUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutSlangInput | BookmarkCreateOrConnectWithoutSlangInput[]
-    createMany?: BookmarkCreateManySlangInputEnvelope
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
+  export type bookmarkUncheckedCreateNestedManyWithoutSlangInput = {
+    create?: XOR<bookmarkCreateWithoutSlangInput, bookmarkUncheckedCreateWithoutSlangInput> | bookmarkCreateWithoutSlangInput[] | bookmarkUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutSlangInput | bookmarkCreateOrConnectWithoutSlangInput[]
+    createMany?: bookmarkCreateManySlangInputEnvelope
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
   }
 
-  export type SlangUpdateexampleInput = {
+  export type slangUpdateexamplesInput = {
     set?: string[]
     push?: string | string[]
   }
@@ -11797,28 +11932,28 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type LikeUpdateManyWithoutSlangNestedInput = {
-    create?: XOR<LikeCreateWithoutSlangInput, LikeUncheckedCreateWithoutSlangInput> | LikeCreateWithoutSlangInput[] | LikeUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutSlangInput | LikeCreateOrConnectWithoutSlangInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutSlangInput | LikeUpsertWithWhereUniqueWithoutSlangInput[]
-    createMany?: LikeCreateManySlangInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutSlangInput | LikeUpdateWithWhereUniqueWithoutSlangInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutSlangInput | LikeUpdateManyWithWhereWithoutSlangInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  export type likeUpdateManyWithoutSlangNestedInput = {
+    create?: XOR<likeCreateWithoutSlangInput, likeUncheckedCreateWithoutSlangInput> | likeCreateWithoutSlangInput[] | likeUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutSlangInput | likeCreateOrConnectWithoutSlangInput[]
+    upsert?: likeUpsertWithWhereUniqueWithoutSlangInput | likeUpsertWithWhereUniqueWithoutSlangInput[]
+    createMany?: likeCreateManySlangInputEnvelope
+    set?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    disconnect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    delete?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    update?: likeUpdateWithWhereUniqueWithoutSlangInput | likeUpdateWithWhereUniqueWithoutSlangInput[]
+    updateMany?: likeUpdateManyWithWhereWithoutSlangInput | likeUpdateManyWithWhereWithoutSlangInput[]
+    deleteMany?: likeScalarWhereInput | likeScalarWhereInput[]
   }
 
-  export type CategoryUpdateOneWithoutSlangsNestedInput = {
-    create?: XOR<CategoryCreateWithoutSlangsInput, CategoryUncheckedCreateWithoutSlangsInput>
-    connectOrCreate?: CategoryCreateOrConnectWithoutSlangsInput
-    upsert?: CategoryUpsertWithoutSlangsInput
+  export type categoryUpdateOneWithoutSlangsNestedInput = {
+    create?: XOR<categoryCreateWithoutSlangsInput, categoryUncheckedCreateWithoutSlangsInput>
+    connectOrCreate?: categoryCreateOrConnectWithoutSlangsInput
+    upsert?: categoryUpsertWithoutSlangsInput
     disconnect?: boolean
-    delete?: CategoryWhereInput | boolean
-    connect?: CategoryWhereUniqueInput
-    update?: XOR<XOR<CategoryUpdateToOneWithWhereWithoutSlangsInput, CategoryUpdateWithoutSlangsInput>, CategoryUncheckedUpdateWithoutSlangsInput>
+    delete?: categoryWhereInput | boolean
+    connect?: categoryWhereUniqueInput
+    update?: XOR<XOR<categoryUpdateToOneWithWhereWithoutSlangsInput, categoryUpdateWithoutSlangsInput>, categoryUncheckedUpdateWithoutSlangsInput>
   }
 
   export type UserUpdateOneRequiredWithoutPostsNestedInput = {
@@ -11829,52 +11964,52 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPostsInput, UserUpdateWithoutPostsInput>, UserUncheckedUpdateWithoutPostsInput>
   }
 
-  export type BookmarkUpdateManyWithoutSlangNestedInput = {
-    create?: XOR<BookmarkCreateWithoutSlangInput, BookmarkUncheckedCreateWithoutSlangInput> | BookmarkCreateWithoutSlangInput[] | BookmarkUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutSlangInput | BookmarkCreateOrConnectWithoutSlangInput[]
-    upsert?: BookmarkUpsertWithWhereUniqueWithoutSlangInput | BookmarkUpsertWithWhereUniqueWithoutSlangInput[]
-    createMany?: BookmarkCreateManySlangInputEnvelope
-    set?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    disconnect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    delete?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    update?: BookmarkUpdateWithWhereUniqueWithoutSlangInput | BookmarkUpdateWithWhereUniqueWithoutSlangInput[]
-    updateMany?: BookmarkUpdateManyWithWhereWithoutSlangInput | BookmarkUpdateManyWithWhereWithoutSlangInput[]
-    deleteMany?: BookmarkScalarWhereInput | BookmarkScalarWhereInput[]
+  export type bookmarkUpdateManyWithoutSlangNestedInput = {
+    create?: XOR<bookmarkCreateWithoutSlangInput, bookmarkUncheckedCreateWithoutSlangInput> | bookmarkCreateWithoutSlangInput[] | bookmarkUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutSlangInput | bookmarkCreateOrConnectWithoutSlangInput[]
+    upsert?: bookmarkUpsertWithWhereUniqueWithoutSlangInput | bookmarkUpsertWithWhereUniqueWithoutSlangInput[]
+    createMany?: bookmarkCreateManySlangInputEnvelope
+    set?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    disconnect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    delete?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    update?: bookmarkUpdateWithWhereUniqueWithoutSlangInput | bookmarkUpdateWithWhereUniqueWithoutSlangInput[]
+    updateMany?: bookmarkUpdateManyWithWhereWithoutSlangInput | bookmarkUpdateManyWithWhereWithoutSlangInput[]
+    deleteMany?: bookmarkScalarWhereInput | bookmarkScalarWhereInput[]
   }
 
-  export type LikeUncheckedUpdateManyWithoutSlangNestedInput = {
-    create?: XOR<LikeCreateWithoutSlangInput, LikeUncheckedCreateWithoutSlangInput> | LikeCreateWithoutSlangInput[] | LikeUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: LikeCreateOrConnectWithoutSlangInput | LikeCreateOrConnectWithoutSlangInput[]
-    upsert?: LikeUpsertWithWhereUniqueWithoutSlangInput | LikeUpsertWithWhereUniqueWithoutSlangInput[]
-    createMany?: LikeCreateManySlangInputEnvelope
-    set?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    disconnect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    delete?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
-    update?: LikeUpdateWithWhereUniqueWithoutSlangInput | LikeUpdateWithWhereUniqueWithoutSlangInput[]
-    updateMany?: LikeUpdateManyWithWhereWithoutSlangInput | LikeUpdateManyWithWhereWithoutSlangInput[]
-    deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  export type likeUncheckedUpdateManyWithoutSlangNestedInput = {
+    create?: XOR<likeCreateWithoutSlangInput, likeUncheckedCreateWithoutSlangInput> | likeCreateWithoutSlangInput[] | likeUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: likeCreateOrConnectWithoutSlangInput | likeCreateOrConnectWithoutSlangInput[]
+    upsert?: likeUpsertWithWhereUniqueWithoutSlangInput | likeUpsertWithWhereUniqueWithoutSlangInput[]
+    createMany?: likeCreateManySlangInputEnvelope
+    set?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    disconnect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    delete?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    connect?: likeWhereUniqueInput | likeWhereUniqueInput[]
+    update?: likeUpdateWithWhereUniqueWithoutSlangInput | likeUpdateWithWhereUniqueWithoutSlangInput[]
+    updateMany?: likeUpdateManyWithWhereWithoutSlangInput | likeUpdateManyWithWhereWithoutSlangInput[]
+    deleteMany?: likeScalarWhereInput | likeScalarWhereInput[]
   }
 
-  export type BookmarkUncheckedUpdateManyWithoutSlangNestedInput = {
-    create?: XOR<BookmarkCreateWithoutSlangInput, BookmarkUncheckedCreateWithoutSlangInput> | BookmarkCreateWithoutSlangInput[] | BookmarkUncheckedCreateWithoutSlangInput[]
-    connectOrCreate?: BookmarkCreateOrConnectWithoutSlangInput | BookmarkCreateOrConnectWithoutSlangInput[]
-    upsert?: BookmarkUpsertWithWhereUniqueWithoutSlangInput | BookmarkUpsertWithWhereUniqueWithoutSlangInput[]
-    createMany?: BookmarkCreateManySlangInputEnvelope
-    set?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    disconnect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    delete?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    connect?: BookmarkWhereUniqueInput | BookmarkWhereUniqueInput[]
-    update?: BookmarkUpdateWithWhereUniqueWithoutSlangInput | BookmarkUpdateWithWhereUniqueWithoutSlangInput[]
-    updateMany?: BookmarkUpdateManyWithWhereWithoutSlangInput | BookmarkUpdateManyWithWhereWithoutSlangInput[]
-    deleteMany?: BookmarkScalarWhereInput | BookmarkScalarWhereInput[]
+  export type bookmarkUncheckedUpdateManyWithoutSlangNestedInput = {
+    create?: XOR<bookmarkCreateWithoutSlangInput, bookmarkUncheckedCreateWithoutSlangInput> | bookmarkCreateWithoutSlangInput[] | bookmarkUncheckedCreateWithoutSlangInput[]
+    connectOrCreate?: bookmarkCreateOrConnectWithoutSlangInput | bookmarkCreateOrConnectWithoutSlangInput[]
+    upsert?: bookmarkUpsertWithWhereUniqueWithoutSlangInput | bookmarkUpsertWithWhereUniqueWithoutSlangInput[]
+    createMany?: bookmarkCreateManySlangInputEnvelope
+    set?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    disconnect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    delete?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    connect?: bookmarkWhereUniqueInput | bookmarkWhereUniqueInput[]
+    update?: bookmarkUpdateWithWhereUniqueWithoutSlangInput | bookmarkUpdateWithWhereUniqueWithoutSlangInput[]
+    updateMany?: bookmarkUpdateManyWithWhereWithoutSlangInput | bookmarkUpdateManyWithWhereWithoutSlangInput[]
+    deleteMany?: bookmarkScalarWhereInput | bookmarkScalarWhereInput[]
   }
 
-  export type SlangCreateNestedOneWithoutLikeInput = {
-    create?: XOR<SlangCreateWithoutLikeInput, SlangUncheckedCreateWithoutLikeInput>
-    connectOrCreate?: SlangCreateOrConnectWithoutLikeInput
-    connect?: SlangWhereUniqueInput
+  export type slangCreateNestedOneWithoutLikeInput = {
+    create?: XOR<slangCreateWithoutLikeInput, slangUncheckedCreateWithoutLikeInput>
+    connectOrCreate?: slangCreateOrConnectWithoutLikeInput
+    connect?: slangWhereUniqueInput
   }
 
   export type UserCreateNestedOneWithoutLikesInput = {
@@ -11883,12 +12018,12 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type SlangUpdateOneRequiredWithoutLikeNestedInput = {
-    create?: XOR<SlangCreateWithoutLikeInput, SlangUncheckedCreateWithoutLikeInput>
-    connectOrCreate?: SlangCreateOrConnectWithoutLikeInput
-    upsert?: SlangUpsertWithoutLikeInput
-    connect?: SlangWhereUniqueInput
-    update?: XOR<XOR<SlangUpdateToOneWithWhereWithoutLikeInput, SlangUpdateWithoutLikeInput>, SlangUncheckedUpdateWithoutLikeInput>
+  export type slangUpdateOneRequiredWithoutLikeNestedInput = {
+    create?: XOR<slangCreateWithoutLikeInput, slangUncheckedCreateWithoutLikeInput>
+    connectOrCreate?: slangCreateOrConnectWithoutLikeInput
+    upsert?: slangUpsertWithoutLikeInput
+    connect?: slangWhereUniqueInput
+    update?: XOR<XOR<slangUpdateToOneWithWhereWithoutLikeInput, slangUpdateWithoutLikeInput>, slangUncheckedUpdateWithoutLikeInput>
   }
 
   export type UserUpdateOneRequiredWithoutLikesNestedInput = {
@@ -11899,52 +12034,52 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutLikesInput, UserUpdateWithoutLikesInput>, UserUncheckedUpdateWithoutLikesInput>
   }
 
-  export type SlangCreateNestedManyWithoutCategoryInput = {
-    create?: XOR<SlangCreateWithoutCategoryInput, SlangUncheckedCreateWithoutCategoryInput> | SlangCreateWithoutCategoryInput[] | SlangUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutCategoryInput | SlangCreateOrConnectWithoutCategoryInput[]
-    createMany?: SlangCreateManyCategoryInputEnvelope
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
+  export type slangCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<slangCreateWithoutCategoryInput, slangUncheckedCreateWithoutCategoryInput> | slangCreateWithoutCategoryInput[] | slangUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutCategoryInput | slangCreateOrConnectWithoutCategoryInput[]
+    createMany?: slangCreateManyCategoryInputEnvelope
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
   }
 
-  export type SlangUncheckedCreateNestedManyWithoutCategoryInput = {
-    create?: XOR<SlangCreateWithoutCategoryInput, SlangUncheckedCreateWithoutCategoryInput> | SlangCreateWithoutCategoryInput[] | SlangUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutCategoryInput | SlangCreateOrConnectWithoutCategoryInput[]
-    createMany?: SlangCreateManyCategoryInputEnvelope
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
+  export type slangUncheckedCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<slangCreateWithoutCategoryInput, slangUncheckedCreateWithoutCategoryInput> | slangCreateWithoutCategoryInput[] | slangUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutCategoryInput | slangCreateOrConnectWithoutCategoryInput[]
+    createMany?: slangCreateManyCategoryInputEnvelope
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
   }
 
-  export type SlangUpdateManyWithoutCategoryNestedInput = {
-    create?: XOR<SlangCreateWithoutCategoryInput, SlangUncheckedCreateWithoutCategoryInput> | SlangCreateWithoutCategoryInput[] | SlangUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutCategoryInput | SlangCreateOrConnectWithoutCategoryInput[]
-    upsert?: SlangUpsertWithWhereUniqueWithoutCategoryInput | SlangUpsertWithWhereUniqueWithoutCategoryInput[]
-    createMany?: SlangCreateManyCategoryInputEnvelope
-    set?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    disconnect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    delete?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    update?: SlangUpdateWithWhereUniqueWithoutCategoryInput | SlangUpdateWithWhereUniqueWithoutCategoryInput[]
-    updateMany?: SlangUpdateManyWithWhereWithoutCategoryInput | SlangUpdateManyWithWhereWithoutCategoryInput[]
-    deleteMany?: SlangScalarWhereInput | SlangScalarWhereInput[]
+  export type slangUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<slangCreateWithoutCategoryInput, slangUncheckedCreateWithoutCategoryInput> | slangCreateWithoutCategoryInput[] | slangUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutCategoryInput | slangCreateOrConnectWithoutCategoryInput[]
+    upsert?: slangUpsertWithWhereUniqueWithoutCategoryInput | slangUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: slangCreateManyCategoryInputEnvelope
+    set?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    disconnect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    delete?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    update?: slangUpdateWithWhereUniqueWithoutCategoryInput | slangUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: slangUpdateManyWithWhereWithoutCategoryInput | slangUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: slangScalarWhereInput | slangScalarWhereInput[]
   }
 
-  export type SlangUncheckedUpdateManyWithoutCategoryNestedInput = {
-    create?: XOR<SlangCreateWithoutCategoryInput, SlangUncheckedCreateWithoutCategoryInput> | SlangCreateWithoutCategoryInput[] | SlangUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: SlangCreateOrConnectWithoutCategoryInput | SlangCreateOrConnectWithoutCategoryInput[]
-    upsert?: SlangUpsertWithWhereUniqueWithoutCategoryInput | SlangUpsertWithWhereUniqueWithoutCategoryInput[]
-    createMany?: SlangCreateManyCategoryInputEnvelope
-    set?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    disconnect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    delete?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    connect?: SlangWhereUniqueInput | SlangWhereUniqueInput[]
-    update?: SlangUpdateWithWhereUniqueWithoutCategoryInput | SlangUpdateWithWhereUniqueWithoutCategoryInput[]
-    updateMany?: SlangUpdateManyWithWhereWithoutCategoryInput | SlangUpdateManyWithWhereWithoutCategoryInput[]
-    deleteMany?: SlangScalarWhereInput | SlangScalarWhereInput[]
+  export type slangUncheckedUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<slangCreateWithoutCategoryInput, slangUncheckedCreateWithoutCategoryInput> | slangCreateWithoutCategoryInput[] | slangUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: slangCreateOrConnectWithoutCategoryInput | slangCreateOrConnectWithoutCategoryInput[]
+    upsert?: slangUpsertWithWhereUniqueWithoutCategoryInput | slangUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: slangCreateManyCategoryInputEnvelope
+    set?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    disconnect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    delete?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    connect?: slangWhereUniqueInput | slangWhereUniqueInput[]
+    update?: slangUpdateWithWhereUniqueWithoutCategoryInput | slangUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: slangUpdateManyWithWhereWithoutCategoryInput | slangUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: slangScalarWhereInput | slangScalarWhereInput[]
   }
 
-  export type SlangCreateNestedOneWithoutBookmarked_byInput = {
-    create?: XOR<SlangCreateWithoutBookmarked_byInput, SlangUncheckedCreateWithoutBookmarked_byInput>
-    connectOrCreate?: SlangCreateOrConnectWithoutBookmarked_byInput
-    connect?: SlangWhereUniqueInput
+  export type slangCreateNestedOneWithoutBookmarked_byInput = {
+    create?: XOR<slangCreateWithoutBookmarked_byInput, slangUncheckedCreateWithoutBookmarked_byInput>
+    connectOrCreate?: slangCreateOrConnectWithoutBookmarked_byInput
+    connect?: slangWhereUniqueInput
   }
 
   export type UserCreateNestedOneWithoutBookmarksInput = {
@@ -11953,12 +12088,12 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type SlangUpdateOneRequiredWithoutBookmarked_byNestedInput = {
-    create?: XOR<SlangCreateWithoutBookmarked_byInput, SlangUncheckedCreateWithoutBookmarked_byInput>
-    connectOrCreate?: SlangCreateOrConnectWithoutBookmarked_byInput
-    upsert?: SlangUpsertWithoutBookmarked_byInput
-    connect?: SlangWhereUniqueInput
-    update?: XOR<XOR<SlangUpdateToOneWithWhereWithoutBookmarked_byInput, SlangUpdateWithoutBookmarked_byInput>, SlangUncheckedUpdateWithoutBookmarked_byInput>
+  export type slangUpdateOneRequiredWithoutBookmarked_byNestedInput = {
+    create?: XOR<slangCreateWithoutBookmarked_byInput, slangUncheckedCreateWithoutBookmarked_byInput>
+    connectOrCreate?: slangCreateOrConnectWithoutBookmarked_byInput
+    upsert?: slangUpsertWithoutBookmarked_byInput
+    connect?: slangWhereUniqueInput
+    update?: XOR<XOR<slangUpdateToOneWithWhereWithoutBookmarked_byInput, slangUpdateWithoutBookmarked_byInput>, slangUncheckedUpdateWithoutBookmarked_byInput>
   }
 
   export type UserUpdateOneRequiredWithoutBookmarksNestedInput = {
@@ -12216,77 +12351,87 @@ export namespace Prisma {
     data: AccountCreateManyUserInput | AccountCreateManyUserInput[]
   }
 
-  export type LikeCreateWithoutLiked_byInput = {
+  export type likeCreateWithoutLiked_byInput = {
     id?: string
-    slang: SlangCreateNestedOneWithoutLikeInput
+    slang: slangCreateNestedOneWithoutLikeInput
   }
 
-  export type LikeUncheckedCreateWithoutLiked_byInput = {
+  export type likeUncheckedCreateWithoutLiked_byInput = {
     id?: string
     slang_id: string
   }
 
-  export type LikeCreateOrConnectWithoutLiked_byInput = {
-    where: LikeWhereUniqueInput
-    create: XOR<LikeCreateWithoutLiked_byInput, LikeUncheckedCreateWithoutLiked_byInput>
+  export type likeCreateOrConnectWithoutLiked_byInput = {
+    where: likeWhereUniqueInput
+    create: XOR<likeCreateWithoutLiked_byInput, likeUncheckedCreateWithoutLiked_byInput>
   }
 
-  export type LikeCreateManyLiked_byInputEnvelope = {
-    data: LikeCreateManyLiked_byInput | LikeCreateManyLiked_byInput[]
+  export type likeCreateManyLiked_byInputEnvelope = {
+    data: likeCreateManyLiked_byInput | likeCreateManyLiked_byInput[]
   }
 
-  export type SlangCreateWithoutPosted_byInput = {
+  export type slangCreateWithoutPosted_byInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeCreateNestedManyWithoutSlangInput
-    category?: CategoryCreateNestedOneWithoutSlangsInput
-    bookmarked_by?: BookmarkCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeCreateNestedManyWithoutSlangInput
+    category?: categoryCreateNestedOneWithoutSlangsInput
+    bookmarked_by?: bookmarkCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangUncheckedCreateWithoutPosted_byInput = {
+  export type slangUncheckedCreateWithoutPosted_byInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     category_id?: string | null
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeUncheckedCreateNestedManyWithoutSlangInput
-    bookmarked_by?: BookmarkUncheckedCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeUncheckedCreateNestedManyWithoutSlangInput
+    bookmarked_by?: bookmarkUncheckedCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangCreateOrConnectWithoutPosted_byInput = {
-    where: SlangWhereUniqueInput
-    create: XOR<SlangCreateWithoutPosted_byInput, SlangUncheckedCreateWithoutPosted_byInput>
+  export type slangCreateOrConnectWithoutPosted_byInput = {
+    where: slangWhereUniqueInput
+    create: XOR<slangCreateWithoutPosted_byInput, slangUncheckedCreateWithoutPosted_byInput>
   }
 
-  export type SlangCreateManyPosted_byInputEnvelope = {
-    data: SlangCreateManyPosted_byInput | SlangCreateManyPosted_byInput[]
+  export type slangCreateManyPosted_byInputEnvelope = {
+    data: slangCreateManyPosted_byInput | slangCreateManyPosted_byInput[]
   }
 
-  export type BookmarkCreateWithoutUserInput = {
+  export type bookmarkCreateWithoutUserInput = {
     id?: string
-    Slang: SlangCreateNestedOneWithoutBookmarked_byInput
+    Slang: slangCreateNestedOneWithoutBookmarked_byInput
   }
 
-  export type BookmarkUncheckedCreateWithoutUserInput = {
+  export type bookmarkUncheckedCreateWithoutUserInput = {
     id?: string
     slang_id: string
   }
 
-  export type BookmarkCreateOrConnectWithoutUserInput = {
-    where: BookmarkWhereUniqueInput
-    create: XOR<BookmarkCreateWithoutUserInput, BookmarkUncheckedCreateWithoutUserInput>
+  export type bookmarkCreateOrConnectWithoutUserInput = {
+    where: bookmarkWhereUniqueInput
+    create: XOR<bookmarkCreateWithoutUserInput, bookmarkUncheckedCreateWithoutUserInput>
   }
 
-  export type BookmarkCreateManyUserInputEnvelope = {
-    data: BookmarkCreateManyUserInput | BookmarkCreateManyUserInput[]
+  export type bookmarkCreateManyUserInputEnvelope = {
+    data: bookmarkCreateManyUserInput | bookmarkCreateManyUserInput[]
   }
 
   export type SessionUpsertWithWhereUniqueWithoutUserInput = {
@@ -12354,85 +12499,90 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Account"> | Date | string
   }
 
-  export type LikeUpsertWithWhereUniqueWithoutLiked_byInput = {
-    where: LikeWhereUniqueInput
-    update: XOR<LikeUpdateWithoutLiked_byInput, LikeUncheckedUpdateWithoutLiked_byInput>
-    create: XOR<LikeCreateWithoutLiked_byInput, LikeUncheckedCreateWithoutLiked_byInput>
+  export type likeUpsertWithWhereUniqueWithoutLiked_byInput = {
+    where: likeWhereUniqueInput
+    update: XOR<likeUpdateWithoutLiked_byInput, likeUncheckedUpdateWithoutLiked_byInput>
+    create: XOR<likeCreateWithoutLiked_byInput, likeUncheckedCreateWithoutLiked_byInput>
   }
 
-  export type LikeUpdateWithWhereUniqueWithoutLiked_byInput = {
-    where: LikeWhereUniqueInput
-    data: XOR<LikeUpdateWithoutLiked_byInput, LikeUncheckedUpdateWithoutLiked_byInput>
+  export type likeUpdateWithWhereUniqueWithoutLiked_byInput = {
+    where: likeWhereUniqueInput
+    data: XOR<likeUpdateWithoutLiked_byInput, likeUncheckedUpdateWithoutLiked_byInput>
   }
 
-  export type LikeUpdateManyWithWhereWithoutLiked_byInput = {
-    where: LikeScalarWhereInput
-    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyWithoutLiked_byInput>
+  export type likeUpdateManyWithWhereWithoutLiked_byInput = {
+    where: likeScalarWhereInput
+    data: XOR<likeUpdateManyMutationInput, likeUncheckedUpdateManyWithoutLiked_byInput>
   }
 
-  export type LikeScalarWhereInput = {
-    AND?: LikeScalarWhereInput | LikeScalarWhereInput[]
-    OR?: LikeScalarWhereInput[]
-    NOT?: LikeScalarWhereInput | LikeScalarWhereInput[]
-    id?: StringFilter<"Like"> | string
-    slang_id?: StringFilter<"Like"> | string
-    user_id?: StringFilter<"Like"> | string
+  export type likeScalarWhereInput = {
+    AND?: likeScalarWhereInput | likeScalarWhereInput[]
+    OR?: likeScalarWhereInput[]
+    NOT?: likeScalarWhereInput | likeScalarWhereInput[]
+    id?: StringFilter<"like"> | string
+    slang_id?: StringFilter<"like"> | string
+    user_id?: StringFilter<"like"> | string
   }
 
-  export type SlangUpsertWithWhereUniqueWithoutPosted_byInput = {
-    where: SlangWhereUniqueInput
-    update: XOR<SlangUpdateWithoutPosted_byInput, SlangUncheckedUpdateWithoutPosted_byInput>
-    create: XOR<SlangCreateWithoutPosted_byInput, SlangUncheckedCreateWithoutPosted_byInput>
+  export type slangUpsertWithWhereUniqueWithoutPosted_byInput = {
+    where: slangWhereUniqueInput
+    update: XOR<slangUpdateWithoutPosted_byInput, slangUncheckedUpdateWithoutPosted_byInput>
+    create: XOR<slangCreateWithoutPosted_byInput, slangUncheckedCreateWithoutPosted_byInput>
   }
 
-  export type SlangUpdateWithWhereUniqueWithoutPosted_byInput = {
-    where: SlangWhereUniqueInput
-    data: XOR<SlangUpdateWithoutPosted_byInput, SlangUncheckedUpdateWithoutPosted_byInput>
+  export type slangUpdateWithWhereUniqueWithoutPosted_byInput = {
+    where: slangWhereUniqueInput
+    data: XOR<slangUpdateWithoutPosted_byInput, slangUncheckedUpdateWithoutPosted_byInput>
   }
 
-  export type SlangUpdateManyWithWhereWithoutPosted_byInput = {
-    where: SlangScalarWhereInput
-    data: XOR<SlangUpdateManyMutationInput, SlangUncheckedUpdateManyWithoutPosted_byInput>
+  export type slangUpdateManyWithWhereWithoutPosted_byInput = {
+    where: slangScalarWhereInput
+    data: XOR<slangUpdateManyMutationInput, slangUncheckedUpdateManyWithoutPosted_byInput>
   }
 
-  export type SlangScalarWhereInput = {
-    AND?: SlangScalarWhereInput | SlangScalarWhereInput[]
-    OR?: SlangScalarWhereInput[]
-    NOT?: SlangScalarWhereInput | SlangScalarWhereInput[]
-    id?: StringFilter<"Slang"> | string
-    name?: StringFilter<"Slang"> | string
-    example?: StringNullableListFilter<"Slang">
-    explaination?: StringFilter<"Slang"> | string
-    category_id?: StringNullableFilter<"Slang"> | string | null
-    view?: IntFilter<"Slang"> | number
-    user_id?: StringFilter<"Slang"> | string
-    createdAt?: DateTimeFilter<"Slang"> | Date | string
-    updatedAt?: DateTimeFilter<"Slang"> | Date | string
+  export type slangScalarWhereInput = {
+    AND?: slangScalarWhereInput | slangScalarWhereInput[]
+    OR?: slangScalarWhereInput[]
+    NOT?: slangScalarWhereInput | slangScalarWhereInput[]
+    id?: StringFilter<"slang"> | string
+    name?: StringFilter<"slang"> | string
+    examples?: StringNullableListFilter<"slang">
+    explanation?: StringFilter<"slang"> | string
+    englishPronunciation?: StringFilter<"slang"> | string
+    category_id?: StringNullableFilter<"slang"> | string | null
+    view?: IntFilter<"slang"> | number
+    user_id?: StringFilter<"slang"> | string
+    originator?: StringFilter<"slang"> | string
+    language?: StringFilter<"slang"> | string
+    country?: StringFilter<"slang"> | string
+    slug?: StringFilter<"slang"> | string
+    createdAt?: DateTimeFilter<"slang"> | Date | string
+    updatedAt?: DateTimeFilter<"slang"> | Date | string
   }
 
-  export type BookmarkUpsertWithWhereUniqueWithoutUserInput = {
-    where: BookmarkWhereUniqueInput
-    update: XOR<BookmarkUpdateWithoutUserInput, BookmarkUncheckedUpdateWithoutUserInput>
-    create: XOR<BookmarkCreateWithoutUserInput, BookmarkUncheckedCreateWithoutUserInput>
+  export type bookmarkUpsertWithWhereUniqueWithoutUserInput = {
+    where: bookmarkWhereUniqueInput
+    update: XOR<bookmarkUpdateWithoutUserInput, bookmarkUncheckedUpdateWithoutUserInput>
+    create: XOR<bookmarkCreateWithoutUserInput, bookmarkUncheckedCreateWithoutUserInput>
   }
 
-  export type BookmarkUpdateWithWhereUniqueWithoutUserInput = {
-    where: BookmarkWhereUniqueInput
-    data: XOR<BookmarkUpdateWithoutUserInput, BookmarkUncheckedUpdateWithoutUserInput>
+  export type bookmarkUpdateWithWhereUniqueWithoutUserInput = {
+    where: bookmarkWhereUniqueInput
+    data: XOR<bookmarkUpdateWithoutUserInput, bookmarkUncheckedUpdateWithoutUserInput>
   }
 
-  export type BookmarkUpdateManyWithWhereWithoutUserInput = {
-    where: BookmarkScalarWhereInput
-    data: XOR<BookmarkUpdateManyMutationInput, BookmarkUncheckedUpdateManyWithoutUserInput>
+  export type bookmarkUpdateManyWithWhereWithoutUserInput = {
+    where: bookmarkScalarWhereInput
+    data: XOR<bookmarkUpdateManyMutationInput, bookmarkUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type BookmarkScalarWhereInput = {
-    AND?: BookmarkScalarWhereInput | BookmarkScalarWhereInput[]
-    OR?: BookmarkScalarWhereInput[]
-    NOT?: BookmarkScalarWhereInput | BookmarkScalarWhereInput[]
-    id?: StringFilter<"Bookmark"> | string
-    slang_id?: StringFilter<"Bookmark"> | string
-    user_id?: StringFilter<"Bookmark"> | string
+  export type bookmarkScalarWhereInput = {
+    AND?: bookmarkScalarWhereInput | bookmarkScalarWhereInput[]
+    OR?: bookmarkScalarWhereInput[]
+    NOT?: bookmarkScalarWhereInput | bookmarkScalarWhereInput[]
+    id?: StringFilter<"bookmark"> | string
+    slang_id?: StringFilter<"bookmark"> | string
+    user_id?: StringFilter<"bookmark"> | string
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -12444,9 +12594,9 @@ export namespace Prisma {
     createdAt: Date | string
     updatedAt: Date | string
     accounts?: AccountCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutLiked_byInput
-    posts?: SlangCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkCreateNestedManyWithoutUserInput
+    likes?: likeCreateNestedManyWithoutLiked_byInput
+    posts?: slangCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -12458,9 +12608,9 @@ export namespace Prisma {
     createdAt: Date | string
     updatedAt: Date | string
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutLiked_byInput
-    posts?: SlangUncheckedCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkUncheckedCreateNestedManyWithoutUserInput
+    likes?: likeUncheckedCreateNestedManyWithoutLiked_byInput
+    posts?: slangUncheckedCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -12487,9 +12637,9 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accounts?: AccountUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUpdateManyWithoutUserNestedInput
+    likes?: likeUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -12500,9 +12650,9 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUncheckedUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUncheckedUpdateManyWithoutUserNestedInput
+    likes?: likeUncheckedUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUncheckedUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutAccountsInput = {
@@ -12514,9 +12664,9 @@ export namespace Prisma {
     createdAt: Date | string
     updatedAt: Date | string
     sessions?: SessionCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutLiked_byInput
-    posts?: SlangCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkCreateNestedManyWithoutUserInput
+    likes?: likeCreateNestedManyWithoutLiked_byInput
+    posts?: slangCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -12528,9 +12678,9 @@ export namespace Prisma {
     createdAt: Date | string
     updatedAt: Date | string
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutLiked_byInput
-    posts?: SlangUncheckedCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkUncheckedCreateNestedManyWithoutUserInput
+    likes?: likeUncheckedCreateNestedManyWithoutLiked_byInput
+    posts?: slangUncheckedCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -12557,9 +12707,9 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUpdateManyWithoutUserNestedInput
+    likes?: likeUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -12570,43 +12720,43 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUncheckedUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUncheckedUpdateManyWithoutUserNestedInput
+    likes?: likeUncheckedUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUncheckedUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type LikeCreateWithoutSlangInput = {
+  export type likeCreateWithoutSlangInput = {
     id?: string
     liked_by: UserCreateNestedOneWithoutLikesInput
   }
 
-  export type LikeUncheckedCreateWithoutSlangInput = {
+  export type likeUncheckedCreateWithoutSlangInput = {
     id?: string
     user_id: string
   }
 
-  export type LikeCreateOrConnectWithoutSlangInput = {
-    where: LikeWhereUniqueInput
-    create: XOR<LikeCreateWithoutSlangInput, LikeUncheckedCreateWithoutSlangInput>
+  export type likeCreateOrConnectWithoutSlangInput = {
+    where: likeWhereUniqueInput
+    create: XOR<likeCreateWithoutSlangInput, likeUncheckedCreateWithoutSlangInput>
   }
 
-  export type LikeCreateManySlangInputEnvelope = {
-    data: LikeCreateManySlangInput | LikeCreateManySlangInput[]
+  export type likeCreateManySlangInputEnvelope = {
+    data: likeCreateManySlangInput | likeCreateManySlangInput[]
   }
 
-  export type CategoryCreateWithoutSlangsInput = {
+  export type categoryCreateWithoutSlangsInput = {
     id?: string
     name: string
   }
 
-  export type CategoryUncheckedCreateWithoutSlangsInput = {
+  export type categoryUncheckedCreateWithoutSlangsInput = {
     id?: string
     name: string
   }
 
-  export type CategoryCreateOrConnectWithoutSlangsInput = {
-    where: CategoryWhereUniqueInput
-    create: XOR<CategoryCreateWithoutSlangsInput, CategoryUncheckedCreateWithoutSlangsInput>
+  export type categoryCreateOrConnectWithoutSlangsInput = {
+    where: categoryWhereUniqueInput
+    create: XOR<categoryCreateWithoutSlangsInput, categoryUncheckedCreateWithoutSlangsInput>
   }
 
   export type UserCreateWithoutPostsInput = {
@@ -12619,8 +12769,8 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionCreateNestedManyWithoutUserInput
     accounts?: AccountCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutLiked_byInput
-    bookmarks?: BookmarkCreateNestedManyWithoutUserInput
+    likes?: likeCreateNestedManyWithoutLiked_byInput
+    bookmarks?: bookmarkCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutPostsInput = {
@@ -12633,8 +12783,8 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutLiked_byInput
-    bookmarks?: BookmarkUncheckedCreateNestedManyWithoutUserInput
+    likes?: likeUncheckedCreateNestedManyWithoutLiked_byInput
+    bookmarks?: bookmarkUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutPostsInput = {
@@ -12642,57 +12792,57 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutPostsInput, UserUncheckedCreateWithoutPostsInput>
   }
 
-  export type BookmarkCreateWithoutSlangInput = {
+  export type bookmarkCreateWithoutSlangInput = {
     id?: string
     user: UserCreateNestedOneWithoutBookmarksInput
   }
 
-  export type BookmarkUncheckedCreateWithoutSlangInput = {
+  export type bookmarkUncheckedCreateWithoutSlangInput = {
     id?: string
     user_id: string
   }
 
-  export type BookmarkCreateOrConnectWithoutSlangInput = {
-    where: BookmarkWhereUniqueInput
-    create: XOR<BookmarkCreateWithoutSlangInput, BookmarkUncheckedCreateWithoutSlangInput>
+  export type bookmarkCreateOrConnectWithoutSlangInput = {
+    where: bookmarkWhereUniqueInput
+    create: XOR<bookmarkCreateWithoutSlangInput, bookmarkUncheckedCreateWithoutSlangInput>
   }
 
-  export type BookmarkCreateManySlangInputEnvelope = {
-    data: BookmarkCreateManySlangInput | BookmarkCreateManySlangInput[]
+  export type bookmarkCreateManySlangInputEnvelope = {
+    data: bookmarkCreateManySlangInput | bookmarkCreateManySlangInput[]
   }
 
-  export type LikeUpsertWithWhereUniqueWithoutSlangInput = {
-    where: LikeWhereUniqueInput
-    update: XOR<LikeUpdateWithoutSlangInput, LikeUncheckedUpdateWithoutSlangInput>
-    create: XOR<LikeCreateWithoutSlangInput, LikeUncheckedCreateWithoutSlangInput>
+  export type likeUpsertWithWhereUniqueWithoutSlangInput = {
+    where: likeWhereUniqueInput
+    update: XOR<likeUpdateWithoutSlangInput, likeUncheckedUpdateWithoutSlangInput>
+    create: XOR<likeCreateWithoutSlangInput, likeUncheckedCreateWithoutSlangInput>
   }
 
-  export type LikeUpdateWithWhereUniqueWithoutSlangInput = {
-    where: LikeWhereUniqueInput
-    data: XOR<LikeUpdateWithoutSlangInput, LikeUncheckedUpdateWithoutSlangInput>
+  export type likeUpdateWithWhereUniqueWithoutSlangInput = {
+    where: likeWhereUniqueInput
+    data: XOR<likeUpdateWithoutSlangInput, likeUncheckedUpdateWithoutSlangInput>
   }
 
-  export type LikeUpdateManyWithWhereWithoutSlangInput = {
-    where: LikeScalarWhereInput
-    data: XOR<LikeUpdateManyMutationInput, LikeUncheckedUpdateManyWithoutSlangInput>
+  export type likeUpdateManyWithWhereWithoutSlangInput = {
+    where: likeScalarWhereInput
+    data: XOR<likeUpdateManyMutationInput, likeUncheckedUpdateManyWithoutSlangInput>
   }
 
-  export type CategoryUpsertWithoutSlangsInput = {
-    update: XOR<CategoryUpdateWithoutSlangsInput, CategoryUncheckedUpdateWithoutSlangsInput>
-    create: XOR<CategoryCreateWithoutSlangsInput, CategoryUncheckedCreateWithoutSlangsInput>
-    where?: CategoryWhereInput
+  export type categoryUpsertWithoutSlangsInput = {
+    update: XOR<categoryUpdateWithoutSlangsInput, categoryUncheckedUpdateWithoutSlangsInput>
+    create: XOR<categoryCreateWithoutSlangsInput, categoryUncheckedCreateWithoutSlangsInput>
+    where?: categoryWhereInput
   }
 
-  export type CategoryUpdateToOneWithWhereWithoutSlangsInput = {
-    where?: CategoryWhereInput
-    data: XOR<CategoryUpdateWithoutSlangsInput, CategoryUncheckedUpdateWithoutSlangsInput>
+  export type categoryUpdateToOneWithWhereWithoutSlangsInput = {
+    where?: categoryWhereInput
+    data: XOR<categoryUpdateWithoutSlangsInput, categoryUncheckedUpdateWithoutSlangsInput>
   }
 
-  export type CategoryUpdateWithoutSlangsInput = {
+  export type categoryUpdateWithoutSlangsInput = {
     name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CategoryUncheckedUpdateWithoutSlangsInput = {
+  export type categoryUncheckedUpdateWithoutSlangsInput = {
     name?: StringFieldUpdateOperationsInput | string
   }
 
@@ -12716,8 +12866,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUpdateManyWithoutUserNestedInput
     accounts?: AccountUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutLiked_byNestedInput
-    bookmarks?: BookmarkUpdateManyWithoutUserNestedInput
+    likes?: likeUpdateManyWithoutLiked_byNestedInput
+    bookmarks?: bookmarkUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPostsInput = {
@@ -12729,55 +12879,65 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutLiked_byNestedInput
-    bookmarks?: BookmarkUncheckedUpdateManyWithoutUserNestedInput
+    likes?: likeUncheckedUpdateManyWithoutLiked_byNestedInput
+    bookmarks?: bookmarkUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type BookmarkUpsertWithWhereUniqueWithoutSlangInput = {
-    where: BookmarkWhereUniqueInput
-    update: XOR<BookmarkUpdateWithoutSlangInput, BookmarkUncheckedUpdateWithoutSlangInput>
-    create: XOR<BookmarkCreateWithoutSlangInput, BookmarkUncheckedCreateWithoutSlangInput>
+  export type bookmarkUpsertWithWhereUniqueWithoutSlangInput = {
+    where: bookmarkWhereUniqueInput
+    update: XOR<bookmarkUpdateWithoutSlangInput, bookmarkUncheckedUpdateWithoutSlangInput>
+    create: XOR<bookmarkCreateWithoutSlangInput, bookmarkUncheckedCreateWithoutSlangInput>
   }
 
-  export type BookmarkUpdateWithWhereUniqueWithoutSlangInput = {
-    where: BookmarkWhereUniqueInput
-    data: XOR<BookmarkUpdateWithoutSlangInput, BookmarkUncheckedUpdateWithoutSlangInput>
+  export type bookmarkUpdateWithWhereUniqueWithoutSlangInput = {
+    where: bookmarkWhereUniqueInput
+    data: XOR<bookmarkUpdateWithoutSlangInput, bookmarkUncheckedUpdateWithoutSlangInput>
   }
 
-  export type BookmarkUpdateManyWithWhereWithoutSlangInput = {
-    where: BookmarkScalarWhereInput
-    data: XOR<BookmarkUpdateManyMutationInput, BookmarkUncheckedUpdateManyWithoutSlangInput>
+  export type bookmarkUpdateManyWithWhereWithoutSlangInput = {
+    where: bookmarkScalarWhereInput
+    data: XOR<bookmarkUpdateManyMutationInput, bookmarkUncheckedUpdateManyWithoutSlangInput>
   }
 
-  export type SlangCreateWithoutLikeInput = {
+  export type slangCreateWithoutLikeInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
-    category?: CategoryCreateNestedOneWithoutSlangsInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    category?: categoryCreateNestedOneWithoutSlangsInput
     posted_by: UserCreateNestedOneWithoutPostsInput
-    bookmarked_by?: BookmarkCreateNestedManyWithoutSlangInput
+    bookmarked_by?: bookmarkCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangUncheckedCreateWithoutLikeInput = {
+  export type slangUncheckedCreateWithoutLikeInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     category_id?: string | null
     view?: number
     user_id: string
-    createdAt: Date | string
-    updatedAt: Date | string
-    bookmarked_by?: BookmarkUncheckedCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bookmarked_by?: bookmarkUncheckedCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangCreateOrConnectWithoutLikeInput = {
-    where: SlangWhereUniqueInput
-    create: XOR<SlangCreateWithoutLikeInput, SlangUncheckedCreateWithoutLikeInput>
+  export type slangCreateOrConnectWithoutLikeInput = {
+    where: slangWhereUniqueInput
+    create: XOR<slangCreateWithoutLikeInput, slangUncheckedCreateWithoutLikeInput>
   }
 
   export type UserCreateWithoutLikesInput = {
@@ -12790,8 +12950,8 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionCreateNestedManyWithoutUserInput
     accounts?: AccountCreateNestedManyWithoutUserInput
-    posts?: SlangCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkCreateNestedManyWithoutUserInput
+    posts?: slangCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutLikesInput = {
@@ -12804,8 +12964,8 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
-    posts?: SlangUncheckedCreateNestedManyWithoutPosted_byInput
-    bookmarks?: BookmarkUncheckedCreateNestedManyWithoutUserInput
+    posts?: slangUncheckedCreateNestedManyWithoutPosted_byInput
+    bookmarks?: bookmarkUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutLikesInput = {
@@ -12813,39 +12973,49 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutLikesInput, UserUncheckedCreateWithoutLikesInput>
   }
 
-  export type SlangUpsertWithoutLikeInput = {
-    update: XOR<SlangUpdateWithoutLikeInput, SlangUncheckedUpdateWithoutLikeInput>
-    create: XOR<SlangCreateWithoutLikeInput, SlangUncheckedCreateWithoutLikeInput>
-    where?: SlangWhereInput
+  export type slangUpsertWithoutLikeInput = {
+    update: XOR<slangUpdateWithoutLikeInput, slangUncheckedUpdateWithoutLikeInput>
+    create: XOR<slangCreateWithoutLikeInput, slangUncheckedCreateWithoutLikeInput>
+    where?: slangWhereInput
   }
 
-  export type SlangUpdateToOneWithWhereWithoutLikeInput = {
-    where?: SlangWhereInput
-    data: XOR<SlangUpdateWithoutLikeInput, SlangUncheckedUpdateWithoutLikeInput>
+  export type slangUpdateToOneWithWhereWithoutLikeInput = {
+    where?: slangWhereInput
+    data: XOR<slangUpdateWithoutLikeInput, slangUncheckedUpdateWithoutLikeInput>
   }
 
-  export type SlangUpdateWithoutLikeInput = {
+  export type slangUpdateWithoutLikeInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    category?: CategoryUpdateOneWithoutSlangsNestedInput
+    category?: categoryUpdateOneWithoutSlangsNestedInput
     posted_by?: UserUpdateOneRequiredWithoutPostsNestedInput
-    bookmarked_by?: BookmarkUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangUncheckedUpdateWithoutLikeInput = {
+  export type slangUncheckedUpdateWithoutLikeInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     category_id?: NullableStringFieldUpdateOperationsInput | string | null
     view?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    bookmarked_by?: BookmarkUncheckedUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUncheckedUpdateManyWithoutSlangNestedInput
   }
 
   export type UserUpsertWithoutLikesInput = {
@@ -12868,8 +13038,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUpdateManyWithoutUserNestedInput
     accounts?: AccountUpdateManyWithoutUserNestedInput
-    posts?: SlangUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUpdateManyWithoutUserNestedInput
+    posts?: slangUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutLikesInput = {
@@ -12881,90 +13051,110 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
-    posts?: SlangUncheckedUpdateManyWithoutPosted_byNestedInput
-    bookmarks?: BookmarkUncheckedUpdateManyWithoutUserNestedInput
+    posts?: slangUncheckedUpdateManyWithoutPosted_byNestedInput
+    bookmarks?: bookmarkUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type SlangCreateWithoutCategoryInput = {
+  export type slangCreateWithoutCategoryInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeCreateNestedManyWithoutSlangInput
     posted_by: UserCreateNestedOneWithoutPostsInput
-    bookmarked_by?: BookmarkCreateNestedManyWithoutSlangInput
+    bookmarked_by?: bookmarkCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangUncheckedCreateWithoutCategoryInput = {
+  export type slangUncheckedCreateWithoutCategoryInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
     user_id: string
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeUncheckedCreateNestedManyWithoutSlangInput
-    bookmarked_by?: BookmarkUncheckedCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeUncheckedCreateNestedManyWithoutSlangInput
+    bookmarked_by?: bookmarkUncheckedCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangCreateOrConnectWithoutCategoryInput = {
-    where: SlangWhereUniqueInput
-    create: XOR<SlangCreateWithoutCategoryInput, SlangUncheckedCreateWithoutCategoryInput>
+  export type slangCreateOrConnectWithoutCategoryInput = {
+    where: slangWhereUniqueInput
+    create: XOR<slangCreateWithoutCategoryInput, slangUncheckedCreateWithoutCategoryInput>
   }
 
-  export type SlangCreateManyCategoryInputEnvelope = {
-    data: SlangCreateManyCategoryInput | SlangCreateManyCategoryInput[]
+  export type slangCreateManyCategoryInputEnvelope = {
+    data: slangCreateManyCategoryInput | slangCreateManyCategoryInput[]
   }
 
-  export type SlangUpsertWithWhereUniqueWithoutCategoryInput = {
-    where: SlangWhereUniqueInput
-    update: XOR<SlangUpdateWithoutCategoryInput, SlangUncheckedUpdateWithoutCategoryInput>
-    create: XOR<SlangCreateWithoutCategoryInput, SlangUncheckedCreateWithoutCategoryInput>
+  export type slangUpsertWithWhereUniqueWithoutCategoryInput = {
+    where: slangWhereUniqueInput
+    update: XOR<slangUpdateWithoutCategoryInput, slangUncheckedUpdateWithoutCategoryInput>
+    create: XOR<slangCreateWithoutCategoryInput, slangUncheckedCreateWithoutCategoryInput>
   }
 
-  export type SlangUpdateWithWhereUniqueWithoutCategoryInput = {
-    where: SlangWhereUniqueInput
-    data: XOR<SlangUpdateWithoutCategoryInput, SlangUncheckedUpdateWithoutCategoryInput>
+  export type slangUpdateWithWhereUniqueWithoutCategoryInput = {
+    where: slangWhereUniqueInput
+    data: XOR<slangUpdateWithoutCategoryInput, slangUncheckedUpdateWithoutCategoryInput>
   }
 
-  export type SlangUpdateManyWithWhereWithoutCategoryInput = {
-    where: SlangScalarWhereInput
-    data: XOR<SlangUpdateManyMutationInput, SlangUncheckedUpdateManyWithoutCategoryInput>
+  export type slangUpdateManyWithWhereWithoutCategoryInput = {
+    where: slangScalarWhereInput
+    data: XOR<slangUpdateManyMutationInput, slangUncheckedUpdateManyWithoutCategoryInput>
   }
 
-  export type SlangCreateWithoutBookmarked_byInput = {
+  export type slangCreateWithoutBookmarked_byInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeCreateNestedManyWithoutSlangInput
-    category?: CategoryCreateNestedOneWithoutSlangsInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeCreateNestedManyWithoutSlangInput
+    category?: categoryCreateNestedOneWithoutSlangsInput
     posted_by: UserCreateNestedOneWithoutPostsInput
   }
 
-  export type SlangUncheckedCreateWithoutBookmarked_byInput = {
+  export type slangUncheckedCreateWithoutBookmarked_byInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     category_id?: string | null
     view?: number
     user_id: string
-    createdAt: Date | string
-    updatedAt: Date | string
-    like?: LikeUncheckedCreateNestedManyWithoutSlangInput
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    like?: likeUncheckedCreateNestedManyWithoutSlangInput
   }
 
-  export type SlangCreateOrConnectWithoutBookmarked_byInput = {
-    where: SlangWhereUniqueInput
-    create: XOR<SlangCreateWithoutBookmarked_byInput, SlangUncheckedCreateWithoutBookmarked_byInput>
+  export type slangCreateOrConnectWithoutBookmarked_byInput = {
+    where: slangWhereUniqueInput
+    create: XOR<slangCreateWithoutBookmarked_byInput, slangUncheckedCreateWithoutBookmarked_byInput>
   }
 
   export type UserCreateWithoutBookmarksInput = {
@@ -12977,8 +13167,8 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionCreateNestedManyWithoutUserInput
     accounts?: AccountCreateNestedManyWithoutUserInput
-    likes?: LikeCreateNestedManyWithoutLiked_byInput
-    posts?: SlangCreateNestedManyWithoutPosted_byInput
+    likes?: likeCreateNestedManyWithoutLiked_byInput
+    posts?: slangCreateNestedManyWithoutPosted_byInput
   }
 
   export type UserUncheckedCreateWithoutBookmarksInput = {
@@ -12991,8 +13181,8 @@ export namespace Prisma {
     updatedAt: Date | string
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
-    likes?: LikeUncheckedCreateNestedManyWithoutLiked_byInput
-    posts?: SlangUncheckedCreateNestedManyWithoutPosted_byInput
+    likes?: likeUncheckedCreateNestedManyWithoutLiked_byInput
+    posts?: slangUncheckedCreateNestedManyWithoutPosted_byInput
   }
 
   export type UserCreateOrConnectWithoutBookmarksInput = {
@@ -13000,39 +13190,49 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutBookmarksInput, UserUncheckedCreateWithoutBookmarksInput>
   }
 
-  export type SlangUpsertWithoutBookmarked_byInput = {
-    update: XOR<SlangUpdateWithoutBookmarked_byInput, SlangUncheckedUpdateWithoutBookmarked_byInput>
-    create: XOR<SlangCreateWithoutBookmarked_byInput, SlangUncheckedCreateWithoutBookmarked_byInput>
-    where?: SlangWhereInput
+  export type slangUpsertWithoutBookmarked_byInput = {
+    update: XOR<slangUpdateWithoutBookmarked_byInput, slangUncheckedUpdateWithoutBookmarked_byInput>
+    create: XOR<slangCreateWithoutBookmarked_byInput, slangUncheckedCreateWithoutBookmarked_byInput>
+    where?: slangWhereInput
   }
 
-  export type SlangUpdateToOneWithWhereWithoutBookmarked_byInput = {
-    where?: SlangWhereInput
-    data: XOR<SlangUpdateWithoutBookmarked_byInput, SlangUncheckedUpdateWithoutBookmarked_byInput>
+  export type slangUpdateToOneWithWhereWithoutBookmarked_byInput = {
+    where?: slangWhereInput
+    data: XOR<slangUpdateWithoutBookmarked_byInput, slangUncheckedUpdateWithoutBookmarked_byInput>
   }
 
-  export type SlangUpdateWithoutBookmarked_byInput = {
+  export type slangUpdateWithoutBookmarked_byInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUpdateManyWithoutSlangNestedInput
-    category?: CategoryUpdateOneWithoutSlangsNestedInput
+    like?: likeUpdateManyWithoutSlangNestedInput
+    category?: categoryUpdateOneWithoutSlangsNestedInput
     posted_by?: UserUpdateOneRequiredWithoutPostsNestedInput
   }
 
-  export type SlangUncheckedUpdateWithoutBookmarked_byInput = {
+  export type slangUncheckedUpdateWithoutBookmarked_byInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     category_id?: NullableStringFieldUpdateOperationsInput | string | null
     view?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUncheckedUpdateManyWithoutSlangNestedInput
+    like?: likeUncheckedUpdateManyWithoutSlangNestedInput
   }
 
   export type UserUpsertWithoutBookmarksInput = {
@@ -13055,8 +13255,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUpdateManyWithoutUserNestedInput
     accounts?: AccountUpdateManyWithoutUserNestedInput
-    likes?: LikeUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUpdateManyWithoutPosted_byNestedInput
+    likes?: likeUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUpdateManyWithoutPosted_byNestedInput
   }
 
   export type UserUncheckedUpdateWithoutBookmarksInput = {
@@ -13068,8 +13268,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
-    likes?: LikeUncheckedUpdateManyWithoutLiked_byNestedInput
-    posts?: SlangUncheckedUpdateManyWithoutPosted_byNestedInput
+    likes?: likeUncheckedUpdateManyWithoutLiked_byNestedInput
+    posts?: slangUncheckedUpdateManyWithoutPosted_byNestedInput
   }
 
   export type SessionCreateManyUserInput = {
@@ -13097,23 +13297,28 @@ export namespace Prisma {
     updatedAt: Date | string
   }
 
-  export type LikeCreateManyLiked_byInput = {
+  export type likeCreateManyLiked_byInput = {
     id?: string
     slang_id: string
   }
 
-  export type SlangCreateManyPosted_byInput = {
+  export type slangCreateManyPosted_byInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     category_id?: string | null
     view?: number
-    createdAt: Date | string
-    updatedAt: Date | string
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type BookmarkCreateManyUserInput = {
+  export type bookmarkCreateManyUserInput = {
     id?: string
     slang_id: string
   }
@@ -13187,139 +13392,174 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type LikeUpdateWithoutLiked_byInput = {
-    slang?: SlangUpdateOneRequiredWithoutLikeNestedInput
+  export type likeUpdateWithoutLiked_byInput = {
+    slang?: slangUpdateOneRequiredWithoutLikeNestedInput
   }
 
-  export type LikeUncheckedUpdateWithoutLiked_byInput = {
+  export type likeUncheckedUpdateWithoutLiked_byInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type LikeUncheckedUpdateManyWithoutLiked_byInput = {
+  export type likeUncheckedUpdateManyWithoutLiked_byInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type SlangUpdateWithoutPosted_byInput = {
+  export type slangUpdateWithoutPosted_byInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUpdateManyWithoutSlangNestedInput
-    category?: CategoryUpdateOneWithoutSlangsNestedInput
-    bookmarked_by?: BookmarkUpdateManyWithoutSlangNestedInput
+    like?: likeUpdateManyWithoutSlangNestedInput
+    category?: categoryUpdateOneWithoutSlangsNestedInput
+    bookmarked_by?: bookmarkUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangUncheckedUpdateWithoutPosted_byInput = {
+  export type slangUncheckedUpdateWithoutPosted_byInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     category_id?: NullableStringFieldUpdateOperationsInput | string | null
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUncheckedUpdateManyWithoutSlangNestedInput
-    bookmarked_by?: BookmarkUncheckedUpdateManyWithoutSlangNestedInput
+    like?: likeUncheckedUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUncheckedUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangUncheckedUpdateManyWithoutPosted_byInput = {
+  export type slangUncheckedUpdateManyWithoutPosted_byInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     category_id?: NullableStringFieldUpdateOperationsInput | string | null
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type BookmarkUpdateWithoutUserInput = {
-    Slang?: SlangUpdateOneRequiredWithoutBookmarked_byNestedInput
+  export type bookmarkUpdateWithoutUserInput = {
+    Slang?: slangUpdateOneRequiredWithoutBookmarked_byNestedInput
   }
 
-  export type BookmarkUncheckedUpdateWithoutUserInput = {
+  export type bookmarkUncheckedUpdateWithoutUserInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BookmarkUncheckedUpdateManyWithoutUserInput = {
+  export type bookmarkUncheckedUpdateManyWithoutUserInput = {
     slang_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type LikeCreateManySlangInput = {
+  export type likeCreateManySlangInput = {
     id?: string
     user_id: string
   }
 
-  export type BookmarkCreateManySlangInput = {
+  export type bookmarkCreateManySlangInput = {
     id?: string
     user_id: string
   }
 
-  export type LikeUpdateWithoutSlangInput = {
+  export type likeUpdateWithoutSlangInput = {
     liked_by?: UserUpdateOneRequiredWithoutLikesNestedInput
   }
 
-  export type LikeUncheckedUpdateWithoutSlangInput = {
+  export type likeUncheckedUpdateWithoutSlangInput = {
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type LikeUncheckedUpdateManyWithoutSlangInput = {
+  export type likeUncheckedUpdateManyWithoutSlangInput = {
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BookmarkUpdateWithoutSlangInput = {
+  export type bookmarkUpdateWithoutSlangInput = {
     user?: UserUpdateOneRequiredWithoutBookmarksNestedInput
   }
 
-  export type BookmarkUncheckedUpdateWithoutSlangInput = {
+  export type bookmarkUncheckedUpdateWithoutSlangInput = {
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type BookmarkUncheckedUpdateManyWithoutSlangInput = {
+  export type bookmarkUncheckedUpdateManyWithoutSlangInput = {
     user_id?: StringFieldUpdateOperationsInput | string
   }
 
-  export type SlangCreateManyCategoryInput = {
+  export type slangCreateManyCategoryInput = {
     id?: string
     name: string
-    example?: SlangCreateexampleInput | string[]
-    explaination: string
+    examples?: slangCreateexamplesInput | string[]
+    explanation: string
+    englishPronunciation: string
     view?: number
     user_id: string
-    createdAt: Date | string
-    updatedAt: Date | string
+    originator: string
+    language: string
+    country: string
+    slug: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type SlangUpdateWithoutCategoryInput = {
+  export type slangUpdateWithoutCategoryInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUpdateManyWithoutSlangNestedInput
+    like?: likeUpdateManyWithoutSlangNestedInput
     posted_by?: UserUpdateOneRequiredWithoutPostsNestedInput
-    bookmarked_by?: BookmarkUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangUncheckedUpdateWithoutCategoryInput = {
+  export type slangUncheckedUpdateWithoutCategoryInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    like?: LikeUncheckedUpdateManyWithoutSlangNestedInput
-    bookmarked_by?: BookmarkUncheckedUpdateManyWithoutSlangNestedInput
+    like?: likeUncheckedUpdateManyWithoutSlangNestedInput
+    bookmarked_by?: bookmarkUncheckedUpdateManyWithoutSlangNestedInput
   }
 
-  export type SlangUncheckedUpdateManyWithoutCategoryInput = {
+  export type slangUncheckedUpdateManyWithoutCategoryInput = {
     name?: StringFieldUpdateOperationsInput | string
-    example?: SlangUpdateexampleInput | string[]
-    explaination?: StringFieldUpdateOperationsInput | string
+    examples?: slangUpdateexamplesInput | string[]
+    explanation?: StringFieldUpdateOperationsInput | string
+    englishPronunciation?: StringFieldUpdateOperationsInput | string
     view?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    originator?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

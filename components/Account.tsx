@@ -37,6 +37,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "@/lib/auth/auth-client";
 import { toast } from "sonner";
 import { redirect } from "next/navigation";
+import avater from "@/assets/avater.png";
 
 const Account = () => {
   const user = authStore((store) => store.user);
@@ -55,10 +56,8 @@ const Account = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Avatar>
-            <AvatarImage
-              src={`https://avatar.iran.liara.run/username?username=${user.name}`}
-            />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarImage src={avater.src} />
+            <AvatarFallback>Account</AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">

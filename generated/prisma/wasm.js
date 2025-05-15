@@ -162,11 +162,16 @@ exports.Prisma.VerificationScalarFieldEnum = {
 exports.Prisma.SlangScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  example: 'example',
-  explaination: 'explaination',
+  examples: 'examples',
+  explanation: 'explanation',
+  englishPronunciation: 'englishPronunciation',
   category_id: 'category_id',
   view: 'view',
   user_id: 'user_id',
+  originator: 'originator',
+  language: 'language',
+  country: 'country',
+  slug: 'slug',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -204,10 +209,10 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  Slang: 'Slang',
-  Like: 'Like',
-  Category: 'Category',
-  Bookmark: 'Bookmark'
+  slang: 'slang',
+  like: 'like',
+  category: 'category',
+  bookmark: 'bookmark'
 };
 
 /**

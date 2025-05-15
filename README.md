@@ -20,4 +20,7 @@ Slango is a modern web application designed to let users share and explore uniqu
 - **Icons**: Lucide React
 - **Routing**: Next.js routing system
 
-
+[] crud on slangs
+[] forget password
+[] make authorization
+[] edit profile picutre
