@@ -12,7 +12,6 @@ import Bookmark from "./Bookmark";
 import { redirect } from "next/navigation";
 import format_number from "../utils/format_number";
 import { authStore } from "@/store/useAuthStore";
-import { EllipsisVertical } from "lucide-react";
 import EditSlang from "./EditSlang";
 
 const CustomCard = ({ item, setSlang }) => {
@@ -54,7 +53,7 @@ const CustomCard = ({ item, setSlang }) => {
       </CardHeader>
       <CardContent className="flex-grow">
         <p>{item.explanation}</p>
-        <p className="bg-accent p-2 mt-2">{`"${item.examples[0]}"`}</p>
+        <p className="bg-accent p-2 mt-2">{`${item.examples[0]}`}</p>
       </CardContent>
       <CardFooter className="flex justify-between w-full">
         <div className="flex gap-2 " onClick={handleButtonClick}>

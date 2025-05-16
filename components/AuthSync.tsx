@@ -2,9 +2,7 @@
 
 import { useSession } from "@/lib/auth/auth-client";
 import { authStore } from "@/store/useAuthStore";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 const AuthSync = () => {
   const session = useSession();

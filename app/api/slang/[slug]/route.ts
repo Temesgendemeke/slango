@@ -2,11 +2,14 @@ import { NextResponse } from "next/server";
 import { NextApiRequest } from "next";
 import { db } from "@/lib/prisma";
 
-export async function GET(request: Request, {params}) {
+export async function GET(request: Request, { params }) {
   const { slug } = await params;
   try {
     const slang = await db.slang.findUnique({
       where: { slug },
+      include: {
+        posted_by: true,
+      },
     });
     if (!slang) {
       return NextResponse.json({ message: "slug not found" }, { status: 404 });
@@ -18,6 +21,10 @@ export async function GET(request: Request, {params}) {
       { status: 500 }
     );
   }
+}
+
+export async function PUT(request, { params }) {
+  const { body } = request;
 }
 
 export async function DELETE(request: NextApiRequest, { params }) {

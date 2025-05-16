@@ -48,23 +48,41 @@ const formSchema = z.object({
   category_id: z.string().optional(),
 });
 
-const SubmitSlangForm = ({ categories }) => {
+const SubmitSlangForm = ({ categories = null, slang = null }) => {
   const user = authStore((state) => state.user);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      explanation: "",
-      language: "en",
-      country: "US",
-      originator: "",
-      englishPronunciation: "",
-      examples: [""],
-      category_id: "",
+      name: slang?.name || "",
+      explanation: slang?.explanation || "",
+      language: slang?.language || "",
+      country: slang?.country || "",
+      originator: slang?.originator || "",
+      englishPronunciation: slang?.englishPronunciation || "",
+      examples: slang?.examples ? [...slang.examples] : [""],
+      category_id: slang?.category_id || "",
     },
   });
+  const edit_mode = !!slang;
 
   const onSubmit = async (data) => {
+    if (edit_mode) {
+      const res = await fetch(`/api/slang`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...slang, ...data }),
+      });
+      if (!res.ok) {
+        toast.error("failed to update, try again");
+      } else {
+        toast.message("🎉 Slang updated successfully! 🚀");
+        redirect("/");
+      }
+      return;
+    }
+
     const res = await fetch(`/api/slang`, {
       method: "POST",
       headers: {
@@ -102,7 +120,7 @@ const SubmitSlangForm = ({ categories }) => {
                   <Input placeholder="shadcn" {...field} />
                 </FormControl>
                 <FormDescription>
-                  enter slang term or phrases you went to share{" "}
+                  enter slang term or phrases you want to share{" "}
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -120,24 +138,19 @@ const SubmitSlangForm = ({ categories }) => {
                 >
                   <FormControl className="w-full">
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Select a language" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="absolute">
                     {languages.map((language, index) => (
-                      <SelectItem
-                        key={index}
-                        value={language.code}
-                        defaultChecked={language.code === "en"}
-                      >
+                      <SelectItem key={index} value={language.code}>
                         {language.name}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
                 <FormDescription>
-                  You can manage email addresses in your{" "}
-                  <Link href="/examples/forms">email settings</Link>.
+                  Choose the language for this slang term.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -219,11 +232,11 @@ const SubmitSlangForm = ({ categories }) => {
                 >
                   <FormControl className="w-full">
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="absolute">
-                    {categories.map((c, index) => (
+                    {categories?.map((c, index) => (
                       <SelectItem key={index} value={c.id}>
                         {c.name}
                       </SelectItem>
@@ -250,16 +263,12 @@ const SubmitSlangForm = ({ categories }) => {
                 >
                   <FormControl className="w-full">
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder="Select a country" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent className="">
+                  <SelectContent>
                     {flags.map((flag, index) => (
-                      <SelectItem
-                        key={index}
-                        value={flag.code}
-                        defaultChecked={flag.code == "US"}
-                      >
+                      <SelectItem key={index} value={flag.code}>
                         {flag.emoji} {flag.name}
                       </SelectItem>
                     ))}
