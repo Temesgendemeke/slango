@@ -23,5 +23,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard", "/submit-slang"],
+  matcher: ["/dashboard", "/submit-slang", "/slang/edit", "/account"],
 };

@@ -8,6 +8,7 @@ export async function GET() {
 
     const slangs = await db.slang.findMany({
       include: {
+        posted_by: true,
         _count: {
           select: { like: true },
         },
@@ -50,11 +51,12 @@ export async function PUT(request: Request) {
   const body = await request.json();
 
   try {
+    const { id, ...updateData } = body;
     const updated_slang = await db.slang.update({
       where: {
-        id: body.id,
+        id: id,
       },
-      data: body,
+      data: { ...updateData },
     });
     return NextResponse.json({
       message: "Upated sucessfuly",

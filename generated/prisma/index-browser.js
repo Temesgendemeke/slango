@@ -118,9 +118,9 @@ exports.Prisma.UserScalarFieldEnum = {
   name: 'name',
   email: 'email',
   emailVerified: 'emailVerified',
-  image: 'image',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  username: 'username'
 };
 
 exports.Prisma.SessionScalarFieldEnum = {
@@ -193,6 +193,13 @@ exports.Prisma.BookmarkScalarFieldEnum = {
   user_id: 'user_id'
 };
 
+exports.Prisma.ImageScalarFieldEnum = {
+  id: 'id',
+  public_id: 'public_id',
+  url: 'url',
+  user_id: 'user_id'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -212,7 +219,8 @@ exports.Prisma.ModelName = {
   slang: 'slang',
   like: 'like',
   category: 'category',
-  bookmark: 'bookmark'
+  bookmark: 'bookmark',
+  image: 'image'
 };
 
 /**

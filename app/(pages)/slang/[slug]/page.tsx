@@ -9,7 +9,7 @@ import {
   Trash2Icon,
   User,
 } from "lucide-react";
-import { redirect, useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import format_number from "@/utils/format_number";
@@ -27,6 +27,7 @@ const page = () => {
   const [example, setExample] = useState();
   const [slang, setSlang] = useState([]);
   const user = authStore((store) => store.user);
+  const router = useRouter();
 
   const fetchSlang = () => {
     setLoading(true);
@@ -43,17 +44,16 @@ const page = () => {
     fetchSlang();
   }, []);
 
-  const handleClick = () => {
-    fetch(`/api/slang/${slug}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (!res.ok) return toast.error("failed to delete. please try again");
-        redirect("/");
-      })
-      .catch(() => {
-        toast.error("Failed to delete slang. Please try again.");
+  const handleDelete = async () => {
+    try {
+      await fetch(`/api/slang/${slug}`, {
+        method: "DELETE",
       });
+      toast.message("🗑️ Deleted successfully");
+      return router.push("/");
+    } catch (error) {
+      toast.error("❌ Oops! Failed to delete slang. Please try again. 😢");
+    }
   };
 
   const handleEdit = () => {
@@ -147,16 +147,18 @@ const page = () => {
               ))}
             </div>
 
-            <div className="flex gap-2">
-              <Button variant={"destructive"} onClick={handleClick}>
-                <Trash2Icon />
-                <span>Delete</span>
-              </Button>
-              <Button onClick={handleEdit}>
-                <PenIcon />
-                <span>Edit</span>
-              </Button>
-            </div>
+            {slang.user_id == user.id && (
+              <div className="flex gap-2">
+                <Button variant={"destructive"} onClick={handleDelete}>
+                  <Trash2Icon />
+                  <span>Delete</span>
+                </Button>
+                <Button onClick={handleEdit}>
+                  <PenIcon />
+                  <span>Edit</span>
+                </Button>
+              </div>
+            )}
 
             <div className="bg-secondary p-4 rounded-xl  gap-2 border border-primary">
               <h4 className="font-bold ">know better example?</h4>

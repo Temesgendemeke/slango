@@ -28,19 +28,19 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request: NextApiRequest, { params }) {
-  const id = params.id;
+  const { slug } = await params;
 
   try {
     await db.slang.delete({
       where: {
-        id,
+        slug,
       },
     });
     return NextResponse.json({ message: "Delete successfuly" });
   } catch (error) {
     return NextResponse.json(
       {
-        message: error.meta?.message || "Internal Server Error",
+        message: "Internal Server Error",
       },
       { status: 500 }
     );

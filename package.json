@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "prisma generate && next dev --turbopack",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -23,6 +23,7 @@
     "@types/nodemailer": "^6.4.17",
     "better-auth": "^1.2.7",
     "class-variance-authority": "^0.7.1",
+    "cloudinary": "^2.6.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "dotenv": "^16.5.0",

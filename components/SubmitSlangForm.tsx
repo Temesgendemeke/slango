@@ -48,7 +48,7 @@ const formSchema = z.object({
   category_id: z.string().optional(),
 });
 
-const SubmitSlangForm = ({ categories = null, slang = null }) => {
+const SubmitSlangForm = ({ slang = null }) => {
   const user = authStore((state) => state.user);
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -64,15 +64,33 @@ const SubmitSlangForm = ({ categories = null, slang = null }) => {
     },
   });
   const edit_mode = !!slang;
+  const [categories, setCategories] = useState();
+
+  useEffect(() => {
+    const fetch_category = async () => {
+      const res = await fetch(`/api/slang/category`);
+      if (res.ok) {
+        const data = await res.json();
+        setCategories(data);
+      }
+    };
+
+    fetch_category();
+  });
 
   const onSubmit = async (data) => {
+    console.log({ ...data, ...slang });
+
     if (edit_mode) {
       const res = await fetch(`/api/slang`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...slang, ...data }),
+        body: JSON.stringify({
+          ...data,
+          id: slang.id,
+        }),
       });
       if (!res.ok) {
         toast.error("failed to update, try again");
@@ -93,7 +111,7 @@ const SubmitSlangForm = ({ categories = null, slang = null }) => {
     if (!res.ok) {
       toast.error("try again");
     } else {
-      toast.message("Slang posted");
+      toast.message("🎉 Slang posted successfully! 🚀✨");
       setTimeout(() => {
         redirect("/");
       }, 300);

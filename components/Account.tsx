@@ -11,10 +11,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useRouter } from "next/navigation";
 import { signOut } from "@/lib/auth/auth-client";
 import { toast } from "sonner";
 import avater from "@/assets/avater.png";
+import { useRouter } from "next/navigation";
 
 const Account = () => {
   const router = useRouter();

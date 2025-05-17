@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import z from "zod";
 import {
   Form,
@@ -14,23 +14,22 @@ import {
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
-import fifty from "@/assets/Rapper=fiftycent.png";
+import fifty from "@/assets/avater.png";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { error } from "console";
 import uploadImage from "@/utils/uploadImage";
+import headers from "@/constants/headers";
+import { authStore } from "@/store/useAuthStore";
 
 const formSchema = z.object({
   username: z
     .string()
     .min(2, { message: "username must be at least 2 characters long." })
     .max(30, { message: "username must not exceed 30 characters." }),
+  name: z.string().default("noname").optional(),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters long." })
-    .max(50, { message: "Password must not exceed 50 characters." }),
   profile_picture: z.string().optional(),
 });
 
@@ -38,38 +37,47 @@ const page = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
-      username: "",
-      password: "",
-      profile_picture: "",
+      email: "td@gmail.com",
+      username: "wemesgen",
+      name: "noname",
+      profile_picture: fifty.src,
     },
   });
   const initalState = { errorMessage: "" };
-  const onSubmit = () => {};
-
-  const preset_name = "slango-preset";
-  const cloud_name = "drgmsakkn";
+  const [image, setImage] = useState<File>(null);
+  const user = authStore((store) => store.user);
 
   const handle_image = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
+    setImage(file);
     if (!file) return;
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", preset_name);
+    // for preview
+    const image_file = URL.createObjectURL(file);
+    form.setValue("profile_picture", image_file);
+  };
 
+  const onSubmit = async (formData) => {
+    console.log("clicked ", formData);
 
-      const {data} = await uploadImage(file)
-      if(data){
-          if (data.secure_url) {
-            form.setValue("profile_picture", data.secure_url);
-            toast.success("Image uploaded successfully!");
-          } else {
-            toast.error("Image upload failed.");
-          }
-        } 
-      }
+    if (!image) return;
 
+    const { data, error } = await uploadImage(image);
+    if (error) {
+      return toast.error(
+        "Oops! Something went wrong uploading your image 😢. Please try again!"
+      );
+    }
+    const { public_id, secure_url } = data;
+
+    await fetch(`/api/user/setting/${user?.username}`, {
+      method: "POST",
+      headers,
+      body: {
+        public_id: public_id,
+        secure_url: secure_url,
+      },
+    });
   };
 
   return (
@@ -78,11 +86,12 @@ const page = () => {
         <div className="flex justfiy-center flex-col items-center">
           <Image
             alt=""
-            src={form.watch("profile_picture") || fifty}
-            width="200"
+            src={form.watch("profile_picture") || fifty} // or placeholder
+            width="150"
             height="50"
+            className="object-fill h-52 w-52 border rounded-full"
           ></Image>
-          <h2>50cent</h2>
+          <h2>@{form.watch("username")}</h2>
         </div>
 
         <Form {...form}>
@@ -106,8 +115,22 @@ const page = () => {
 
             <FormField
               control={form.control}
-              name="profile_picture"
+              name="name"
               render={({ field }) => (
+                <FormItem>
+                  <FormLabel>name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="profile_picture"
+              render={({ _ }) => (
                 <FormItem>
                   <FormLabel>Image</FormLabel>
                   <FormControl>

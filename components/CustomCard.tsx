@@ -13,6 +13,8 @@ import { redirect } from "next/navigation";
 import format_number from "../utils/format_number";
 import { authStore } from "@/store/useAuthStore";
 import EditSlang from "./EditSlang";
+import { get_relative_time } from "@/utils/relative_date";
+import headers from "@/constants/headers";
 
 const CustomCard = ({ item, setSlang }) => {
   const handleClick = (e) => {
@@ -25,8 +27,20 @@ const CustomCard = ({ item, setSlang }) => {
     e.stopPropagation();
     e.preventDefault();
   };
-
   const user = authStore((store) => store.user);
+
+  const like = async () => {
+    const data = {
+      slang_id: item.id,
+      user_id: user.id,
+    };
+    //  how to implement
+    await fetch("/slang/like", {
+      method: "POST",
+      headers,
+      body: data,
+    });
+  };
 
   return (
     <Card
@@ -34,7 +48,7 @@ const CustomCard = ({ item, setSlang }) => {
       className="relative flex flex-col hover:bg-secondary transition ease-in duration-300"
       onClick={handleClick}
     >
-      {user ? (
+      {user?.id == item.user_id ? (
         <EditSlang />
       ) : (
         <Bookmark
@@ -48,12 +62,13 @@ const CustomCard = ({ item, setSlang }) => {
       <CardHeader>
         <CardTitle>{item.name}</CardTitle>
         <CardDescription>
-          Added by {item.user_id} &#x2022; {item.updatedAt}
+          Added by {item.posted_by?.name} &#x2022;{" "}
+          {get_relative_time(item.updatedAt)}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
         <p>{item.explanation}</p>
-        <p className="bg-accent p-2 mt-2">{`${item.examples[0]}`}</p>
+        {/* <p className="p-2 mt-2">{`${item.examples[0]}`}</p> */}
       </CardContent>
       <CardFooter className="flex justify-between w-full">
         <div className="flex gap-2 " onClick={handleButtonClick}>

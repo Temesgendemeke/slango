@@ -16,8 +16,8 @@ const EditSlangPage = async ({ params }: { params: { slug: string } }) => {
   // });
   try {
     const res = await fetch(`${URL}/api/slang/${slug}`);
-    // if (!res.ok) throw new Error("not found");
     const slang = await res.json();
+
     return <SubmitSlangForm slang={slang} />;
   } catch (_) {
     return redirect("/not-found");

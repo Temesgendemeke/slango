@@ -54,7 +54,6 @@ const SignUpForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log(data);
 
       startTransition(() => {
         formAction(data);

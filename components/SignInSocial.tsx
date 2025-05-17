@@ -13,7 +13,7 @@ const SignInSocial = ({
       onClick={async () => {
         await signIn.social({
           provider,
-          callbackURL: "/",
+          callbackURL: "/account/set-username",
         });
       }}
       className="w-full flex items-center justify-center gap-2 mt-5"
