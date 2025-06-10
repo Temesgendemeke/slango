@@ -4,15 +4,23 @@ import { db } from "@/lib/prisma";
 
 export async function GET(request: Request, { params }) {
   const { slug } = await params;
+
   try {
     const slang = await db.slang.findUnique({
       where: { slug },
+
       include: {
         posted_by: true,
+        views: true,
+        _count: {
+          select: {
+            views: true,
+          },
+        },
       },
     });
     if (!slang) {
-      return NextResponse.json({ message: "slug not found" }, { status: 404 });
+      return NextResponse.json({ message: "post not found" }, { status: 404 });
     }
     return NextResponse.json(slang);
   } catch (error) {
@@ -23,8 +31,30 @@ export async function GET(request: Request, { params }) {
   }
 }
 
-export async function PUT(request, { params }) {
-  const { body } = request;
+export async function PUT(request: Request, { params }) {
+  const body = await request.json();
+  const { slug } = await params;
+
+  console.log("body =====> ", body);
+
+  try {
+    const updated_slang = await db.slang.update({
+      where: {
+        slug,
+      },
+      data: { ...body },
+    });
+    return NextResponse.json({
+      message: "Upated sucessfuly",
+      slang: updated_slang,
+    });
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { error: "Failed to update slang", details: (error as Error).message },
+      { status: 500 }
+    );
+  }
 }
 
 export async function DELETE(request: NextApiRequest, { params }) {

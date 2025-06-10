@@ -1,5 +1,5 @@
 import { TrendingUp } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Menu = () => {
   const menu = [
@@ -8,6 +8,11 @@ const Menu = () => {
     { title: "Popular" },
   ];
   const [active, setActive] = useState("recent")
+
+
+
+
+
   return (
     <div className="flex  bg-card text-sm  w-fit rounded-xl overflow-hidden border border-secondary shadow">
       {menu.map((item, index) => {

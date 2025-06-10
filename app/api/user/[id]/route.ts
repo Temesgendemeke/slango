@@ -10,19 +10,23 @@ export async function GET(request, { params }) {
         id,
       },
       include: {
-        slang: {
+        image: true,
+        posts: {
           include: {
-            posted_by: true,
             _count: {
-              select: { like: true },
+              select: { bookmarked_by: true, views: true},
+
             },
           },
         },
         _count: {
-          select: { slang: true },
+          select: { posts: true },
         },
       },
     });
+
+
+
 
     return NextResponse.json(userWithCounts);
   } catch (error) {

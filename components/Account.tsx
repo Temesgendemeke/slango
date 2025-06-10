@@ -1,7 +1,7 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { authStore } from "@/store/useAuthStore";
-import { Github, LogOut, Settings, User } from "lucide-react";
+import { Github, HeartIcon, LogOut, Settings, User } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +15,7 @@ import { signOut } from "@/lib/auth/auth-client";
 import { toast } from "sonner";
 import avater from "@/assets/avater.png";
 import { useRouter } from "next/navigation";
+import { authStore } from "@/store/useAuthStore";
 
 const Account = () => {
   const router = useRouter();
@@ -29,23 +30,29 @@ const Account = () => {
     }
   };
   return (
-    <div className="relative">
+    <div className="">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Avatar>
-            <AvatarImage src={avater.src} />
-            <AvatarFallback>Account</AvatarFallback>
+          <Avatar className="shadow">
+            <AvatarImage src={user.image || avater.src} />
+            <AvatarFallback>user</AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
+        <DropdownMenuContent className="w-56 absolute -right-4">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={() => router.push("/user")}>
+            <DropdownMenuItem onClick={() => router.push(`/user/${user.id}`)}>
               <User />
               <span>Profile</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => router.push(`/user/bookmark`)}
+            >
+              <HeartIcon />
+              <span>bookmarks</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => router.push("/account/setting")}>
               <Settings />
               <span>Settings</span>
             </DropdownMenuItem>

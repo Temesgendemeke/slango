@@ -7,16 +7,18 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import { EyeIcon, ThumbsUp } from "lucide-react";
+import { EyeIcon } from "lucide-react";
 import Bookmark from "./Bookmark";
 import { redirect } from "next/navigation";
 import format_number from "../utils/format_number";
 import { authStore } from "@/store/useAuthStore";
 import EditSlang from "./EditSlang";
 import { get_relative_time } from "@/utils/relative_date";
-import headers from "@/constants/headers";
+import { getEmoji, getLanguage } from "@/utils/getCountry";
 
 const CustomCard = ({ item, setSlang }) => {
+  const user = authStore((store) => store.user);
+  const [bookmark, setBookmark] = useState<bool>(false);
   const handleClick = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -27,58 +29,46 @@ const CustomCard = ({ item, setSlang }) => {
     e.stopPropagation();
     e.preventDefault();
   };
-  const user = authStore((store) => store.user);
 
-  const like = async () => {
-    const data = {
-      slang_id: item.id,
-      user_id: user.id,
-    };
-    //  how to implement
-    await fetch("/slang/like", {
-      method: "POST",
-      headers,
-      body: data,
-    });
+  const handleBookmark = async () => {
+    
   };
 
   return (
     <Card
       key={item.id}
-      className="relative flex flex-col hover:bg-secondary transition ease-in duration-300"
+      className="relative flex flex-col hover:border-primary   backdrop-blur-3xl transition ease-in duration-300"
       onClick={handleClick}
     >
       {user?.id == item.user_id ? (
-        <EditSlang />
+        <EditSlang slug={item.slug} setSlang={setSlang} />
       ) : (
         <Bookmark
           id={item.id}
           isBookmarked={true}
           setSlang={setSlang}
-          onClick={handleButtonClick}
+          onClick={handleBookmark}
         />
       )}
 
       <CardHeader>
-        <CardTitle>{item.name}</CardTitle>
+        <CardTitle className="text-2xl font-bold">{item.name}</CardTitle>
         <CardDescription>
           Added by {item.posted_by?.name} &#x2022;{" "}
           {get_relative_time(item.updatedAt)}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p>{item.explanation}</p>
-        {/* <p className="p-2 mt-2">{`${item.examples[0]}`}</p> */}
+        <p className="text-primary">{item.explanation}</p>
       </CardContent>
       <CardFooter className="flex justify-between w-full">
-        <div className="flex gap-2 " onClick={handleButtonClick}>
-          <ThumbsUp />
-          <span>{format_number(item.like_count)}</span>
+        <div className="flex gap-2 ">
+          {getEmoji(item.country)} {getLanguage(item.language)}
         </div>
 
         <div className="flex gap-2 " onClick={handleButtonClick}>
           <EyeIcon />
-          <span>{format_number(item.view)}</span>
+          <span>{format_number(item._count.views)}</span>
         </div>
       </CardFooter>
     </Card>

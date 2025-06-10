@@ -55,8 +55,8 @@ const SubmitSlangForm = ({ slang = null }) => {
     defaultValues: {
       name: slang?.name || "",
       explanation: slang?.explanation || "",
-      language: slang?.language || "",
-      country: slang?.country || "",
+      language: slang?.language,
+      country: slang?.country,
       originator: slang?.originator || "",
       englishPronunciation: slang?.englishPronunciation || "",
       examples: slang?.examples ? [...slang.examples] : [""],
@@ -76,20 +76,17 @@ const SubmitSlangForm = ({ slang = null }) => {
     };
 
     fetch_category();
-  });
+  }, []);
 
   const onSubmit = async (data) => {
-    console.log({ ...data, ...slang });
-
     if (edit_mode) {
-      const res = await fetch(`/api/slang`, {
+      const res = await fetch(`/api/slang/${slang.slug}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...data,
-          id: slang.id,
         }),
       });
       if (!res.ok) {
@@ -161,7 +158,11 @@ const SubmitSlangForm = ({ slang = null }) => {
                   </FormControl>
                   <SelectContent className="absolute">
                     {languages.map((language, index) => (
-                      <SelectItem key={index} value={language.code}>
+                      <SelectItem
+                        key={index}
+                        value={language.code}
+                        defaultChecked={language.code == "en"}
+                      >
                         {language.name}
                       </SelectItem>
                     ))}
@@ -286,7 +287,11 @@ const SubmitSlangForm = ({ slang = null }) => {
                   </FormControl>
                   <SelectContent>
                     {flags.map((flag, index) => (
-                      <SelectItem key={index} value={flag.code}>
+                      <SelectItem
+                        key={index}
+                        value={flag.code}
+                        defaultChecked={flag.code == "us"}
+                      >
                         {flag.emoji} {flag.name}
                       </SelectItem>
                     ))}

@@ -119,8 +119,7 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   emailVerified: 'emailVerified',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  username: 'username'
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SessionScalarFieldEnum = {
@@ -176,10 +175,11 @@ exports.Prisma.SlangScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.LikeScalarFieldEnum = {
+exports.Prisma.ViewsScalarFieldEnum = {
   id: 'id',
-  slang_id: 'slang_id',
-  user_id: 'user_id'
+  post_id: 'post_id',
+  ip: 'ip',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.CategoryScalarFieldEnum = {
@@ -217,7 +217,7 @@ exports.Prisma.ModelName = {
   Account: 'Account',
   Verification: 'Verification',
   slang: 'slang',
-  like: 'like',
+  Views: 'Views',
   category: 'category',
   bookmark: 'bookmark',
   image: 'image'

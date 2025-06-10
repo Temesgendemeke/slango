@@ -1,4 +1,5 @@
-import { Edit2Icon, EllipsisVertical,  Trash2 } from "lucide-react";
+"use client";
+import { Edit2Icon, EllipsisVertical, Trash2 } from "lucide-react";
 import { authStore } from "@/store/useAuthStore";
 import {
   DropdownMenu,
@@ -8,22 +9,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
-import { signOut } from "@/lib/auth/auth-client";
 import { toast } from "sonner";
 
-const EditSlang = () => {
+const EditSlang = ({ slug, setSlang }) => {
   const user = authStore((store) => store.user);
-
   const router = useRouter();
-  const handleClick = async () => {
+
+  const deletePost = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     try {
-      //   remove
-      await signOut();
-      router.push("/login");
-    } catch (_) {
-      toast.error("Error during sign out. Please try again.");
+      await fetch(`/api/slang/${slug}`, {
+        method: "DELETE",
+      });
+      setSlang((prev) => {
+        const filteredSlang = prev.filter((post) => post.slug !== slug);
+        return filteredSlang;
+      });
+    } catch (error) {
+      toast.error("Failed to delete the post.");
     }
   };
+
   return (
     <div
       className="absolute right-2 cursor-pointer"
@@ -39,14 +46,13 @@ const EditSlang = () => {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                router.push("/submit-slang");
+                router.push(`/slang/edit/${slug}`);
               }}
             >
               <Edit2Icon />
               <span>Edit</span>
             </DropdownMenuItem>
-            <DropdownMenuItem
-            >
+            <DropdownMenuItem onClick={deletePost}>
               <Trash2 />
               <span>Delete</span>
             </DropdownMenuItem>

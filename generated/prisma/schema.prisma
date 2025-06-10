@@ -24,12 +24,10 @@ model User {
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
-  likes         like[]
   posts         slang[]
   bookmarks     bookmark[]
-  username      String?
 
-  @@unique([email, username])
+  @@unique([email])
   @@map("user")
 }
 
@@ -83,7 +81,6 @@ model slang {
   name                 String
   examples             String[]
   explanation          String
-  like                 like[]
   englishPronunciation String
   category             category?  @relation("CategorySlangs", fields: [category_id], references: [id])
   category_id          String?    @db.ObjectId
@@ -95,22 +92,30 @@ model slang {
   country              String
   bookmarked_by        bookmark[]
   slug                 String     @unique
+  views                Views[]
   createdAt            DateTime   @default(now())
   updatedAt            DateTime   @updatedAt
 
   @@map("slang")
 }
 
-model like {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  slang    slang  @relation(fields: [slang_id], references: [id])
-  slang_id String @db.ObjectId
-  liked_by User   @relation(fields: [user_id], references: [id])
-  user_id  String
-
-  @@unique([slang_id, user_id])
-  @@map("like")
+model Views {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  post      slang    @relation(fields: [post_id], references: [id])
+  post_id   String   @db.ObjectId
+  ip        String?  @unique
+  createdAt DateTime @default(now())
 }
+
+// model like{
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   slang slang @relation(fields: [slang_id], references:[id])
+//   slang_id String @db.ObjectId
+//   liked_by User @relation(fields: [user_id], references: [id])
+//   user_id String
+//   @@unique([slang_id, user_id])
+//   @@map("like")
+// }
 
 model category {
   id     String  @id @default(auto()) @map("_id") @db.ObjectId

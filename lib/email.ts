@@ -1,12 +1,6 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-export const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
+const resend = new Resend("re_iEewfb2d_CRrfUcYgDAr7Khbu8rK2FE4W");
 
 export const sendEmail = async ({
   to,
@@ -17,12 +11,12 @@ export const sendEmail = async ({
   subject: string;
   text: string;
 }) => {
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
+  await resend.emails.send({
+    from: "SLANGO <onboarding@resend.dev>", 
     to,
     subject,
-    html: `<p>you have requested password reset<p>
+    html: `<p>You have requested a password reset.</p>
               <p>${text}</p>
-              <p>If your did not request this, please ignore this email</p>`,
+              <p>If you did not request this, please ignore this email.</p>`,
   });
 };

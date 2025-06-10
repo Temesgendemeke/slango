@@ -3,12 +3,12 @@ import deleteImage from "@/utils/deleteImage";
 import { NextResponse } from "next/server";
 
 export async function GET(params: type) {
-  const { username } = await params;
+  const { id } = await params;
 
   try {
     const user = await db.user.findFirst({
       where: {
-        username: username,
+        id: id,
       },
       include: {
         image: true,
@@ -23,22 +23,25 @@ export async function GET(params: type) {
   }
 }
 
-export async function PUT(request, params: type) {
-  const { username } = await params;
-  const data = await request.body();
-  const { image, user } = data;
+export async function PUT(request, { params }) {
+  const { id } = await params;
+  const image = await request.json();
 
-  const current_image = await db.image.findFirst();
+  console.log("data ", image);
 
   try {
-    await deleteImage(current_image.public_id);
+    const current_image = await db.image.findFirst();
+    if (current_image) {
+      await deleteImage(current_image?.public_id);
+    }
+
     await db.image.upsert({
       create: {
         id: "singleton",
         public_id: image.public_id as string,
         url: image.secure_url as string,
         user: {
-          connect: { id: user.id },
+          connect: { id: id },
         },
       },
       update: {
@@ -50,19 +53,9 @@ export async function PUT(request, params: type) {
       },
     });
 
-    await db.user.update({
-      where: {
-        username: username,
-      },
-      data: {
-        username: user.username,
-        name: user.name,
-        email: user.email,
-      },
-    });
-
     return NextResponse.json({ message: "profile updated sucessfuly" });
   } catch (error) {
+    console.log(error);
     return NextResponse.json(error, { status: 500 });
   }
 }

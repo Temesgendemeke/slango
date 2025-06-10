@@ -2,26 +2,45 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/prisma";
 import generate_unique_slug from "@/utils/generate_unique";
 
-export async function GET() {
-  try {
-    console.log("slangs");
+export async function GET(request) {
+  const url = new URL(request.url);
+  const current_page = parseInt(url.searchParams.get("page")) || 1;
+  const perpage = parseInt(url.searchParams.get("perpage")) || 10;
 
+  try {
     const slangs = await db.slang.findMany({
       include: {
-        posted_by: true,
-        _count: {
-          select: { like: true },
+      posted_by: true,
+      _count: {
+        select: {
+        views: true,
         },
       },
+      },
+      orderBy: {
+      views: {
+        _count: 'desc',
+      },
+      },
+      skip: (current_page - 1) * perpage,
+      take: perpage,
     });
 
-    const result = slangs.map((slang) => ({
-      ...slang,
-      like_count: slang._count.like,
-    }));
+    // const result = slangs.map((slang) => ({
+    //   ...slang,
+    //   like_count: slang._count.like,
+    // }));
 
-    return NextResponse.json(result);
+    const totalPosts = await db.slang.count();
+    const totalPages = Math.ceil(totalPosts / perpage);
+
+    return NextResponse.json({
+      posts: slangs,
+      total_page: totalPages,
+      totalPosts,
+    });
   } catch (error) {
+    console.log(error);
     return NextResponse.json(
       { error: "Failed to fetch slangs", message: error },
       { status: 500 }
@@ -42,29 +61,6 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Failed to create slang", message: error },
 
-      { status: 500 }
-    );
-  }
-}
-
-export async function PUT(request: Request) {
-  const body = await request.json();
-
-  try {
-    const { id, ...updateData } = body;
-    const updated_slang = await db.slang.update({
-      where: {
-        id: id,
-      },
-      data: { ...updateData },
-    });
-    return NextResponse.json({
-      message: "Upated sucessfuly",
-      slang: updated_slang,
-    });
-  } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to update slang", details: (error as Error).message },
       { status: 500 }
     );
   }

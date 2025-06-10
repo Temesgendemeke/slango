@@ -1,5 +1,5 @@
 "use client";
-import React, { useActionState, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import friends_image from "@/assets/Ethnic friendship-pana.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,6 +20,7 @@ import SocialLogin from "@/components/SocialLogin";
 import { login } from "@/lib/actions";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+
 
 const formSchema = z.object({
   email: z
@@ -42,25 +43,21 @@ const LoginForm = () => {
       rememberme: false,
     },
   });
-  const [error, setEror] = useState<string>("");
-  const initalState = { errorMessage: "" };
-  const [state, formAction, pending] = useActionState(login, initalState);
-
-  useEffect(() => {
-    if (state.errorMessage.length) {
-      toast.error(state.errorMessage);
-    }
-  }, [state.errorMessage]);
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    try {
-      await login(data);
-    } catch (err) {
-      setEror("An error occurred. Please try again.");
-    }
-  };
+    setLoading(true);
+    const { success, errorMessage } = await login(data);
+    setLoading(false);
 
-  const onChange = async (data) => {};
+    if (!success) {
+      return toast.error(errorMessage, { position: "top-center" });
+    }
+
+
+    return window.location.replace("/");
+  }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <Image alt="friendship" src={friends_image} className="lg:flex-1" />
@@ -68,12 +65,7 @@ const LoginForm = () => {
       <div className="lg:flex-1 lg:mt-10 lg:p-10">
         <h1 className="text-5xl  font-bold text-center mb-10">Welcome back</h1>
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8"
-            action={formAction}
-          >
-            <p className="text-red-500">{error}</p>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
               control={form.control}
               name="email"
@@ -134,11 +126,11 @@ const LoginForm = () => {
                 Forget password?
               </Link>
             </div>
-            <Button type="submit" className="w-full" disabled={pending}>
+            <Button type="submit" className="w-full" disabled={loading}>
               Login
             </Button>
             <p className="text-sm text-center">
-              Don't have an account?{" "}
+              Don&#39;t have an account?{" "}
               <Link href="/signup" className="text-blue-500 hover:underline">
                 Sign up
               </Link>

@@ -1,3 +1,4 @@
+"use client";
 import Footer from "../components/Footer";
 import HeroSection from "..//components/HeroSection";
 import SlangList from "../components/SlangList";

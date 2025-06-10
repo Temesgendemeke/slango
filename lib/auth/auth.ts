@@ -3,17 +3,28 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { db } from "../prisma";
 import { nextCookies } from "better-auth/next-js";
 import { sendEmail } from "@/lib/email";
-import { username } from "better-auth/plugins";
 
 export const auth = betterAuth({
   database: prismaAdapter(db, {
     provider: "mongodb",
   }),
+
+
+  user: {
+    deleteUser:{
+      enabled: true,
+    },
+
+    changeEmail: {
+      enabled: true,
+    },
+  },
+
   emailAndPassword: {
     enabled: true,
     minPasswordLength: 8,
     autoSignIn: true,
-    sendResetPassword: async ({ user, url, token }, request) => {
+    sendResetPassword: async ({ user, url }) => {
       await sendEmail({
         to: user.email,
         subject: "Reset your password",
@@ -39,10 +50,5 @@ export const auth = betterAuth({
     },
   },
 
-  plugins: [
-    nextCookies(),
-    username({
-      minUsernameLength: 5,
-    }),
-  ],
+  plugins: [nextCookies()],
 });

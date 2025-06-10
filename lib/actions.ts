@@ -1,18 +1,12 @@
 "use server";
-
-import { redirect } from "next/navigation";
 import { auth } from "./auth/auth";
 import { APIError } from "better-auth/api";
 
-interface State {
-  errorMessage?: string | null;
-}
-
-export const signup = async (prevState: State, formdata) => {
+export const signup = async (formdata) => {
   const rowData = {
     email: formdata.email as string,
     password: formdata.password as string,
-    name: formdata.username as string,
+    name: formdata.name as string,
   };
 
   try {
@@ -25,18 +19,18 @@ export const signup = async (prevState: State, formdata) => {
     if (error instanceof APIError) {
       switch (error.status) {
         case "UNPROCESSABLE_ENTITY":
-          return { errorMessage: "user already exists." };
+          return { success: false, errorMessage: "user already exists." };
         case "BAD_REQUEST":
-          return { errorMessage: "Invalid Email." };
+          return { success: false, errorMessage: "Invalid Email." };
         default:
-          return { errorMessage: "something went wrong." };
+          return { success: false, errorMessage: "something went wrong." };
       }
     } else {
       throw new Error("An unknown error occurred.");
     }
   }
 
-  redirect("/");
+  return { success: true, errorMessage: "" };
 };
 
 export const login = async (formData) => {
@@ -56,16 +50,19 @@ export const login = async (formData) => {
     if (error instanceof APIError) {
       switch (error.status) {
         case "UNPROCESSABLE_ENTITY":
-          return { errorMessage: "user already exists." };
+          return { success: false, errorMessage: "user already exists." };
         case "BAD_REQUEST":
-          return { errorMessage: "Invalid Email." };
+          return { success: false, errorMessage: "Invalid Email." };
+        case "UNAUTHORIZED":
+          return {
+            success: false,
+            errorMessage: "Incorrect email or password.",
+          };
         default:
-          return { errorMessage: "something went wrong." };
+          return { success: false, errorMessage: "" };
       }
-    } else {
-      throw new Error("An unknown error occurred.");
     }
   }
 
-  redirect("/");
+  return { success: true, errorMessage: "" };
 };

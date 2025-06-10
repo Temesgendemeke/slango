@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "./ui/button";
 import Image from "next/image";
 import google_logo from "../assets/google.svg";
 import github_white from "../assets/github-mark-white.svg";

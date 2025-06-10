@@ -1,5 +1,6 @@
+"use client";
 import Footer from "@/components/Footer";
-import React, { startTransition, useActionState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import friends_image2 from "@/assets/Feeling proud-amico.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -19,55 +19,45 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import SocialLogin from "@/components/SocialLogin";
 import { signup } from "@/lib/actions";
-import { useEffect } from "react";
 import { toast } from "sonner";
 
-const formSchema = z
-  .object({
-    username: z
-      .string()
-      .min(2, { message: "username must be at least 2 characters long." })
-      .max(30, { message: "username must not exceed 30 characters." }),
-    email: z.string().email({ message: "Please enter a valid email address." }),
-    password: z
-      .string()
-      .min(6, { message: "Password must be at least 6 characters long." })
-      .max(50, { message: "Password must not exceed 50 characters." }),
-  })
-  .refine((data) => data.username || data.email, {
-    message: "Either username or email must be provided.",
-  });
+const formSchema = z.object({
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters long." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  password: z
+    .string()
+    .min(8, { message: "Password must be at least 8 characters long." })
+    .max(50, { message: "Password must not exceed 50 characters." }),
+});
 
 const SignUpForm = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      username: "",
       password: "",
+      name: "",
     },
   });
-
-  const initalState = { errorMessage: "" };
-  const [state, formAction, pending] = useActionState(signup, initalState);
-  
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
     try {
+      setLoading(true);
+      const { success, errorMessage } = await signup(data);
+      setLoading(false);
 
-      startTransition(() => {
-        formAction(data);
-      });
+      if (!success) {
+        return toast.error(errorMessage, { position: "top-center" });
+      }
     } catch (error) {
-      console.error("Signup failed:", error);
+      toast.error(error, { position: "top-center" });
     }
-  };
 
-  useEffect(() => {
-    if (state.errorMessage.length) {
-      toast.error(state.errorMessage);
-    }
-  }, [state.errorMessage]);
+    return window.location.replace("/");
+  };
 
   return (
     <div>
@@ -88,24 +78,25 @@ const SignUpForm = () => {
             >
               <FormField
                 control={form.control}
-                name="username"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>username</FormLabel>
+                    <FormLabel >name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your username" {...field} />
+                      <Input placeholder="Enter your name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+              
 
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel >Email</FormLabel>
                     <FormControl>
                       <Input
                         type="email"
@@ -123,7 +114,7 @@ const SignUpForm = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel >Password</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Enter your password"
@@ -139,8 +130,8 @@ const SignUpForm = () => {
               <Button
                 type="submit"
                 className="w-full"
-                disabled={pending}
-                aria-disabled={pending}
+                disabled={loading}
+                aria-disabled={loading}
               >
                 Sign up
               </Button>
