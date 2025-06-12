@@ -2,7 +2,6 @@
 import CustomCard from "@/components/CustomCard";
 import GoBackHomeButton from "@/components/GoBackHomeButton";
 import { authStore } from "@/store/useAuthStore";
-import { notFound } from "next/navigation";
 import React, { useEffect } from "react";
 import { toast } from "sonner";
 

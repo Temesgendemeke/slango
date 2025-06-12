@@ -7,19 +7,23 @@ import CardSkeleton from "./CardSkeleton";
 import { getCountry } from "@/utils/getCountry";
 import { customFetch } from "@/utils/fetch";
 import { toast } from "sonner";
+import { usePostStore } from "@/store/usePostStore";
 
 const SlangList = () => {
-  const [slangs, setSlang] = useState([]);
+  // const [slangs, setSlang] = useState([]);
   const [postsbyCountry, setPostsbyCountry] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const setPosts = usePostStore(store => store.setPosts)
+  const posts = usePostStore(store => store.posts)
+
 
   useEffect(() => {
     const fetchSlang = async () => {
       setLoading(true);
       const res = await fetch("/api/slang/trending");
       const post = await res.json();
-      setSlang(post);
+      setPosts(post);
 
       const { error, data } = await customFetch({
         route: `/api/slang/country`,
@@ -41,9 +45,9 @@ const SlangList = () => {
         <CardSkeleton />
       ) : (
         <div className="grid grid-cols-1 bg-transparent  md:grid-cols-2 lg:grid-cols-3 mt-3  gap-2 w-full">
-          {Array.isArray(slangs) &&
-            slangs.map((item, index) => (
-              <CustomCard key={index} item={item} setSlang={setSlang} />
+          {Array.isArray(posts) &&
+            posts.map((item, index) => (
+              <CustomCard key={index} item={item}/>
             ))}
         </div>
       )}
@@ -54,8 +58,8 @@ const SlangList = () => {
         </Button>
       </div>
 
-      {Object.entries(postsbyCountry).map(([country, posts]) => (
-        <>
+      {Object.entries(postsbyCountry).map(([country, posts], index) => (
+        <React.Fragment key={index}>
           <h3 className="font-bold text-3xl mt-10">
             {getCountry(country)} slang
           </h3>
@@ -65,7 +69,7 @@ const SlangList = () => {
             <div className="grid grid-cols-1 bg-transparent  md:grid-cols-2 lg:grid-cols-3 mt-3  gap-2 w-full">
               {Array.isArray(posts) &&
                 posts.map((item, index) => (
-                  <CustomCard key={index} item={item} setSlang={setSlang} />
+                  <CustomCard key={index} item={item} />
                 ))}
             </div>
           )}
@@ -76,7 +80,7 @@ const SlangList = () => {
           >
             🚀 Discover more {getCountry(country)} slang!
           </Button>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

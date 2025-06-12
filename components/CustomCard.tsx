@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -15,24 +15,21 @@ import { authStore } from "@/store/useAuthStore";
 import EditSlang from "./EditSlang";
 import { get_relative_time } from "@/utils/relative_date";
 import { getEmoji, getLanguage } from "@/utils/getCountry";
+import { usePostStore } from "@/store/usePostStore";
 
-const CustomCard = ({ item, setSlang }) => {
+const CustomCard = ({ item }) => {
   const user = authStore((store) => store.user);
-  const [bookmark, setBookmark] = useState<bool>(false);
   const handleClick = (e) => {
     e.stopPropagation();
     e.preventDefault();
     redirect(`/slang/${item.slug}`);
   };
-
   const handleButtonClick = (e) => {
     e.stopPropagation();
     e.preventDefault();
   };
 
-  const handleBookmark = async () => {
-    
-  };
+  const handleBookmark = async () => {};
 
   return (
     <Card
@@ -41,12 +38,11 @@ const CustomCard = ({ item, setSlang }) => {
       onClick={handleClick}
     >
       {user?.id == item.user_id ? (
-        <EditSlang slug={item.slug} setSlang={setSlang} />
+        <EditSlang slug={item.slug} />
       ) : (
         <Bookmark
           id={item.id}
           isBookmarked={true}
-          setSlang={setSlang}
           onClick={handleBookmark}
         />
       )}

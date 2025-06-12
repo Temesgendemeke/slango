@@ -10,23 +10,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { usePostStore } from "@/store/usePostStore";
 
-const EditSlang = ({ slug, setSlang }) => {
-  const user = authStore((store) => store.user);
+const EditSlang = ({ slug }) => {
   const router = useRouter();
+  const deletePost = usePostStore((state) => state.deletePost);
 
-  const deletePost = async (e) => {
+  const handleDeletion = async (e) => {
     e.preventDefault();
     e.stopPropagation();
     try {
       await fetch(`/api/slang/${slug}`, {
         method: "DELETE",
       });
-      setSlang((prev) => {
-        const filteredSlang = prev.filter((post) => post.slug !== slug);
-        return filteredSlang;
-      });
-    } catch (error) {
+      await deletePost(slug);
+    } catch {
       toast.error("Failed to delete the post.");
     }
   };
@@ -52,7 +50,7 @@ const EditSlang = ({ slug, setSlang }) => {
               <Edit2Icon />
               <span>Edit</span>
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={deletePost}>
+            <DropdownMenuItem onClick={handleDeletion}>
               <Trash2 />
               <span>Delete</span>
             </DropdownMenuItem>

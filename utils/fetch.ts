@@ -1,5 +1,8 @@
 import headers from "@/constants/headers";
 import { toast } from "sonner";
+
+const URL = process.env.URL;
+
 export const customFetch = async ({
   route,
   headers: customheader = {},
@@ -39,4 +42,16 @@ export const customFetch = async ({
     toast.error("😬 Yikes, something went wrong!");
     return { error: true, message: "failed to fetch" };
   }
+};
+
+export const fetchPostbySlug = async (slug) => {
+  const res = await fetch(`${URL}/api/slang/${slug}`);
+  const data = await res.json();
+  return data;
+};
+
+export const fetchUserbyId = async (id) => {
+  const res = await fetch(`${URL}/api/user/${id}`);
+  const data = await res.json();
+  return data;
 };

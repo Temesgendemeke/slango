@@ -1,17 +1,25 @@
 import SubmitSlangForm from "@/components/SubmitSlangForm";
 import React from "react";
-import { redirect } from "next/navigation";
-import { URL } from "@/constants/config";
+import { notFound } from "next/navigation";
+import {  fetchPostbySlug } from "@/utils/fetch";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const data = await fetchPostbySlug(slug);
+
+  return {
+    title: data.name,
+  };
+}
 
 const EditSlangPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
   try {
-    const res = await fetch(`${URL}/api/slang/${slug}`);
-    const slang = await res.json();
+    const data = await fetchPostbySlug(slug);
 
-    return <SubmitSlangForm slang={slang} />;
-  } catch (_) {
-    return redirect("/not-found");
+    return <SubmitSlangForm slang={data} />;
+  } catch {
+    return notFound();
   }
 };
 

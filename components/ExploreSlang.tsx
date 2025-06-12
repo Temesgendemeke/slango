@@ -49,13 +49,6 @@ const ExploreSlang = ({ page, country }) => {
     }
   }, [currentPage]);
 
-  // useEffect(() => {
-  //   if (country) {
-  //     fetchbyCountry();
-  //   } else {
-  //     fetchPost();
-  //   }
-  // }, []);
 
   const fetchbyCountry = async () => {
     const pre_page = 10;
