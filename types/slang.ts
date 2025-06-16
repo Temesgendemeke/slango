@@ -19,6 +19,7 @@ export interface Slang {
   name: string;
   examples: string[];
   explanation: string;
+  bookmarked_by: string[];
   englishPronunciation: string;
   category_id: string;
   view: number;

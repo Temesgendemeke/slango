@@ -11,6 +11,7 @@ export async function GET(request: Request, { params }) {
 
       include: {
         posted_by: true,
+        bookmarked_by: true,
         views: true,
         _count: {
           select: {
@@ -34,8 +35,6 @@ export async function GET(request: Request, { params }) {
 export async function PUT(request: Request, { params }) {
   const body = await request.json();
   const { slug } = await params;
-
-  console.log("body =====> ", body);
 
   try {
     const updated_slang = await db.slang.update({

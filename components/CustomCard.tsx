@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -11,60 +12,54 @@ import { EyeIcon } from "lucide-react";
 import Bookmark from "./Bookmark";
 import { redirect } from "next/navigation";
 import format_number from "../utils/format_number";
-import { authStore } from "@/store/useAuthStore";
 import EditSlang from "./EditSlang";
 import { get_relative_time } from "@/utils/relative_date";
 import { getEmoji, getLanguage } from "@/utils/getCountry";
-import { usePostStore } from "@/store/usePostStore";
+import { authStore } from "@/store/useAuthStore";
 
-const CustomCard = ({ item }) => {
+const CustomCard = ({ post }) => {
   const user = authStore((store) => store.user);
+
   const handleClick = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    redirect(`/slang/${item.slug}`);
+    redirect(`/slang/${post.slug}`);
   };
   const handleButtonClick = (e) => {
     e.stopPropagation();
     e.preventDefault();
   };
 
-  const handleBookmark = async () => {};
-
   return (
     <Card
-      key={item.id}
+      key={post.id}
       className="relative flex flex-col hover:border-primary   backdrop-blur-3xl transition ease-in duration-300"
       onClick={handleClick}
     >
-      {user?.id == item.user_id ? (
-        <EditSlang slug={item.slug} />
+      {user?.id == post.user_id ? (
+        <EditSlang slug={post.slug} />
       ) : (
-        <Bookmark
-          id={item.id}
-          isBookmarked={true}
-          onClick={handleBookmark}
-        />
+        <Bookmark id={post.id} />
       )}
 
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">{item.name}</CardTitle>
+        <CardTitle className="text-2xl font-bold">{post.name}</CardTitle>
         <CardDescription>
-          Added by {item.posted_by?.name} &#x2022;{" "}
-          {get_relative_time(item.updatedAt)}
+          Added by {post.posted_by?.name} &#x2022;{" "}
+          {get_relative_time(post.updatedAt)}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-primary">{item.explanation}</p>
+        <p className="text-primary">{post.explanation}</p>
       </CardContent>
       <CardFooter className="flex justify-between w-full">
         <div className="flex gap-2 ">
-          {getEmoji(item.country)} {getLanguage(item.language)}
+          {getEmoji(post.country)} {getLanguage(post.language)}
         </div>
 
         <div className="flex gap-2 " onClick={handleButtonClick}>
           <EyeIcon />
-          <span>{format_number(item._count.views)}</span>
+          <span>{format_number(post?._count.views)}</span>
         </div>
       </CardFooter>
     </Card>

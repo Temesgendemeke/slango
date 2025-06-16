@@ -8,6 +8,7 @@ const AuthSync = () => {
   const setUser = authStore((state) => state.setUser);
   const clearUser = authStore((state) => state.clearUser);
 
+
   useEffect(() => {
     const fetchImage = async (id: string): Promise<string | undefined> => {
       const res = await fetch(`/api/user/image/${id}`);
@@ -17,7 +18,7 @@ const AuthSync = () => {
       }
 
       const data = await res.json();      
-      return data.url;
+      return data?.url;
     };
 
     const syncUser = async () => {
@@ -30,7 +31,7 @@ const AuthSync = () => {
     };
 
     syncUser();
-  }, [session, clearUser, setUser]);
+  }, [session.data?.user, clearUser, setUser]);
 
   return null;
 };

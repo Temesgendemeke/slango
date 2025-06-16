@@ -6,7 +6,6 @@ import { Button } from "./ui/button";
 import Account from "./Account";
 import { useRouter } from "next/navigation";
 import { authStore } from "@/store/useAuthStore";
-import BookmarkButton from "./BookmarkButton";
 
 const Nav = () => {
   const router = useRouter();

@@ -142,6 +142,7 @@ model bookmark{
   user_id String
 
   @@index([slang_id])
+  @@unique([user_id, slang_id])
   @@map("bookmark")
 }
 

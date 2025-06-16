@@ -14,6 +14,7 @@ export async function GET(request: Request, { params }) {
       },
       include: {
         posted_by: true,
+        bookmarked_by: true,
         _count: {
           select: {
             views: true,

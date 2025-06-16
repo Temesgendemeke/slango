@@ -132,6 +132,7 @@ model bookmark {
   user     User   @relation(fields: [user_id], references: [id])
   user_id  String
 
+  @@unique([user_id, slang_id])
   @@index([slang_id])
   @@map("bookmark")
 }

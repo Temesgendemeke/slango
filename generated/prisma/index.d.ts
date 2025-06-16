@@ -11603,6 +11603,7 @@ export namespace Prisma {
 
   export type bookmarkWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    user_id_slang_id?: bookmarkUser_idSlang_idCompoundUniqueInput
     AND?: bookmarkWhereInput | bookmarkWhereInput[]
     OR?: bookmarkWhereInput[]
     NOT?: bookmarkWhereInput | bookmarkWhereInput[]
@@ -11610,7 +11611,7 @@ export namespace Prisma {
     user_id?: StringFilter<"bookmark"> | string
     Slang?: XOR<SlangScalarRelationFilter, slangWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id">
+  }, "id" | "user_id_slang_id">
 
   export type bookmarkOrderByWithAggregationInput = {
     id?: SortOrder
@@ -12742,6 +12743,11 @@ export namespace Prisma {
   export type categoryMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+  }
+
+  export type bookmarkUser_idSlang_idCompoundUniqueInput = {
+    user_id: string
+    slang_id: string
   }
 
   export type bookmarkCountOrderByAggregateInput = {

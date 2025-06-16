@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Github, HeartIcon, LogOut, Settings, User } from "lucide-react";
 import {
@@ -20,11 +20,20 @@ import { authStore } from "@/store/useAuthStore";
 const Account = () => {
   const router = useRouter();
   const user = authStore((store) => store.user);
+  const clearUser = authStore((store) => store.clearUser);
 
   const handleClick = async () => {
     try {
-      await signOut();
-      router.push("/login");
+      await signOut({
+        fetchOptions: {
+          onSuccess: () => {
+            console.log("benn here")
+            router.push("/login");
+          },
+        },
+      });
+      clearUser();
+      router.refresh();
     } catch (_) {
       toast.error("Error during sign out. Please try again.");
     }
@@ -46,9 +55,7 @@ const Account = () => {
               <User />
               <span>Profile</span>
             </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => router.push(`/user/bookmark`)}
-            >
+            <DropdownMenuItem onClick={() => router.push(`/user/bookmark`)}>
               <HeartIcon />
               <span>bookmarks</span>
             </DropdownMenuItem>

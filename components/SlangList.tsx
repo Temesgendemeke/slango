@@ -8,15 +8,34 @@ import { getCountry } from "@/utils/getCountry";
 import { customFetch } from "@/utils/fetch";
 import { toast } from "sonner";
 import { usePostStore } from "@/store/usePostStore";
+import { authStore } from "@/store/useAuthStore";
+import useBookmark from "@/store/useBookmark";
 
 const SlangList = () => {
-  // const [slangs, setSlang] = useState([]);
-  const [postsbyCountry, setPostsbyCountry] = useState([]);
+  const latestPost = usePostStore((state) => state.latestPost);
+  const setLatestPost = usePostStore((state) => state.setLatestPost);
+  const postsbyCountry = usePostStore((state) => state.postsbyCountry) || {};
+  const setPostsbyCountry = usePostStore((state) => state.setPostsbyCountry);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const setPosts = usePostStore(store => store.setPosts)
-  const posts = usePostStore(store => store.posts)
+  const setPosts = usePostStore((store) => store.setPosts);
+  const posts = usePostStore((store) => store.posts);
 
+  const user = authStore((store) => store.user);
+  const setBookmarks = useBookmark((store) => store.setBookmarks);
+
+  const fetchBookmark = async () => {
+    if (!user) return;
+    const { data } = await customFetch({
+      route: `/api/user/bookmark/${user.id}`,
+    });
+
+    setBookmarks(data);
+  };
+
+  useEffect(() => {
+    fetchBookmark();
+  }, [user]);
 
   useEffect(() => {
     const fetchSlang = async () => {
@@ -31,6 +50,17 @@ const SlangList = () => {
       if (error) {
         return toast.error("Uh-oh! Something went wrong 😅 Please try again!");
       }
+
+      await customFetch({ route: "/api/slang/latest" }).then((res) => {
+        const { error, data } = res;
+        if (error) {
+          return toast.error(
+            "Uh-oh! Something went wrong 😅 Please try again!"
+          );
+        }
+        setLatestPost(data);
+      });
+
       setPostsbyCountry(data);
       setLoading(false);
     };
@@ -41,14 +71,13 @@ const SlangList = () => {
   return (
     <div className="mt-10 px-2">
       <h3 className="font-bold text-3xl">🔥 Trending</h3>
+
       {loading ? (
         <CardSkeleton />
       ) : (
         <div className="grid grid-cols-1 bg-transparent  md:grid-cols-2 lg:grid-cols-3 mt-3  gap-2 w-full">
           {Array.isArray(posts) &&
-            posts.map((item, index) => (
-              <CustomCard key={index} item={item}/>
-            ))}
+            posts.map((post, index) => <CustomCard key={index} post={post} />)}
         </div>
       )}
 
@@ -57,6 +86,18 @@ const SlangList = () => {
           View More
         </Button>
       </div>
+
+      <h3 className="font-bold text-3xl">🆕 Latest</h3>
+      {loading ? (
+        <CardSkeleton />
+      ) : (
+        <div className="grid grid-cols-1 bg-transparent  md:grid-cols-2 lg:grid-cols-3 mt-3  gap-2 w-full">
+          {Array.isArray(posts) &&
+            latestPost.map((post, index) => (
+              <CustomCard key={index} post={post} />
+            ))}
+        </div>
+      )}
 
       {Object.entries(postsbyCountry).map(([country, posts], index) => (
         <React.Fragment key={index}>
@@ -68,8 +109,8 @@ const SlangList = () => {
           ) : (
             <div className="grid grid-cols-1 bg-transparent  md:grid-cols-2 lg:grid-cols-3 mt-3  gap-2 w-full">
               {Array.isArray(posts) &&
-                posts.map((item, index) => (
-                  <CustomCard key={index} item={item} />
+                posts.map((post, index) => (
+                  <CustomCard key={index} post={post} />
                 ))}
             </div>
           )}

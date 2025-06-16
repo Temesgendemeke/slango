@@ -14,33 +14,6 @@ import UserProfileSkeleton from "@/components/skeleton/userProfileSkeleton";
 import Footer from "@/components/Footer";
 
 const UserProfile = ({ user }) => {
-//   const [loading, setLoading] = useState(false);
-//   const [user, setUser] = useState();
-  // const logginedUser = authStore((store) => store.user);
-//   const [slang, setSlang] = useState();
-
-//   const fetchUser = async () => {
-//       setLoading(true);
-//       const res = await fetch(`/api/user/${id}`);
-//       setLoading(false);
-
-//       if (!res.ok) {
-//         return toast.error("Failed to fetch user. Retrying...");
-//       }
-//       const user_data = await res.json();
-
-//       setUser(user_data);
-//     };
-
-
-// {loading ? (
-//         <UserProfileSkeleton />
-//       ) : (
-
-  // useEffect(() => {
-  //   // fetchUser();
-  // }, []);
-
   return (
     <>
       <div className="flex flex-col gap-4  items-center mt-10">
@@ -48,7 +21,7 @@ const UserProfile = ({ user }) => {
             <div className="relative rounded-full overflow-hidden w-62 h-62">
               <Image
                 alt="user avater"
-                src={user?.image.url || avater}
+                src={user?.image?.url || avater}
                 className="object-cover w-full h-full"
                 width={260}
                 height={260}
@@ -81,7 +54,6 @@ const UserProfile = ({ user }) => {
             ))}
           </div>
         </div>
-      <Footer />
     </>
   );
 };

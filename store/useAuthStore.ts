@@ -7,7 +7,7 @@ interface AuthStore {
     email: string;
     image: string;
   } | null;
-  setUser: (user: { id: string; name: string } | null) => void;
+  setUser: (user) => void;
   clearUser: () => void;
 }
 

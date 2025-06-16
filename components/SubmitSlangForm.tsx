@@ -22,18 +22,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Link from "next/link";
 import GoBack from "@/components/GoBack";
 import { flags } from "@/constants/flags";
 import { languages } from "@/constants/languages";
 import { Trash2Icon } from "lucide-react";
 import { redirect } from "next/navigation";
-import { useSession } from "@/lib/auth/auth-client";
 import { authStore } from "@/store/useAuthStore";
 import { toast } from "sonner";
-import generate_unique_slug from "@/utils/generate_unique";
 
-const URL = process.env.URL;
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -132,7 +128,7 @@ const SubmitSlangForm = ({ slang = null }) => {
               <FormItem>
                 <FormLabel className="form_label">slang term</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="e.g., lit, fam, flex" {...field} />
                 </FormControl>
                 <FormDescription>
                   enter slang term or phrases you want to share{" "}
