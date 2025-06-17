@@ -15,12 +15,11 @@ const ExploreSlang = ({ page, country }) => {
   const [slang, setSlang] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredSlang, setFilteredSlang] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const perpage = 5;
   const [totalPage, setTotalPage] = useState<number>();
 
-  console.log("fdfffffffff", page, country);
 
   const fetchPost = async () => {
     const res = await fetch(
@@ -39,10 +38,8 @@ const ExploreSlang = ({ page, country }) => {
 
   useEffect(() => {
     setLoading(true);
-    console.log("country ", country);
 
     if (country) {
-      console.log("dsdsds cihn");
       fetchbyCountry();
     } else {
       fetchPost();

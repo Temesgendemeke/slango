@@ -8,9 +8,7 @@ const Logout = () => {
     try {
       await signOut();
       redirect("/login");
-    } catch (error) {
-      console.error("Error during sign out:", error);
-    }
+    } catch {}
   };
 
   return <Button onClick={handleClick}>Logout</Button>;

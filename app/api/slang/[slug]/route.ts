@@ -47,7 +47,6 @@ export async function PUT(request: Request, { params }) {
       slang: updated_slang,
     });
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { error: "Failed to update slang", details: (error as Error).message },
       { status: 500 }

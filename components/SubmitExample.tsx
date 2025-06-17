@@ -23,8 +23,6 @@ const SubmitExample = ({ slug, prevExamples, setSlang }) => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = (data) => {
-    console.log("add my example bro");
-    console.log(data.example);
     setLoading(true);
     fetch(`/api/slang/${slug}`, {
       method: "PUT",

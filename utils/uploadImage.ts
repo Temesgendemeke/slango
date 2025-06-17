@@ -6,13 +6,10 @@ const uploadImage = async (file) => {
 
   const formData = new FormData();
 
-  console.log("cloud name ", cloud_name);
-  console.log(preset_name);
 
   formData.append("file", file);
   formData.append("upload_preset", preset_name);
 
-  console.log(formData);
 
   try {
     const res = await fetch(url, {

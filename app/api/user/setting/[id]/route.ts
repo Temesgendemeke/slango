@@ -31,7 +31,6 @@ export async function PUT(
   const { id } = await params;
   const image = await request.json();
 
-  console.log("data ", image);
 
   try {
     const current_image = await db.image.findFirst();
@@ -59,7 +58,6 @@ export async function PUT(
 
     return NextResponse.json({ message: "profile updated sucessfuly" });
   } catch (error) {
-    console.log(error);
     return NextResponse.json(error, { status: 500 });
   }
 }

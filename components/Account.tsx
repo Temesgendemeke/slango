@@ -27,7 +27,6 @@ const Account = () => {
       await signOut({
         fetchOptions: {
           onSuccess: () => {
-            console.log("benn here")
             router.push("/login");
           },
         },
