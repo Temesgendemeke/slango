@@ -1,13 +1,7 @@
 import GetPostbySlug from "@/components/GetPostBySlug";
 import React from "react";
 import { fetchPostbySlug } from "@/utils/fetch";
-import { Metadata } from "next";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
