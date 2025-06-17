@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useTransition } from "react";
+import React, {  useTransition } from "react";
 import Image from "next/image";
 import friends_image2 from "@/assets/Feeling proud-amico.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
