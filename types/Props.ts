@@ -6,3 +6,5 @@ export interface IdPagePropes {
   params: Promise<{ id: string }>;
 }
 
+
+
