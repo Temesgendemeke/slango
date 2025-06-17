@@ -1,17 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
-import { useParams } from "next/navigation";
-import { toast } from "sonner";
+import React from "react";
 import Image from "next/image";
 import CustomCard from "@/components/CustomCard";
-import { authStore } from "@/store/useAuthStore";
 import avater from "@/assets/avater.png";
-import { Label } from "@radix-ui/react-dropdown-menu";
-import { Upload } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import UserProfileSkeleton from "@/components/skeleton/userProfileSkeleton";
-import Footer from "@/components/Footer";
+
 
 const UserProfile = ({ user }) => {
   return (
@@ -49,8 +41,8 @@ const UserProfile = ({ user }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 w-full mt-10">
-            {user?.posts.map((item, index) => (
-              <CustomCard key={index} item={item} />
+            {user?.posts.map((post, index) => (
+              <CustomCard key={index} post={post} />
             ))}
           </div>
         </div>

@@ -2,7 +2,7 @@ import { db } from "@/lib/prisma";
 import deleteImage from "@/utils/deleteImage";
 import { NextResponse } from "next/server";
 
-export async function GET(params: type) {
+export async function GET({ params }) {
   const { id } = await params;
 
   try {

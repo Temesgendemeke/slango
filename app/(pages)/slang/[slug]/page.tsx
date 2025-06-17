@@ -1,22 +1,25 @@
 import GetPostbySlug from "@/components/GetPostBySlug";
 import React from "react";
 import { fetchPostbySlug } from "@/utils/fetch";
+import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = await params;
-  const post = fetchPostbySlug(slug);
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const post = await fetchPostbySlug(slug);
 
   return {
     title: post.name,
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+export default async function Page({ params }) {
+  const { slug } = params;
 
   const post = await fetchPostbySlug(slug);
 

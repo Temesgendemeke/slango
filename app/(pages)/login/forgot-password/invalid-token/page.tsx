@@ -1,7 +1,7 @@
 import React from "react";
 import InvalidToken from "@/components/InvalidToken";
 
-export const meta = {
+export const metadata = {
   title: "invalid password",
 };
 

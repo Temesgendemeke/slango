@@ -1,4 +1,3 @@
-import { _ } from "better-auth/dist/shared/better-auth.DNTAFSt1";
 import React from "react";
 import { Skeleton } from "./ui/skeleton";
 

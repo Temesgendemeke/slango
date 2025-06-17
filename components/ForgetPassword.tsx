@@ -15,6 +15,8 @@ import { toast } from "sonner";
 import { forgetPasswordSchema } from "@/utils/zodSchema";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+
 
 const ForgetPassword = () => {
   const form = useForm({
@@ -69,7 +71,7 @@ const ForgetPassword = () => {
         >
           <h1 className="text-2xl font-bold mb-4">Forgot Your Password?</h1>
           <p className="text-sm text-gray-600 mb-6">
-            Enter your email address below, and we'll send you a verification
+            Enter your email address below, and we&apos;ll send you a verification
             code to reset your password.
           </p>
 

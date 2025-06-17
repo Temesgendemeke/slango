@@ -1,8 +1,7 @@
 "use client";
 import headers from "@/constants/headers";
 import { authStore } from "@/store/useAuthStore";
-import { usePostStore } from "@/store/usePostStore";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { HeartIcon } from "lucide-react";
 import useBookmark from "@/store/useBookmark";

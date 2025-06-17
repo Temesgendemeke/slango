@@ -34,7 +34,7 @@ const Account = () => {
       });
       clearUser();
       router.refresh();
-    } catch (_) {
+    } catch {
       toast.error("Error during sign out. Please try again.");
     }
   };

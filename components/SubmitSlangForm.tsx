@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Schema, z } from "zod";
+import {  z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -60,7 +60,7 @@ const SubmitSlangForm = ({ slang = null }) => {
     },
   });
   const edit_mode = !!slang;
-  const [categories, setCategories] = useState();
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const fetch_category = async () => {

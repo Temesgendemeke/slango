@@ -15,7 +15,7 @@ export async function GET(request, { params }) {
     });
     const slang_ids = bookmarked_posts.map((b) => b.slang_id);
     return NextResponse.json(slang_ids);
-  } catch (err) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to fetch bookmarks" },
       { status: 500 }

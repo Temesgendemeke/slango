@@ -1,6 +1,5 @@
 "use client";
 import { Edit2Icon, EllipsisVertical, Trash2 } from "lucide-react";
-import { authStore } from "@/store/useAuthStore";
 import {
   DropdownMenu,
   DropdownMenuContent,

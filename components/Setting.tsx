@@ -157,7 +157,7 @@ const Setting = () => {
                 <FormField
                   control={form.control}
                   name="image"
-                  render={({ _ }) => (
+                  render={({  }) => (
                     <FormItem>
                       <FormLabel>Image</FormLabel>
                       <FormControl>
