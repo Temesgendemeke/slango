@@ -46,7 +46,6 @@ const SignUpForm = () => {
     try {
       setLoading(true);
       const { success, errorMessage } = await signup(data);
-      setLoading(false);
 
       if (!success) {
         return toast.error(errorMessage, { position: "top-center" });
@@ -55,6 +54,8 @@ const SignUpForm = () => {
       const message =
         error instanceof Error ? error.message : "Something went wrong";
       return toast.error(message, { position: "top-center" });
+    } finally {
+      setLoading(false);
     }
 
     return window.location.replace("/");
