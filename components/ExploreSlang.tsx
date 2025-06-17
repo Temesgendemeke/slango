@@ -122,7 +122,6 @@ const ExploreSlang = ({ page, country }) => {
           )}
         </div>
       )}
-      <Footer />
     </div>
   );
 };

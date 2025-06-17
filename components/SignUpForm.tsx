@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import React, { useState } from "react";
 import Image from "next/image";
 import friends_image2 from "@/assets/Feeling proud-amico.svg";
@@ -147,7 +146,6 @@ const SignUpForm = () => {
           <SocialLogin />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
