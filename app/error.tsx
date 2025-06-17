@@ -18,7 +18,7 @@ const Error = ({ error }: ErrorProps) => {
         tech can’t vibe 24/7! Refresh or bounce back home and let’s pretend this
         never happened. 😅
       </p>
-      {NODE_ENV && (
+      {NODE_ENV === "development" && (
         <pre className="bg-red-100 text-red-700 p-4 rounded max-w-xl overflow-x-auto">
           {error.message}
         </pre>
