@@ -49,7 +49,6 @@ const ExploreSlang = ({ page, country }) => {
     }
   }, [currentPage]);
 
-
   const fetchbyCountry = async () => {
     const pre_page = 10;
 
@@ -68,7 +67,7 @@ const ExploreSlang = ({ page, country }) => {
 
   useEffect(() => {
     setFilteredSlang(slang || []);
-  }, [loading]);
+  }, [loading, setFilteredSlang]);
 
   useEffect(() => {
     if (!loading) {
@@ -110,7 +109,7 @@ const ExploreSlang = ({ page, country }) => {
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 w-full">
                 {filteredSlang.map((post, index) => (
-                  <CustomCard key={index} post={post}  />
+                  <CustomCard key={index} post={post} />
                 ))}
               </div>
               <PostPagination

@@ -3,8 +3,12 @@ import React from "react";
 import { fetchPostbySlug } from "@/utils/fetch";
 
 
-export async function generateMetadata({ params }) {
-  const { slug } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   const post = await fetchPostbySlug(slug);
 
   return {
@@ -12,9 +16,12 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function Page({ params }) {
-  const { slug } = params;
-
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   const post = await fetchPostbySlug(slug);
 
   return <GetPostbySlug slug={slug} data={post} />;

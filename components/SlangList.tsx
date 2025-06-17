@@ -66,7 +66,7 @@ const SlangList = () => {
     };
 
     fetchSlang();
-  }, []);
+  }, [setLatestPost, setPosts, setPostsbyCountry]);
 
   return (
     <div className="mt-10 px-2">

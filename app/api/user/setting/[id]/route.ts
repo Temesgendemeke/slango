@@ -1,8 +1,9 @@
 import { db } from "@/lib/prisma";
 import deleteImage from "@/utils/deleteImage";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { IdPagePropes } from "@/types/Props";
 
-export async function GET({ params }) {
+export async function GET(_request: NextRequest, { params }: IdPagePropes) {
   const { id } = await params;
 
   try {
@@ -23,7 +24,10 @@ export async function GET({ params }) {
   }
 }
 
-export async function PUT(request, { params }) {
+export async function PUT(
+  request: Request | NextRequest,
+  { params }: IdPagePropes
+) {
   const { id } = await params;
   const image = await request.json();
 

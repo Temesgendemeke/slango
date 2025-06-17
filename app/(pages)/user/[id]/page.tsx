@@ -1,8 +1,10 @@
 import UserProfile from "@/components/UserProfile";
+import { IdPagePropes } from "@/types/Props";
 import { fetchUserbyId } from "@/utils/fetch";
 
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+
+export async function generateMetadata({ params }: IdPagePropes) {
   const { id } = await params;
   const user = await fetchUserbyId(id);
 
@@ -11,7 +13,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params }:IdPagePropes) {
   const { id } = await params;
   const user = await fetchUserbyId(id);
 

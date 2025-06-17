@@ -1,5 +1,4 @@
-import { NextResponse } from "next/server";
-import { NextApiRequest } from "next";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/prisma";
 
 export async function GET(request: Request, { params }) {
@@ -56,7 +55,7 @@ export async function PUT(request: Request, { params }) {
   }
 }
 
-export async function DELETE(request: NextApiRequest, { params }) {
+export async function DELETE(request: Request | NextRequest, { params }) {
   const { slug } = await params;
 
   try {

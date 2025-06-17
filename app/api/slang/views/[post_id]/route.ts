@@ -4,12 +4,11 @@ import { subHours } from "date-fns";
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { post_id: string } }
+  { params }: { params: Promise<{ post_id: string }> }
 ) {
   const { post_id } = await params;
   const forwardedFor = req.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0]?.trim() || "unknown";
-
 
   if (!ip) {
     return NextResponse.json({ success: true });

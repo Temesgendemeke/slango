@@ -1,7 +1,7 @@
 import { db } from "@/lib/prisma";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request, { params }) {
+export async function GET(_request: NextRequest, { params }) {
   const { user_id } = await params;
 
   const posts = await db.bookmark.findMany({
@@ -21,6 +21,5 @@ export async function GET(request, { params }) {
     },
   });
 
-  console.log(posts);
   return NextResponse.json(posts);
 }

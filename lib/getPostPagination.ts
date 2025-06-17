@@ -6,9 +6,6 @@ const getPostPagination = async (page: number, prePage: number) => {
   const postPromise = db.slang.findMany({
     include: {
       posted_by: true,
-      _count: {
-        select: { like: true },
-      },
     },
     skip,
     take: prePage,

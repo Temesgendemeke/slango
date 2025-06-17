@@ -57,22 +57,22 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex justify-center mt-10">
-      <form onSubmit={onSubmit} className="space-y-4 md:w-2xl w-full">
-        <h1 className="text-2xl font-bold mb-4">Reset Your Password</h1>
-        <p className="text-sm text-gray-600 mb-6">
-          Please enter your new password below to reset your account password.
-        </p>
-        <Label>Password</Label>
-        <Input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        ></Input>
-        <Button disabled={loading} type="submit">
-          reset
-        </Button>
-      </form>
-    </div>
+      <div className="flex justify-center mt-10">
+        <form onSubmit={onSubmit} className="space-y-4 md:w-2xl w-full">
+          <h1 className="text-2xl font-bold mb-4">Reset Your Password</h1>
+          <p className="text-sm text-gray-600 mb-6">
+            Please enter your new password below to reset your account password.
+          </p>
+          <Label>Password</Label>
+          <Input
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          ></Input>
+          <Button disabled={loading} type="submit">
+            reset
+          </Button>
+        </form>
+      </div>
   );
 };
 

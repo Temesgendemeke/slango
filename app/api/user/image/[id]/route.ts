@@ -1,7 +1,8 @@
 import { db } from "@/lib/prisma";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { IdPagePropes } from "@/types/Props";
 
-export async function GET(request, { params }) {
+export async function GET(_request: NextRequest, { params }: IdPagePropes) {
   const { id: user_id } = await params;
 
   const image = await db.image.findFirst({
