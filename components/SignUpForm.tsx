@@ -52,7 +52,9 @@ const SignUpForm = () => {
         return toast.error(errorMessage, { position: "top-center" });
       }
     } catch (error) {
-      return toast.error(error, { position: "top-center" });
+      const message =
+        error instanceof Error ? error.message : "Something went wrong";
+      return toast.error(message, { position: "top-center" });
     }
 
     return window.location.replace("/");
