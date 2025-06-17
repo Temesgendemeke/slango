@@ -52,7 +52,7 @@ const SignUpForm = () => {
         return toast.error(errorMessage, { position: "top-center" });
       }
     } catch (error) {
-      toast.error(error, { position: "top-center" });
+      return toast.error(error, { position: "top-center" });
     }
 
     return window.location.replace("/");
@@ -80,7 +80,7 @@ const SignUpForm = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel >name</FormLabel>
+                    <FormLabel>name</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter your name" {...field} />
                     </FormControl>
@@ -88,14 +88,13 @@ const SignUpForm = () => {
                   </FormItem>
                 )}
               />
-              
 
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel >Email</FormLabel>
+                    <FormLabel>Email</FormLabel>
                     <FormControl>
                       <Input
                         type="email"
@@ -113,7 +112,7 @@ const SignUpForm = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel >Password</FormLabel>
+                    <FormLabel>Password</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Enter your password"
