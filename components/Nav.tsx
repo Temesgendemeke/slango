@@ -26,7 +26,7 @@ const Nav = () => {
             <Account />
           </>
         ) : (
-          <div className="hidden md:flex">
+          <div className="hidden md:flex space-x-1">
             <Button
               onClick={() => router.push("/signup")}
               className="transition duration-300 ease-in border-white bg-transparent hover:bg-primary  text-primary hover:text-secondary"
