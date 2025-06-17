@@ -7,7 +7,6 @@ import { Search } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { PostPagination } from "@/components/PostPagination";
-import Footer from "@/components/Footer";
 import { customFetch } from "@/utils/fetch";
 
 const ExploreSlang = ({ page, country }) => {
