@@ -7,7 +7,7 @@ import { Plus, Search } from "lucide-react";
 const HeroSection = () => {
   return (
     <div className="flex justify-center  flex-col items-center gap-4 mt-10 md:mt-20 w-full">
-      <h1 className="text-center text-2xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r dark:from-slate-50 dark:to-slate-300 from-black to-gray-700">
+      <h1 className="text-center text-3xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r dark:from-slate-50 dark:to-slate-300 from-black to-gray-700">
         DISCOVER, SHARE, DEFINE SLANG
       </h1>
       <p className="dark:text-gray-300 text-black text-center text-[0.7rem] md:text-lg max-w-xs md:max-w-2xl">

@@ -28,27 +28,10 @@ const GetPostbySlug = ({ slug, data }) => {
   const router = useRouter();
   const [showInput, setShowInput] = useState(false);
 
-  //   const fetchSlang = () => {
-  //     setLoading(true);
-  //     fetch(`/api/slang/${slug}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         fetch(`/api/slang/views/${data.id}`, { method: "PUT" });
-  //         setSlang(data);
-  //         setLoading(false);
-  //       })
-  //       .catch(() =>
-  //         toast.error(
-  //           "😬 Whoops! Couldn't load the slang. Try again later, bestie 🚧"
-  //         )
-  //       );
-  //   };
-
   useEffect(() => {
     setLoading(true);
     fetch(`/api/slang/views/${data.id}`, { method: "PUT" });
     setLoading(false);
-    // fetchSlang();
   }, []);
 
   const handleDelete = async () => {
@@ -179,7 +162,7 @@ const GetPostbySlug = ({ slug, data }) => {
                 better!
               </p>
               <Button onClick={() => setShowInput((prev) => !prev)}>
-                Submit slang
+                Submit
               </Button>
             </div>
           </div>
