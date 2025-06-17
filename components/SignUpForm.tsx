@@ -51,6 +51,7 @@ const SignUpForm = () => {
         return toast.error(errorMessage, { position: "top-center" });
       }
     } catch (error) {
+      console.log(error);
       const message =
         error instanceof Error ? error.message : "Something went wrong";
       return toast.error(message, { position: "top-center" });
