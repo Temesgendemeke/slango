@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-auto  border-t">
+    <footer className="w-full mt-10  ">
       <div className="flex justify-center my-4">
       <p className="text-center">
         © {new Date().getFullYear()} Slango. Developed by{" "}
