@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import friends_image2 from "@/assets/Feeling proud-amico.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -40,26 +40,27 @@ const SignUpForm = () => {
       name: "",
     },
   });
-  const [loading, setLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const onSubmit = async (data) => {
     try {
-      setLoading(true);
-      const { success, errorMessage } = await signup(data);
-
-      if (!success) {
-        return toast.error(errorMessage, { position: "top-center" });
-      }
-    } catch (error) {
-      console.log(error);
-      const message =
-        error instanceof Error ? error.message : "Something went wrong";
-      return toast.error(message, { position: "top-center" });
-    } finally {
-      setLoading(false);
+      startTransition(() => {
+        signup(data).then(({ success, errorMessage }) => {
+          if (!success) {
+            toast.error(errorMessage, { position: "top-center" });
+          } else {
+            window.location.replace("/");
+          }
+        }).catch((error) => {
+          console.log(error);
+          const message =
+            error instanceof Error ? error.message : "Something went wrong";
+          toast.error(message, { position: "top-center" });
+        });
+      });
+    } catch  {
+      toast.error("Something went wrong", { position: "top-center" });
     }
-
-    return window.location.replace("/");
   };
 
   return (
@@ -132,8 +133,8 @@ const SignUpForm = () => {
               <Button
                 type="submit"
                 className="w-full"
-                disabled={loading}
-                aria-disabled={loading}
+                disabled={isPending}
+                aria-disabled={isPending}
               >
                 Sign up
               </Button>

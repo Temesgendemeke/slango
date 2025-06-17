@@ -26,7 +26,7 @@ export const signup = async (formdata) => {
           return { success: false, errorMessage: "something went wrong." };
       }
     } else {
-      throw new Error("An unknown error occurred.");
+      return { success: false, errorMessage: "An unknown error occurred." };
     }
   }
 
