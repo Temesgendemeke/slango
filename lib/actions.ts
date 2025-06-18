@@ -1,6 +1,7 @@
 "use server";
 import { auth } from "./auth/auth";
 import { APIError } from "better-auth/api";
+import { sendVerificationEmail } from "./auth/auth-client";
 
 export const signup = async (formdata) => {
   const rowData = {
@@ -16,8 +17,6 @@ export const signup = async (formdata) => {
       },
     });
   } catch (error) {
-    console.log("p2002 ", error?.code);
-    console.log("error", error);
     if (error instanceof APIError) {
       switch (error.status) {
         case "UNPROCESSABLE_ENTITY":
@@ -41,30 +40,20 @@ export const login = async (formData) => {
     password: formData.password as string,
     remberMe: formData.remeberme as string,
   };
+  let emailVerified;
 
   try {
-    await auth.api.signInEmail({
+    const { user } = await auth.api.signInEmail({
       body: {
         ...rowData,
       },
     });
+    emailVerified = user.emailVerified;
   } catch (error) {
     if (error instanceof APIError) {
-      switch (error.status) {
-        case "UNPROCESSABLE_ENTITY":
-          return { success: false, errorMessage: "user already exists." };
-        case "BAD_REQUEST":
-          return { success: false, errorMessage: "Invalid Email." };
-        case "UNAUTHORIZED":
-          return {
-            success: false,
-            errorMessage: "Incorrect email or password.",
-          };
-        default:
-          return { success: false, errorMessage: "" };
-      }
+      return { success: false, errorMessage: error.message, emailVerified: "" };
     }
   }
 
-  return { success: true, errorMessage: "" };
+  return { success: true, errorMessage: "", emailVerified };
 };

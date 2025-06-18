@@ -11,10 +11,14 @@ const InvalidToken = () => {
     <div className="flex items-center justify-center flex-col gap-2 lg:flex-row">
       <Image alt="stress person picture" src={stress_pan} className=""></Image>
       <div className="flex items-center   gap-5 flex-col ">
-        <h2 className="text-center">
-          Invalid or expired token! <br /> Please request a new password reset
-          link.
+        <h2 className="text-center text-3xl font-extrabold text-white animate-bounce drop-shadow-lg">
+          Yikes! <span className="text-black bg-white px-2 rounded">Token went ghost 👻</span>
         </h2>
+        <p className="text-center text-lg text-gray-200 mt-3 italic">
+          Looks like this link dipped out faster than your fave TikTok trend.<br />
+          <span className="text-black bg-white px-1 rounded">Your token is expired or invalid! 🕒🚫</span><br />
+          Smash that button for a do-over! 🔄✨
+        </p>
         <Button
           className="w-full sm:w-40"
           onClick={() => router.push("/login/forgot-password")}

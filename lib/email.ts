@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend("re_iEewfb2d_CRrfUcYgDAr7Khbu8rK2FE4W");
+const resend = new Resend(process.env.RESEND_KEY);
 
 export const sendEmail = async ({
   to,
@@ -11,8 +11,8 @@ export const sendEmail = async ({
   subject: string;
   text: string;
 }) => {
-  await resend.emails.send({
-    from: "SLANGO <onboarding@resend.dev>", 
+   await resend.emails.send({
+    from: "SLANGO <admin@wemesgen.live>",
     to,
     subject,
     html: `<p>You have requested a password reset.</p>

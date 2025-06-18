@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { resetPassword } from "@/lib/auth/auth-client";
+import EyeButton from "./EyeButton";
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
@@ -14,6 +15,7 @@ const ResetPassword = () => {
   const token = searchParams.get("token");
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     if (typeof token !== "string" || !token) {
@@ -57,22 +59,28 @@ const ResetPassword = () => {
   };
 
   return (
-      <div className="flex justify-center mt-10">
-        <form onSubmit={onSubmit} className="space-y-4 md:w-2xl w-full">
-          <h1 className="text-2xl font-bold mb-4">Reset Your Password</h1>
-          <p className="text-sm text-gray-600 mb-6">
-            Please enter your new password below to reset your account password.
-          </p>
-          <Label>Password</Label>
+    <div className="flex justify-center mt-10">
+      <form onSubmit={onSubmit} className="space-y-4 md:w-2xl w-full">
+        <h1 className="text-2xl font-bold mb-4">Reset Your Password</h1>
+        <p className="text-sm text-gray-600 mb-6">
+          Please enter your new password below to reset your account password.
+        </p>
+        <Label>Password</Label>
+        <div className="relative">
           <Input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           ></Input>
-          <Button disabled={loading} type="submit">
-            reset
-          </Button>
-        </form>
-      </div>
+          <EyeButton
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+          />
+        </div>
+        <Button disabled={loading} type="submit">
+          reset
+        </Button>
+      </form>
+    </div>
   );
 };
 

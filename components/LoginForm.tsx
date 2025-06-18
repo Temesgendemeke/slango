@@ -21,6 +21,8 @@ import { login } from "@/lib/actions";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import EyeButton from "./EyeButton";
+import { sendVerificationEmail } from "@/lib/auth/auth-client";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   email: z
@@ -45,11 +47,15 @@ const LoginForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     setLoading(true);
-    const { success, errorMessage } = await login(data);
+    const { success, errorMessage, emailVerified } = await login(data);
     setLoading(false);
+    if (!emailVerified) {
+      return router.push(`/login/verify-email?email=${data.email}`);
+    }
 
     if (!success) {
       return toast.error(errorMessage, { position: "top-center" });

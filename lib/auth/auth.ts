@@ -9,9 +9,8 @@ export const auth = betterAuth({
     provider: "mongodb",
   }),
 
-
   user: {
-    deleteUser:{
+    deleteUser: {
       enabled: true,
     },
 
@@ -32,6 +31,20 @@ export const auth = betterAuth({
       });
     },
     resetPasswordTokenExpiresIn: 3600,
+    requireEmailVerification: true,
+  },
+  emailVerification: {
+    sendOnSignUp: true,
+    expiresIn: 60 * 60, // one hour
+    autoSignInAfterVerification: true,
+    sendVerificationEmail: async({user, url})=>{
+      console.log("email sent to ", user.email)
+      await sendEmail({
+        to: user.email,
+        subject: "Verify your email address",
+        text: `Click the link to verify your email address: ${url}`,
+      });
+    }
   },
 
   account: {
