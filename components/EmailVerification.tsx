@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import { sendVerificationEmail } from "@/lib/auth/auth-client";
 
 const EmailVerification = () => {

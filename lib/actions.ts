@@ -1,7 +1,6 @@
 "use server";
 import { auth } from "./auth/auth";
 import { APIError } from "better-auth/api";
-import { sendVerificationEmail } from "./auth/auth-client";
 
 export const signup = async (formdata) => {
   const rowData = {

@@ -19,8 +19,8 @@ import Link from "next/link";
 import SocialLogin from "@/components/SocialLogin";
 import { signup } from "@/lib/actions";
 import { toast } from "sonner";
-import { Eye, EyeOffIcon } from "lucide-react";
 import EyeButton from "./EyeButton";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z
@@ -44,6 +44,7 @@ const SignUpForm = () => {
   });
   const [isPending, startTransition] = useTransition();
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     try {
@@ -53,7 +54,7 @@ const SignUpForm = () => {
             if (!success) {
               toast.error(errorMessage, { position: "top-center" });
             } else {
-              window.location.replace("/");
+              router.push(`/login/verify-email?email=${data.email}`);
             }
           })
           .catch((error) => {

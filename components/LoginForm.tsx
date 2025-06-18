@@ -21,7 +21,6 @@ import { login } from "@/lib/actions";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import EyeButton from "./EyeButton";
-import { sendVerificationEmail } from "@/lib/auth/auth-client";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
