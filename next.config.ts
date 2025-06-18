@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["res.cloudinary.com", "asset.cloudinary.com"],
   },
+
 };
 
 export default nextConfig;
