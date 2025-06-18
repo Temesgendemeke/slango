@@ -1,0 +1,15 @@
+{
+  "build": {
+    "env": {
+      "PRISMA_QUERY_ENGINE_BINARY": "/var/task/generated/prisma/libquery_engine-rhel-openssl-3.0.x.so.node"
+    }
+  },
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": "generated/prisma/**"
+    },
+    "app/**/route.js": {
+      "includeFiles": "generated/prisma/**"
+    }
+  }
+}
