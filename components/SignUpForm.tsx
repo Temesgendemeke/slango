@@ -1,5 +1,5 @@
 "use client";
-import React, {  useTransition } from "react";
+import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import friends_image2 from "@/assets/Feeling proud-amico.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,6 +19,8 @@ import Link from "next/link";
 import SocialLogin from "@/components/SocialLogin";
 import { signup } from "@/lib/actions";
 import { toast } from "sonner";
+import { Eye, EyeOffIcon } from "lucide-react";
+import EyeButton from "./EyeButton";
 
 const formSchema = z.object({
   name: z
@@ -41,23 +43,26 @@ const SignUpForm = () => {
     },
   });
   const [isPending, startTransition] = useTransition();
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = async (data) => {
     try {
       startTransition(() => {
-        signup(data).then(({ success, errorMessage }) => {
-          if (!success) {
-            toast.error(errorMessage, { position: "top-center" });
-          } else {
-            window.location.replace("/");
-          }
-        }).catch((error) => {
-          const message =
-            error instanceof Error ? error.message : "Something went wrong";
-          toast.error(message, { position: "top-center" });
-        });
+        signup(data)
+          .then(({ success, errorMessage }) => {
+            if (!success) {
+              toast.error(errorMessage, { position: "top-center" });
+            } else {
+              window.location.replace("/");
+            }
+          })
+          .catch((error) => {
+            const message =
+              error instanceof Error ? error.message : "Something went wrong";
+            toast.error(message, { position: "top-center" });
+          });
       });
-    } catch  {
+    } catch {
       toast.error("Something went wrong", { position: "top-center" });
     }
   };
@@ -118,11 +123,18 @@ const SignUpForm = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Enter your password"
-                        {...field}
-                        type="password"
-                      />
+                      <div className="relative">
+                        <Input
+                          placeholder="Enter your password"
+                          {...field}
+                          type={showPassword ? "text" : "password"}
+                          className="pr-10"
+                        />
+                        <EyeButton
+                          setShowPassword={setShowPassword}
+                          showPassword={showPassword}
+                        />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>

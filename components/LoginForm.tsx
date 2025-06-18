@@ -20,7 +20,7 @@ import SocialLogin from "@/components/SocialLogin";
 import { login } from "@/lib/actions";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
-
+import EyeButton from "./EyeButton";
 
 const formSchema = z.object({
   email: z
@@ -44,6 +44,7 @@ const LoginForm = () => {
     },
   });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = async (data) => {
     setLoading(true);
@@ -54,9 +55,8 @@ const LoginForm = () => {
       return toast.error(errorMessage, { position: "top-center" });
     }
 
-
     return window.location.replace("/");
-  }
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -89,11 +89,17 @@ const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="Enter your password"
-                      {...field}
-                      type="password"
-                    />
+                    <div className="relative">
+                      <Input
+                        placeholder="Enter your password"
+                        {...field}
+                        type={showPassword ? "text" : "password"}
+                      />
+                      <EyeButton
+                        showPassword={showPassword}
+                        setShowPassword={setShowPassword}
+                      />
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
