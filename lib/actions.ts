@@ -16,6 +16,8 @@ export const signup = async (formdata) => {
       },
     });
   } catch (error) {
+    console.log("p2002 ", error?.code);
+    console.log("error", error);
     if (error instanceof APIError) {
       switch (error.status) {
         case "UNPROCESSABLE_ENTITY":

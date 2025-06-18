@@ -52,7 +52,6 @@ const SignUpForm = () => {
             window.location.replace("/");
           }
         }).catch((error) => {
-          console.log(error);
           const message =
             error instanceof Error ? error.message : "Something went wrong";
           toast.error(message, { position: "top-center" });
