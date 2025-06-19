@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 type Session = typeof auth.$Infer.Session;
 
 export async function middleware(request: NextRequest) {
+  
   const { data: session } = await betterFetch<Session>(
     "/api/auth/get-session",
     {
@@ -18,10 +19,15 @@ export async function middleware(request: NextRequest) {
   if (!session) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
-
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/dashboard", "/submit-slang", "/slang/edit", "/account"],
+  matcher: [
+    "/dashboard",
+    "/submit-slang",
+    "/slang/edit",
+    "/account",
+    "/user/bookmark",
+  ],
 };
