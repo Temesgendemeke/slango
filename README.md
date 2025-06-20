@@ -1,6 +1,6 @@
 # Slango
 
-![Home page screenshot](./asssets/screenshot.png)
+![Home page screenshot](./assets/screenshot.png)
 
 Slango is a modern web application that lets users share and explore unique slang words and phrases. Create an account, log in, and contribute to a growing collection of slang—all within a sleek, responsive interface.
 
