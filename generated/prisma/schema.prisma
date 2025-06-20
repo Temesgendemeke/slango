@@ -102,7 +102,7 @@ model slang {
 
 model Views {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  post      slang    @relation(fields: [post_id], references: [id])
+  post      slang    @relation(fields: [post_id], references: [id], onDelete: Cascade)
   post_id   String   @db.ObjectId
   ip        String?  @unique
   createdAt DateTime @default(now())

@@ -64,7 +64,8 @@ export async function DELETE(request: Request | NextRequest, { params }) {
       },
     });
     return NextResponse.json({ message: "Delete successfuly" });
-  } catch {
+  } catch (error) {
+    console.log("[deleete] ", error);
     return NextResponse.json(
       {
         message: "Internal Server Error",
