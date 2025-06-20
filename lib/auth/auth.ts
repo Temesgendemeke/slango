@@ -67,7 +67,7 @@ export const auth = betterAuth({
   plugins: [nextCookies()],
 });
 
-export async function isAuthenticated(): Promise<{ error: Response | string }> {
+export async function isAuthenticated(): Promise<{ session: unknown } | { error: Response }> {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -78,5 +78,5 @@ export async function isAuthenticated(): Promise<{ error: Response | string }> {
     };
   }
 
-  return { error: "" };
+  return { session };
 }

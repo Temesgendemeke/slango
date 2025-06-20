@@ -11,17 +11,17 @@ export async function GET(request) {
   try {
     const slangs = await db.slang.findMany({
       include: {
-      posted_by: true,
-      _count: {
-        select: {
-        views: true,
+        posted_by: true,
+        _count: {
+          select: {
+            views: true,
+          },
         },
       },
-      },
       orderBy: {
-      views: {
-        _count: 'desc',
-      },
+        views: {
+          _count: "desc",
+        },
       },
       skip: (current_page - 1) * perpage,
       take: perpage,
@@ -44,10 +44,10 @@ export async function GET(request) {
 }
 
 export async function POST(request: Request) {
-  const { error } = await isAuthenticated();
+  const isAuth = await isAuthenticated();
+  if ("error" in isAuth) return isAuth.error;
+
   
-  
-  if (error) return error;
   try {
     const body = await request.json();
     const slug = await generate_unique_slug(body.name);

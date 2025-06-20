@@ -13,7 +13,7 @@ export async function GET() {
       },
       },
       orderBy: {
-      createdAt: "desc", // Change "asc" to "desc" to fetch latest posts
+      createdAt: "desc", 
       },
       take: 5,
     });

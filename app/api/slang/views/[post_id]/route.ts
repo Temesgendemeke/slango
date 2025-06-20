@@ -1,6 +1,7 @@
 import { db } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { subHours } from "date-fns";
+import { isAuthenticated } from "@/lib/auth/auth";
 
 export async function PUT(
   req: NextRequest,
@@ -9,6 +10,8 @@ export async function PUT(
   const { post_id } = await params;
   const forwardedFor = req.headers.get("x-forwarded-for");
   const ip = forwardedFor?.split(",")[0]?.trim() || "unknown";
+  const isAuth = await isAuthenticated();
+  if ("error" in isAuth) return isAuth.error;
 
   if (!ip) {
     return NextResponse.json({ success: true });

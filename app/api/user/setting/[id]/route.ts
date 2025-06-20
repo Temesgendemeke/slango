@@ -2,6 +2,7 @@ import { db } from "@/lib/prisma";
 import deleteImage from "@/utils/deleteImage";
 import { NextRequest, NextResponse } from "next/server";
 import { IdPagePropes } from "@/types/Props";
+import { isAuthenticated } from "@/lib/auth/auth";
 
 export async function GET(_request: NextRequest, { params }: IdPagePropes) {
   const { id } = await params;
@@ -30,6 +31,8 @@ export async function PUT(
 ) {
   const { id } = await params;
   const image = await request.json();
+  const isAuth = await isAuthenticated();
+  if ("error" in isAuth) return isAuth.error;
 
 
   try {
