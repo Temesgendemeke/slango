@@ -39,7 +39,7 @@ const CustomCard = ({ post }) => {
       {user?.id == post.user_id ? (
         <EditSlang slug={post.slug} />
       ) : (
-        <Bookmark id={post.id} />
+        <Bookmark id={post.id} cls="absolute right-2"/>
       )}
 
       <CardHeader>

@@ -8,6 +8,8 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import headers from "@/constants/headers";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { authStore } from "@/store/useAuthStore";
 
 const exampleSchema = z.object({
   example: z.string(),
@@ -21,9 +23,14 @@ const SubmitExample = ({ slug, prevExamples, setSlang }) => {
     },
   });
   const [loading, setLoading] = useState(false);
+  const user = authStore((store) => store.user);
+  const router = useRouter();
 
   const onSubmit = (data) => {
     setLoading(true);
+    if (!user) {
+      return router.push("/login");
+    }
     fetch(`/api/slang/${slug}`, {
       method: "PUT",
       headers: headers,
@@ -38,7 +45,10 @@ const SubmitExample = ({ slug, prevExamples, setSlang }) => {
         if (!res.ok) {
           return toast.error("Something went wrong. Please try again.");
         }
-        setSlang(prev => ({...prev, examples: [...prevExamples, data.example]}))
+        setSlang((prev) => ({
+          ...prev,
+          examples: [...prevExamples, data.example],
+        }));
         toast.success("Thanks for submitting, fam! 🔥");
       })
       .catch(() => {

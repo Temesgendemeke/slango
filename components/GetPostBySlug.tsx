@@ -1,14 +1,7 @@
 "use client";
 import GoBack from "@/components/GoBack";
 import { Button } from "@/components/ui/button";
-import {
-  Bookmark,
-  Calendar,
-  EyeIcon,
-  PenIcon,
-  Trash2Icon,
-  User,
-} from "lucide-react";
+import { Calendar, EyeIcon, PenIcon, Trash2Icon, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -20,6 +13,7 @@ import { getCountry, getLanguage } from "@/utils/getCountry";
 import SubmitExample from "@/components/SubmitExample";
 import { Slang } from "@/types/slang";
 import format_number from "@/utils/format_number";
+import Bookmark from "./Bookmark";
 
 const GetPostbySlug = ({ slug, data }) => {
   const [loading, setLoading] = useState(true);
@@ -27,6 +21,9 @@ const GetPostbySlug = ({ slug, data }) => {
   const user = authStore((store) => store.user);
   const router = useRouter();
   const [showInput, setShowInput] = useState(false);
+  
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -77,7 +74,7 @@ const GetPostbySlug = ({ slug, data }) => {
                   <p>{format_number(slang._count.views)}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Bookmark className="size-4 md:size-5" />
+                  <Bookmark id={slang.id} cls="" />
                 </div>
               </div>
             </div>

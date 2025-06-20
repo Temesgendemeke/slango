@@ -8,9 +8,10 @@ import useBookmark from "@/store/useBookmark";
 
 interface BookmarkProps {
   id: string;
+  cls: string;
 }
 
-const Bookmark = ({ id }: BookmarkProps) => {
+const Bookmark = ({ id, cls }: BookmarkProps) => {
   const user = authStore((store) => store.user);
   const router = useRouter();
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -34,13 +35,13 @@ const Bookmark = ({ id }: BookmarkProps) => {
 
   const handleBookmark = async (e) => {
     e.stopPropagation();
-    if (!user) router.push("/login");
+    if (!user) return router.push("/login");
     await postBookmark(user?.id, id);
   };
 
   return (
     <div
-      className="absolute right-2 cursor-pointer "
+      className={`${cls} cursor-pointer `}
       onClick={handleBookmark}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
