@@ -1,6 +1,8 @@
 # Slango
 
-Slango is a modern web application designed to let users share and explore unique slang words and phrases. It provides a platform for users to create accounts, log in, and contribute to a growing collection of slang while interacting with a sleek and responsive user interface.
+![Home page screenshot](asssets/screenshot.png)
+
+Slango is a modern web application that lets users share and explore unique slang words and phrases. Create an account, log in, and contribute to a growing collection of slang—all within a sleek, responsive interface.
 
 ## Features
 
@@ -19,5 +21,40 @@ Slango is a modern web application designed to let users share and explore uniqu
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Routing**: Next.js routing system
+- **Authentication**: BetterAuth for secure authentication and social logins
+- **Database**: Mongodb with Prisma ORM
+- **API**: RESTful API routes with Next.js
+- **State Management**: Zustand
+- **Deployment**: Vercel
+- **Linting & Formatting**: ESLint, Prettier
 
+---
+
+## 🚀 Get Started
+
+1. Clone the repo:  
+    ```bash
+    git clone https://github.com/yourusername/slango.git
+    ```
+2. Install dependencies:  
+    ```bash
+    npm install
+    ```
+3. Set up environment variables (see `.env.example`).
+4. Run the development server:  
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open issues or submit pull requests to help improve Slango.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
 
