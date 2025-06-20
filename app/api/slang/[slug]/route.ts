@@ -1,8 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/prisma";
+import { isAuthenticated } from "@/lib/auth/auth";
 
 export async function GET(request: Request, { params }) {
   const { slug } = await params;
+
+  const { error } = await isAuthenticated();
+
+  if (error) return error;
 
   try {
     const slang = await db.slang.findUnique({
@@ -34,6 +39,9 @@ export async function GET(request: Request, { params }) {
 export async function PUT(request: Request, { params }) {
   const body = await request.json();
   const { slug } = await params;
+  const { error } = await isAuthenticated();
+
+  if (error) return error;
 
   try {
     const updated_slang = await db.slang.update({
@@ -56,6 +64,9 @@ export async function PUT(request: Request, { params }) {
 
 export async function DELETE(request: Request | NextRequest, { params }) {
   const { slug } = await params;
+  const { error } = await isAuthenticated();
+
+  if (error) return error;
 
   try {
     await db.slang.delete({
@@ -63,7 +74,7 @@ export async function DELETE(request: Request | NextRequest, { params }) {
         slug,
       },
     });
-    return NextResponse.json({ message: "Delete successfuly" });
+    return NextResponse.json({ message: "Delete successfuly", error });
   } catch (error) {
     console.log("[deleete] ", error);
     return NextResponse.json(

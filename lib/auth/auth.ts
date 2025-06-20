@@ -3,6 +3,8 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { db } from "../prisma";
 import { nextCookies } from "better-auth/next-js";
 import { sendEmail } from "@/lib/email";
+import { headers } from "next/headers";
+import { NextResponse } from "next/server";
 
 export const auth = betterAuth({
   database: prismaAdapter(db, {
@@ -37,13 +39,13 @@ export const auth = betterAuth({
     sendOnSignUp: true,
     expiresIn: 60 * 60, // one hour
     autoSignInAfterVerification: true,
-    sendVerificationEmail: async({user, url})=>{
+    sendVerificationEmail: async ({ user, url }) => {
       await sendEmail({
         to: user.email,
         subject: "Verify your email address",
         text: `Click the link to verify your email address: ${url}`,
       });
-    }
+    },
   },
 
   account: {
@@ -64,3 +66,17 @@ export const auth = betterAuth({
 
   plugins: [nextCookies()],
 });
+
+export async function isAuthenticated(): Promise<{ error: Response | string }> {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    return {
+      error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }),
+    };
+  }
+
+  return { error: "" };
+}

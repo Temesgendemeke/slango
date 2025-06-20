@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/prisma";
 import generate_unique_slug from "@/utils/generate_unique";
+import { isAuthenticated } from "@/lib/auth/auth";
 
 export async function GET(request) {
   const url = new URL(request.url);
@@ -26,11 +27,6 @@ export async function GET(request) {
       take: perpage,
     });
 
-    // const result = slangs.map((slang) => ({
-    //   ...slang,
-    //   like_count: slang._count.like,
-    // }));
-
     const totalPosts = await db.slang.count();
     const totalPages = Math.ceil(totalPosts / perpage);
 
@@ -48,6 +44,10 @@ export async function GET(request) {
 }
 
 export async function POST(request: Request) {
+  const { error } = await isAuthenticated();
+  
+  
+  if (error) return error;
   try {
     const body = await request.json();
     const slug = await generate_unique_slug(body.name);

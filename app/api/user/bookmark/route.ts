@@ -1,9 +1,13 @@
+import { isAuthenticated } from "@/lib/auth/auth";
 import { db } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const { user_id, post_id: slang_id } = await request.json();
+  const { error } = await isAuthenticated();
+  if (error) return error;
 
+  
   const existingBookmark = await db.bookmark.findUnique({
     where: {
       user_id_slang_id: {

@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(_request: NextRequest, { params }) {
   const { user_id } = await params;
 
+
   const posts = await db.bookmark.findMany({
     where: {
       user_id,

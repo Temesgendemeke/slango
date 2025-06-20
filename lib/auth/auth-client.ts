@@ -16,4 +16,5 @@ export const {
   changeEmail,
   deleteUser,
   sendVerificationEmail,
+  
 } = createAuthClient();

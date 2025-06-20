@@ -4,6 +4,7 @@ import { IdPagePropes } from "@/types/Props";
 
 export async function GET(_request: NextRequest, { params }: IdPagePropes) {
   const { id: user_id } = await params;
+  
 
   const image = await db.image.findFirst({
     where: {
